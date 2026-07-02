@@ -9,8 +9,10 @@ import TimeSlider from './components/TimeSlider'
 import { loadData, matchById, team } from './lib/data'
 import { t as tr } from './lib/i18n'
 import type { Picks } from './lib/picks'
-import { decodePicks, loadPicks, savePicks, scorePicks } from './lib/picks'
+import { decodePicks, isLocked, isPickable, loadPicks, savePicks, scorePicks } from './lib/picks'
 import type { DataBundle, Lang, Selection, View } from './types'
+
+const STAGE_ORDER = ['r32', 'r16', 'qf', 'sf', 'third', 'final']
 
 export default function App() {
   const [data, setData] = useState<DataBundle | null>(null)
@@ -24,6 +26,8 @@ export default function App() {
   const [livePicks, setLivePicks] = useState<Picks>(() => loadPicks(false))
   const [retroPicks, setRetroPicks] = useState<Picks>(() => loadPicks(true))
   const [theirs, setTheirs] = useState<Picks | null>(null)
+  const [wizardOn, setWizardOn] = useState(false)
+  const [coachSeen, setCoachSeen] = useState(() => localStorage.getItem('cc26-coach') === '1')
 
   useEffect(() => {
     loadData().then(setData, (e) => setError(String(e)))
@@ -39,6 +43,20 @@ export default function App() {
     if (p.retro) setRetroPicks(p)
     else setLivePicks(p)
   }
+
+  // All matches the user can currently pick, bracket order; drives the wizard + FAB count
+  const pickQueue = useMemo(() => {
+    if (!data) return []
+    return data.tournament.matches
+      .filter((m) => isPickable(m) && !isLocked(m, retro))
+      .sort(
+        (a, b) => STAGE_ORDER.indexOf(a.stage) - STAGE_ORDER.indexOf(b.stage) || a.bracketIndex - b.bracketIndex
+      )
+  }, [data, retro])
+  const unpickedCount = useMemo(
+    () => pickQueue.filter((m) => !(retro ? retroPicks : livePicks).winners[m.id]).length,
+    [pickQueue, retro, retroPicks, livePicks]
+  )
 
   const scorecard = useMemo(
     () => (data ? scorePicks(data, picks, asOf) : { results: {}, points: 0, correct: 0, wrong: 0, pending: 0, exact: 0 }),
@@ -68,6 +86,24 @@ export default function App() {
     if (teamId) winners[matchId] = teamId
     else delete winners[matchId]
     setPicks({ ...picks, winners })
+    if (wizardOn && teamId) {
+      // step to the next unpicked match, giving the star/score row a beat to register
+      const idx = pickQueue.findIndex((m) => m.id === matchId)
+      const next = pickQueue.find((m, i) => i > idx && !winners[m.id]) ?? pickQueue.find((m) => !winners[m.id])
+      setTimeout(() => {
+        if (next) setSelection({ kind: 'match', id: next.id })
+        else {
+          setSelection(null)
+          setWizardOn(false)
+        }
+      }, 450)
+    }
+  }
+  const startWizard = () => {
+    const first = pickQueue.find((m) => !picks.winners[m.id]) ?? pickQueue[0]
+    if (!first) return
+    setWizardOn(true)
+    setSelection({ kind: 'match', id: first.id })
   }
   const onConf = (matchId: string, conf: 1 | 2 | 3) => setPicks({ ...picks, conf: { ...picks.conf, [matchId]: conf } })
   const onScore = (matchId: string, score: [number, number] | null) => {
@@ -118,6 +154,20 @@ export default function App() {
 
       {retro && <div className="retro-banner">📼 {tr('retroHint', lang)}</div>}
 
+      {!coachSeen && (
+        <div className="coach" onClick={(e) => e.stopPropagation()}>
+          <span>💡 {tr('coach', lang)}</span>
+          <button
+            onClick={() => {
+              localStorage.setItem('cc26-coach', '1')
+              setCoachSeen(true)
+            }}
+          >
+            {tr('gotIt', lang)}
+          </button>
+        </div>
+      )}
+
       {selTeam && (
         <div className="path-pill" onClick={(e) => e.stopPropagation()}>
           <img src={selTeam.logo} alt="" width={22} height={15} />
@@ -148,6 +198,12 @@ export default function App() {
         )}
       </main>
 
+      {view !== 'groups' && unpickedCount > 0 && !wizardOn && (
+        <button className="pick-fab" onClick={(e) => { e.stopPropagation(); startWizard() }}>
+          ⭐ {tr('fillBracket', lang)} · {unpickedCount}
+        </button>
+      )}
+
       {selMatch && (
         <MatchSheet
           data={data}
@@ -158,11 +214,31 @@ export default function App() {
           onConf={onConf}
           onScore={onScore}
           onSelectTeam={(id) => {
+            setWizardOn(false)
             setSelection({ kind: 'team', id })
             setView('circle')
           }}
-          onClose={() => setSelection(null)}
+          onClose={() => {
+            setSelection(null)
+            setWizardOn(false)
+          }}
           lang={lang}
+          wizard={
+            wizardOn && pickQueue.some((m) => m.id === selMatch.id)
+              ? {
+                  pos: pickQueue.findIndex((m) => m.id === selMatch.id) + 1,
+                  total: pickQueue.length,
+                  onPrev: () => {
+                    const i = pickQueue.findIndex((m) => m.id === selMatch.id)
+                    if (i > 0) setSelection({ kind: 'match', id: pickQueue[i - 1].id })
+                  },
+                  onNext: () => {
+                    const i = pickQueue.findIndex((m) => m.id === selMatch.id)
+                    if (i < pickQueue.length - 1) setSelection({ kind: 'match', id: pickQueue[i + 1].id })
+                  },
+                }
+              : undefined
+          }
         />
       )}
 

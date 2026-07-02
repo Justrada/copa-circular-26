@@ -75,6 +75,13 @@ const STRINGS = {
   theirPick: { en: 'Their pick', es: 'Su pick' },
   agree: { en: 'You agree', es: 'De acuerdo' },
   disagree: { en: 'You differ', es: 'Difieren' },
+  fillBracket: { en: 'Fill out your bracket', es: 'Completa tu bracket' },
+  allPicked: { en: 'All picked in!', es: '¡Bracket completo!' },
+  coach: {
+    en: 'How it works: tap any upcoming match (dashed gold outline) to pick your winner — or use “Fill out your bracket” to step through them all. Confidence stars and exact scores earn bonus points; green/red dots track your hits as real results land each night.',
+    es: 'Cómo funciona: toca cualquier partido próximo (borde dorado punteado) y elige a tu ganador — o usa “Completa tu bracket” para recorrerlos todos. Las estrellas de confianza y el marcador exacto dan puntos extra; los puntos verdes/rojos marcan tus aciertos cada noche.',
+  },
+  gotIt: { en: 'Got it', es: 'Entendido' },
 } as const
 
 export type StringKey = keyof typeof STRINGS

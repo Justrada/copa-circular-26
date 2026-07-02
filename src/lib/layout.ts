@@ -2,23 +2,23 @@ import type { Match, Stage } from '../types'
 
 // The SVG lives in viewBox "-500 -500 1000 1000", centered on the final.
 export const RINGS: Record<string, number> = {
-  r32: 340,
-  r16: 262,
-  qf: 188,
-  sf: 118,
+  r32: 342,
+  r16: 260,
+  qf: 184,
+  sf: 114,
 }
-export const GROUP_RING = { inner: 408, outer: 500 }
+export const GROUP_RING = { inner: 400, outer: 500 }
 export const SLOT_COUNT: Record<string, number> = { r32: 16, r16: 8, qf: 4, sf: 2 }
 
 // Match-node card sizes per stage (width, height)
 export const NODE_SIZE: Record<Stage, [number, number]> = {
   group: [0, 0],
-  r32: [64, 34],
-  r16: [70, 36],
-  qf: [78, 40],
-  sf: [86, 42],
-  third: [104, 40],
-  final: [148, 84],
+  r32: [74, 40],
+  r16: [84, 44],
+  qf: [94, 46],
+  sf: [104, 48],
+  third: [118, 44],
+  final: [166, 94],
 }
 
 export function deg2rad(d: number): number {
@@ -77,7 +77,7 @@ export function groupSector(gi: number): { start: number; end: number; mid: numb
 /** Position + tangential rotation for a team chip inside its group sector (rank 1 outermost). */
 export function chipTransform(gi: number, rank: number): string {
   const { mid } = groupSector(gi)
-  const r = GROUP_RING.outer - 14 - (rank - 1) * 21
+  const r = GROUP_RING.outer - 15 - (rank - 1) * 23
   const [x, y] = polar(mid, r)
   // Tangential text, flipped on the lower half so nothing reads upside down
   let rot = mid + 90
@@ -99,9 +99,9 @@ export function sectorPath(gi: number, rInner: number, rOuter: number): string {
 /** Ribbon from a team's group chip down to its R32 slot. */
 export function ribbonPath(gi: number, rank: number, r32Index: number): string {
   const { mid } = groupSector(gi)
-  const chipR = GROUP_RING.outer - 14 - (rank - 1) * 21
+  const chipR = GROUP_RING.outer - 15 - (rank - 1) * 23
   const a1 = slotAngle('r32', r32Index)
-  return radialLink(mid, chipR - 10, a1, RINGS.r32 + 20)
+  return radialLink(mid, chipR - 11, a1, RINGS.r32 + 22)
 }
 
 /** Anchor for the round label rings (12 o'clock). */

@@ -16,6 +16,7 @@ interface Props {
   onSelectTeam: (teamId: string) => void
   onClose: () => void
   lang: Lang
+  wizard?: { pos: number; total: number; onPrev: () => void; onNext: () => void }
 }
 
 const PLATFORM_ICON: Record<SocialPost['platform'], string> = {
@@ -25,7 +26,7 @@ const PLATFORM_ICON: Record<SocialPost['platform'], string> = {
   youtube: '▶',
 }
 
-export default function MatchSheet({ data, m, asOf, picks, onPick, onConf, onScore, onSelectTeam, onClose, lang }: Props) {
+export default function MatchSheet({ data, m, asOf, picks, onPick, onConf, onScore, onSelectTeam, onClose, lang, wizard }: Props) {
   const t = data.tournament
   const known = knownAsOf(m, asOf)
   const media = data.media[m.id]
@@ -52,6 +53,20 @@ export default function MatchSheet({ data, m, asOf, picks, onPick, onConf, onSco
           ✕
         </button>
       </header>
+
+      {wizard && (
+        <div className="wizard-nav">
+          <button onClick={wizard.onPrev} disabled={wizard.pos <= 1}>
+            ◂
+          </button>
+          <span>
+            {tr('pickWinner', lang)} · {wizard.pos} / {wizard.total}
+          </span>
+          <button onClick={wizard.onNext} disabled={wizard.pos >= wizard.total}>
+            ▸
+          </button>
+        </div>
+      )}
 
       <div className="sheet-score">
         <SheetTeam team={home} hint={slotHint(t, m, 'home')} winner={known && m.winnerId === m.homeId} onClick={onSelectTeam} />

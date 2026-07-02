@@ -1,5 +1,4 @@
 import { useMemo, useState } from 'react'
-import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch'
 import { knownAsOf, matchById, slotHint, slotTeamId, teamPath, upsetInfo } from '../lib/data'
 import { stageName, t as tr } from '../lib/i18n'
 import {
@@ -16,8 +15,9 @@ import {
   sectorPath,
 } from '../lib/layout'
 import type { Picks, Scorecard } from '../lib/picks'
-import { validPick } from '../lib/picks'
+import { isLocked, isPickable, validPick } from '../lib/picks'
 import type { DataBundle, Lang, Match, Selection } from '../types'
+import SvgZoom from './SvgZoom'
 
 interface Props {
   data: DataBundle
@@ -54,39 +54,31 @@ export default function RadialBracket({ data, asOf, selection, onSelect, picks, 
 
   return (
     <div className={`radial-wrap ${pathIds ? 'has-path' : ''} ${zoomed ? 'zoomed' : ''}`}>
-      <TransformWrapper
-        minScale={0.5}
-        maxScale={6}
-        limitToBounds={false}
-        doubleClick={{ mode: 'zoomIn' }}
-        onTransformed={(_, s) => setZoomed(s.scale > 1.7)}
-      >
-        <TransformComponent wrapperClass="radial-viewport" contentClass="radial-content">
-          <svg viewBox="-500 -500 1000 1000" className="radial-svg" role="img" aria-label="World Cup 2026 circular bracket">
-            <RingBands lang={lang} />
-            <GroupRing t={t} selection={selection} onSelect={onSelect} pathIds={pathIds} />
-            <Ribbons t={t} selection={selection} />
-            <Links t={t} koMatches={koMatches} pathIds={pathIds} />
-            <g className="nodes">
-              {koMatches.map((m) => (
-                <MatchNode
-                  key={m.id}
-                  data={data}
-                  m={m}
-                  asOf={asOf}
-                  picks={picks}
-                  scorecard={scorecard}
-                  upset={upsets.get(m.id)}
-                  onPath={!pathIds || pathIds.has(m.id)}
-                  selected={selection?.kind === 'match' && selection.id === m.id}
-                  onSelect={onSelect}
-                  lang={lang}
-                />
-              ))}
-            </g>
-          </svg>
-        </TransformComponent>
-      </TransformWrapper>
+      <SvgZoom onScaleChange={(k) => setZoomed(k > 1.35)}>
+        <svg viewBox="-512 -512 1024 1024" className="radial-svg" role="img" aria-label="World Cup 2026 circular bracket">
+          <RingBands lang={lang} />
+          <GroupRing t={t} selection={selection} onSelect={onSelect} pathIds={pathIds} />
+          <Ribbons t={t} selection={selection} />
+          <Links t={t} koMatches={koMatches} pathIds={pathIds} />
+          <g className="nodes">
+            {koMatches.map((m) => (
+              <MatchNode
+                key={m.id}
+                data={data}
+                m={m}
+                asOf={asOf}
+                picks={picks}
+                scorecard={scorecard}
+                upset={upsets.get(m.id)}
+                onPath={!pathIds || pathIds.has(m.id)}
+                selected={selection?.kind === 'match' && selection.id === m.id}
+                onSelect={onSelect}
+                lang={lang}
+              />
+            ))}
+          </g>
+        </svg>
+      </SvgZoom>
     </div>
   )
 }
@@ -147,12 +139,12 @@ function GroupRing({
                     onSelect(isSel ? null : { kind: 'team', id: teamId })
                   }}
                 >
-                  <rect x={-34} y={-9} width={68} height={18} rx={4} className="chip-bg" />
-                  <image href={team.logo} x={-31} y={-6} width={16} height={12} preserveAspectRatio="xMidYMid slice" />
-                  <text x={-11} y={3.5} className="chip-abbrev">
+                  <rect x={-38} y={-10} width={76} height={20} rx={5} className="chip-bg" />
+                  <image href={team.logo} x={-34} y={-7} width={18} height={14} preserveAspectRatio="xMidYMid slice" />
+                  <text x={-12} y={4} className="chip-abbrev">
                     {team.abbrev}
                   </text>
-                  <text x={30} y={3.5} className="chip-pts" textAnchor="end">
+                  <text x={34} y={4} className="chip-pts" textAnchor="end">
                     {team.points}
                   </text>
                 </g>
@@ -258,14 +250,16 @@ function MatchNode({
   const pick = validPick(t, picks, m)
   const result = scorecard.results[m.id]
   const isFinal = m.stage === 'final'
+  const needsPick = isPickable(m) && m.status === 'scheduled' && !pick && !isLocked(m, picks.retro)
 
+  const FS: Record<string, number> = { r32: 11, r16: 11.5, qf: 12, sf: 12.5, third: 12, final: 14 }
   const row = (side: 'home' | 'away', rowY: number) => {
     const id = side === 'home' ? homeId : awayId
     const team = id ? t.teams[id] : null
     const score = known ? (side === 'home' ? m.homeScore : m.awayScore) : null
     const pen = known ? (side === 'home' ? m.homePens : m.awayPens) : null
     const winner = known && m.winnerId != null && m.winnerId === id
-    const fs = isFinal ? 13 : m.stage === 'sf' ? 10.5 : 9.5
+    const fs = FS[m.stage]
     return (
       <g className={`node-row ${winner ? 'winner' : known ? 'loser' : ''}`} key={side}>
         {team ? (
@@ -295,11 +289,11 @@ function MatchNode({
     )
   }
 
-  const rowGap = isFinal ? 17 : h * 0.24
+  const rowGap = isFinal ? 18 : h * 0.24
   return (
     <g
       transform={`translate(${x.toFixed(1)},${y.toFixed(1)})`}
-      className={`node stage-${m.stage} ${onPath ? 'on-path' : ''} ${selected ? 'selected' : ''} ${m.status === 'live' ? 'live' : ''}`}
+      className={`node stage-${m.stage} ${onPath ? 'on-path' : ''} ${selected ? 'selected' : ''} ${m.status === 'live' ? 'live' : ''} ${needsPick ? 'needs-pick' : ''}`}
       onClick={(e) => {
         e.stopPropagation()
         onSelect({ kind: 'match', id: m.id })
