@@ -656,91 +656,91 @@
   "note": "Consistent with closing sportsbook lines (FanDuel -370/+410/+1300)"
  },
  "760496": {
-  "home": 0.55875,
-  "draw": 0.2675,
-  "away": 0.18625,
-  "source": "Polymarket",
-  "kind": "market",
-  "note": "Portugal vs Croatia, slug fifwc-prt-hrv-2026-07-02"
+  "home": 0.557,
+  "draw": 0.251,
+  "away": 0.191,
+  "source": "DraftKings closing line",
+  "kind": "book",
+  "capturedAt": "2026-07-02T10:14:34.699Z"
  },
  "760497": {
-  "home": 0.74875,
-  "draw": 0.17875,
-  "away": 0.07875,
-  "source": "Polymarket",
-  "kind": "market",
-  "note": "Spain vs Austria, slug fifwc-esp-aut-2026-07-02"
+  "home": 0.726,
+  "draw": 0.183,
+  "away": 0.091,
+  "source": "DraftKings closing line",
+  "kind": "book",
+  "capturedAt": "2026-07-02T10:14:34.699Z"
  },
  "760498": {
-  "home": 0.47375,
-  "draw": 0.29875,
-  "away": 0.23125,
-  "source": "Polymarket",
-  "kind": "market",
-  "note": "Switzerland vs Algeria, slug fifwc-che-alg-2026-07-02"
+  "home": 0.478,
+  "draw": 0.294,
+  "away": 0.228,
+  "source": "DraftKings closing line",
+  "kind": "book",
+  "capturedAt": "2026-07-02T10:14:34.699Z"
  },
  "760499": {
-  "home": 0.285,
-  "draw": 0.335,
-  "away": 0.385,
-  "source": "Polymarket",
-  "kind": "market",
-  "note": "Australia vs Egypt, slug fifwc-aus-egy-2026-07-03"
+  "home": 0.289,
+  "draw": 0.329,
+  "away": 0.382,
+  "source": "DraftKings closing line",
+  "kind": "book",
+  "capturedAt": "2026-07-02T10:14:34.699Z"
  },
  "760500": {
-  "home": 0.845,
-  "draw": 0.115,
-  "away": 0.0435,
-  "source": "Polymarket",
-  "kind": "market",
-  "note": "Argentina vs Cabo Verde, slug fifwc-arg-cvi-2026-07-03"
+  "home": 0.828,
+  "draw": 0.121,
+  "away": 0.051,
+  "source": "DraftKings closing line",
+  "kind": "book",
+  "capturedAt": "2026-07-02T10:14:34.699Z"
  },
  "760501": {
-  "home": 0.645,
-  "draw": 0.245,
-  "away": 0.125,
-  "source": "Polymarket",
-  "kind": "market",
-  "note": "Colombia vs Ghana, slug fifwc-col-gha-2026-07-03"
+  "home": 0.629,
+  "draw": 0.234,
+  "away": 0.137,
+  "source": "DraftKings closing line",
+  "kind": "book",
+  "capturedAt": "2026-07-02T10:14:34.699Z"
  },
  "760502": {
-  "home": 0.185,
-  "draw": 0.275,
-  "away": 0.545,
-  "source": "Polymarket",
-  "kind": "market",
-  "note": "Canada vs Morocco, slug fifwc-can-mar-2026-07-04"
+  "home": 0.192,
+  "draw": 0.274,
+  "away": 0.534,
+  "source": "DraftKings closing line",
+  "kind": "book",
+  "capturedAt": "2026-07-02T10:14:34.699Z"
  },
  "760503": {
-  "home": 0.045,
-  "draw": 0.125,
-  "away": 0.835,
-  "source": "Polymarket",
-  "kind": "market",
-  "note": "Paraguay vs France, slug fifwc-par-fra-2026-07-04"
+  "home": 0.05,
+  "draw": 0.136,
+  "away": 0.813,
+  "source": "DraftKings closing line",
+  "kind": "book",
+  "capturedAt": "2026-07-02T10:14:34.699Z"
  },
  "760504": {
-  "home": 0.515,
-  "draw": 0.265,
-  "away": 0.215,
-  "source": "Polymarket",
-  "kind": "market",
-  "note": "Brazil vs Norway, slug fifwc-bra-nor-2026-07-05"
+  "home": 0.502,
+  "draw": 0.259,
+  "away": 0.239,
+  "source": "DraftKings closing line",
+  "kind": "book",
+  "capturedAt": "2026-07-02T10:14:34.699Z"
  },
  "760505": {
-  "home": 0.345,
-  "draw": 0.295,
-  "away": 0.365,
-  "source": "Kalshi",
-  "kind": "market",
-  "note": "Mexico vs England not listed on Polymarket as of 2026-07-01; Kalshi regulation-time moneyline bid/ask midpoints, event KXWCGAME-26JUL05MEXENG"
+  "home": 0.316,
+  "draw": 0.306,
+  "away": 0.378,
+  "source": "DraftKings closing line",
+  "kind": "book",
+  "capturedAt": "2026-07-02T10:14:34.699Z"
  },
  "760507": {
-  "home": 0.375,
-  "draw": 0.275,
-  "away": 0.365,
-  "source": "Kalshi",
-  "kind": "market",
-  "note": "USA vs Belgium not listed on Polymarket as of 2026-07-01; Kalshi regulation-time moneyline bid/ask midpoints, event KXWCGAME-26JUL06USABEL"
+  "home": 0.384,
+  "draw": 0.274,
+  "away": 0.342,
+  "source": "DraftKings closing line",
+  "kind": "book",
+  "capturedAt": "2026-07-02T10:14:34.699Z"
  }
 }
