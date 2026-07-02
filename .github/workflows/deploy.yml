@@ -1,0 +1,49 @@
+name: deploy
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Nightly at 07:15 UTC (3:15am ET) — scores land, odds snapshot before next day's kickoffs
+    - cron: '15 7 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - name: Refresh tournament data
+        if: github.event_name != 'push'
+        run: |
+          node scripts/fetch-data.mjs
+          if ! git diff --quiet public/data; then
+            git config user.name 'copa-circular-bot'
+            git config user.email 'actions@users.noreply.github.com'
+            git add public/data
+            git commit -m 'data: nightly refresh'
+            git push
+          fi
+      - run: npm run build
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deployment
+        uses: actions/deploy-pages@v4

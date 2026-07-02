@@ -1,0 +1,746 @@
+{
+ "760414": {
+  "home": 0.373,
+  "draw": 0.313,
+  "away": 0.313,
+  "source": "Polymarket pre-match prices (event fifwc-kr-cze-2026-06-11, CLOB price history at kickoff)",
+  "kind": "market",
+  "note": "raw prices 0.375/0.315/0.315, normalized"
+ },
+ "760415": {
+  "home": 0.692,
+  "draw": 0.204,
+  "away": 0.104,
+  "source": "Polymarket pre-match prices (event fifwc-mex-rsa-2026-06-11, CLOB price history at kickoff)",
+  "kind": "market",
+  "note": "raw prices 0.695/0.205/0.105, normalized"
+ },
+ "760416": {
+  "home": 0.532,
+  "draw": 0.274,
+  "away": 0.194,
+  "source": "Polymarket pre-match prices (event fifwc-can-bih-2026-06-12, CLOB price history at kickoff)",
+  "kind": "market",
+  "note": "raw prices 0.535/0.275/0.195, normalized"
+ },
+ "760417": {
+  "home": 0.467,
+  "draw": 0.296,
+  "away": 0.236,
+  "source": "Polymarket pre-match prices (event fifwc-usa-par-2026-06-12, CLOB price history at kickoff)",
+  "kind": "market",
+  "note": "raw prices 0.465/0.295/0.235, normalized"
+ },
+ "760418": {
+  "home": 0.168,
+  "draw": 0.208,
+  "away": 0.624,
+  "source": "Polymarket pre-match prices (event fifwc-hai-sco-2026-06-13, CLOB price history at kickoff)",
+  "kind": "market",
+  "note": "raw prices 0.165/0.205/0.615, normalized"
+ },
+ "760419": {
+  "home": 0.582,
+  "draw": 0.254,
+  "away": 0.164,
+  "source": "Polymarket pre-match prices (event fifwc-bra-mar-2026-06-13, CLOB price history at kickoff)",
+  "kind": "market",
+  "note": "raw prices 0.585/0.255/0.165, normalized"
+ },
+ "760420": {
+  "home": 0.059,
+  "draw": 0.124,
+  "away": 0.817,
+  "source": "Polymarket pre-match prices (event fifwc-qat-che-2026-06-13, CLOB price history at kickoff)",
+  "kind": "market",
+  "note": "raw prices 0.0595/0.125/0.825, normalized"
+ },
+ "760421": {
+  "home": 0.176,
+  "draw": 0.256,
+  "away": 0.568,
+  "source": "Polymarket pre-match prices (event fifwc-aus-tur-2026-06-14, CLOB price history at kickoff)",
+  "kind": "market",
+  "note": "raw prices 0.175/0.255/0.565, normalized; Australia win was an upset"
+ },
+ "760422": {
+  "home": 0.942,
+  "draw": 0.035,
+  "away": 0.023,
+  "source": "Polymarket pre-match prices (event fifwc-ger-kor-2026-06-14, CLOB price history at kickoff)",
+  "kind": "market",
+  "note": "raw prices 0.9455/0.0355/0.0235, normalized"
+ },
+ "760423": {
+  "home": 0.286,
+  "draw": 0.337,
+  "away": 0.377,
+  "source": "Polymarket pre-match prices (event fifwc-civ-ecu-2026-06-14, CLOB price history, last price 5 min before kickoff)",
+  "kind": "market",
+  "note": "raw yes-prices h=0.285 d=0.335 a=0.375 (sum 0.995), normalized to 1"
+ },
+ "760424": {
+  "home": 0.508,
+  "draw": 0.286,
+  "away": 0.206,
+  "source": "Polymarket pre-match prices (event fifwc-swe-tun-2026-06-14, CLOB price history, last price 5 min before kickoff)",
+  "kind": "market",
+  "note": "raw yes-prices h=0.505 d=0.285 a=0.205 (sum 0.995), normalized to 1"
+ },
+ "760425": {
+  "home": 0.483,
+  "draw": 0.274,
+  "away": 0.244,
+  "source": "Polymarket pre-match prices (event fifwc-nld-jpn-2026-06-14, CLOB price history, last price 5 min before kickoff)",
+  "kind": "market",
+  "note": "raw yes-prices h=0.485 d=0.275 a=0.245 (sum 1.005), normalized to 1"
+ },
+ "760426": {
+  "home": 0.658,
+  "draw": 0.216,
+  "away": 0.126,
+  "source": "Polymarket pre-match prices (event fifwc-bel-egy-2026-06-15, CLOB price history, last price 5 min before kickoff)",
+  "kind": "market",
+  "note": "raw yes-prices h=0.655 d=0.215 a=0.125 (sum 0.995), normalized to 1"
+ },
+ "760427": {
+  "home": 0.512,
+  "draw": 0.284,
+  "away": 0.204,
+  "source": "Polymarket pre-match prices (event fifwc-irn-nzl-2026-06-15, CLOB price history, last price 5 min before kickoff)",
+  "kind": "market",
+  "note": "raw yes-prices h=0.515 d=0.285 a=0.205 (sum 1.005), normalized to 1"
+ },
+ "760428": {
+  "home": 0.899,
+  "draw": 0.071,
+  "away": 0.03,
+  "source": "Polymarket pre-match prices (event fifwc-esp-cvi-2026-06-15, CLOB price history, last price 5 min before kickoff)",
+  "kind": "market",
+  "note": "raw yes-prices h=0.895 d=0.071 a=0.0295 (sum 0.995), normalized to 1"
+ },
+ "760429": {
+  "home": 0.124,
+  "draw": 0.234,
+  "away": 0.642,
+  "source": "Polymarket pre-match prices (event fifwc-ksa-ury-2026-06-15, CLOB price history, last price 5 min before kickoff)",
+  "kind": "market",
+  "note": "raw yes-prices h=0.125 d=0.235 a=0.645 (sum 1.005), normalized to 1"
+ },
+ "760430": {
+  "home": 0.065,
+  "draw": 0.144,
+  "away": 0.791,
+  "source": "Polymarket pre-match prices (event fifwc-irq-nor-2026-06-16, CLOB price history, last price 5 min before kickoff)",
+  "kind": "market",
+  "note": "raw yes-prices h=0.065 d=0.145 a=0.795 (sum 1.005), normalized to 1"
+ },
+ "760431": {
+  "home": 0.699,
+  "draw": 0.196,
+  "away": 0.105,
+  "source": "Polymarket pre-match prices (event fifwc-aut-jor-2026-06-17, CLOB price history, last price 5 min before kickoff)",
+  "kind": "market",
+  "note": "raw yes-prices h=0.695 d=0.195 a=0.105 (sum 0.995), normalized to 1"
+ },
+ "760432": {
+  "home": 0.652,
+  "draw": 0.214,
+  "away": 0.134,
+  "source": "Polymarket fifwc-fra-sen-2026-06-16 (CLOB last pre-kickoff prices, normalized)",
+  "kind": "market",
+  "note": "France vs Senegal; 90-minute 3-way moneyline"
+ },
+ "760433": {
+  "home": 0.628,
+  "draw": 0.236,
+  "away": 0.136,
+  "source": "Polymarket fifwc-arg-alg-2026-06-16 (CLOB last pre-kickoff prices, normalized)",
+  "kind": "market",
+  "note": "Argentina vs Algeria; 90-minute 3-way moneyline"
+ },
+ "760434": {
+  "home": 0.393,
+  "draw": 0.313,
+  "away": 0.294,
+  "source": "Polymarket fifwc-gha-pan-2026-06-17 (CLOB last pre-kickoff prices, normalized)",
+  "kind": "market",
+  "note": "Ghana vs Panama; 90-minute 3-way moneyline"
+ },
+ "760435": {
+  "home": 0.761,
+  "draw": 0.164,
+  "away": 0.075,
+  "source": "Polymarket fifwc-prt-cdr-2026-06-17 (CLOB last pre-kickoff prices, normalized)",
+  "kind": "market",
+  "note": "Portugal vs Congo DR; 90-minute 3-way moneyline"
+ },
+ "760436": {
+  "home": 0.084,
+  "draw": 0.182,
+  "away": 0.734,
+  "source": "Polymarket fifwc-uzb-col-2026-06-17 (CLOB last pre-kickoff prices, normalized)",
+  "kind": "market",
+  "note": "Uzbekistan vs Colombia; 90-minute 3-way moneyline"
+ },
+ "760437": {
+  "home": 0.588,
+  "draw": 0.246,
+  "away": 0.166,
+  "source": "Polymarket fifwc-eng-hrv-2026-06-17 (CLOB last pre-kickoff prices, normalized)",
+  "kind": "market",
+  "note": "England vs Croatia; 90-minute 3-way moneyline"
+ },
+ "760438": {
+  "home": 0.502,
+  "draw": 0.284,
+  "away": 0.214,
+  "source": "Polymarket fifwc-cze-rsa-2026-06-18 (CLOB last pre-kickoff prices, normalized)",
+  "kind": "market",
+  "note": "Czechia vs South Africa; 90-minute 3-way moneyline"
+ },
+ "760439": {
+  "home": 0.615,
+  "draw": 0.232,
+  "away": 0.153,
+  "source": "Polymarket fifwc-che-bih-2026-06-18 (CLOB last pre-kickoff prices, normalized)",
+  "kind": "market",
+  "note": "Switzerland vs Bosnia-Herzegovina; 90-minute 3-way moneyline"
+ },
+ "760440": {
+  "home": 0.769,
+  "draw": 0.156,
+  "away": 0.075,
+  "source": "Polymarket fifwc-can-qat-2026-06-18 (CLOB last pre-kickoff prices, normalized)",
+  "kind": "market",
+  "note": "Canada vs Qatar; 90-minute 3-way moneyline"
+ },
+ "760441": {
+  "home": 0.467,
+  "draw": 0.307,
+  "away": 0.226,
+  "source": "Polymarket fifwc-mex-kr-2026-06-18 (CLOB last trade prices immediately before kickoff 2026-06-19T01:00:00+00:00)",
+  "kind": "market",
+  "note": "Mexico vs South Korea; 90-minute 3-way moneyline markets, normalized to sum to 1"
+ },
+ "760442": {
+  "home": 0.612,
+  "draw": 0.224,
+  "away": 0.164,
+  "source": "Polymarket fifwc-usa-aus-2026-06-19 (CLOB last trade prices immediately before kickoff 2026-06-19T19:00:00+00:00)",
+  "kind": "market",
+  "note": "United States vs Australia; 90-minute 3-way moneyline markets, normalized to sum to 1"
+ },
+ "760443": {
+  "home": 0.463,
+  "draw": 0.293,
+  "away": 0.244,
+  "source": "Polymarket fifwc-tur-par-2026-06-19 (CLOB last trade prices immediately before kickoff 2026-06-20T03:00:00+00:00)",
+  "kind": "market",
+  "note": "Turkiye vs Paraguay; 90-minute 3-way moneyline markets, normalized to sum to 1. Paraguay win was an upset vs 0.46 pre-match Turkiye probability"
+ },
+ "760444": {
+  "home": 0.876,
+  "draw": 0.079,
+  "away": 0.045,
+  "source": "Polymarket fifwc-bra-hai-2026-06-19 (CLOB last trade prices immediately before kickoff 2026-06-20T00:30:00+00:00)",
+  "kind": "market",
+  "note": "Brazil vs Haiti; 90-minute 3-way moneyline markets, normalized to sum to 1"
+ },
+ "760445": {
+  "home": 0.156,
+  "draw": 0.266,
+  "away": 0.578,
+  "source": "Polymarket fifwc-sco-mar-2026-06-19 (CLOB last trade prices immediately before kickoff 2026-06-19T22:00:00+00:00)",
+  "kind": "market",
+  "note": "Scotland vs Morocco; 90-minute 3-way moneyline markets, normalized to sum to 1. Morocco (away) were clear favorites"
+ },
+ "760446": {
+  "home": 0.84,
+  "draw": 0.104,
+  "away": 0.056,
+  "source": "Polymarket fifwc-ecu-kor-2026-06-20 (CLOB last trade prices immediately before kickoff 2026-06-21T00:00:00+00:00)",
+  "kind": "market",
+  "note": "Ecuador vs Curacao (event slug uses 'kor' code for Curacao but event title is Ecuador vs. Curacao); 90-minute 3-way moneyline markets, normalized to sum to 1. 0-0 draw was an upset vs 0.84 Ecuador probability"
+ },
+ "760447": {
+  "home": 0.572,
+  "draw": 0.234,
+  "away": 0.194,
+  "source": "Polymarket fifwc-nld-swe-2026-06-20 (CLOB last trade prices immediately before kickoff 2026-06-20T17:00:00+00:00)",
+  "kind": "market",
+  "note": "Netherlands vs Sweden; 90-minute 3-way moneyline markets, normalized to sum to 1"
+ },
+ "760448": {
+  "home": 0.668,
+  "draw": 0.196,
+  "away": 0.136,
+  "source": "Polymarket fifwc-ger-civ-2026-06-20 (CLOB last trade prices immediately before kickoff 2026-06-20T20:00:00+00:00)",
+  "kind": "market",
+  "note": "Germany vs Ivory Coast; 90-minute 3-way moneyline markets, normalized to sum to 1"
+ },
+ "760449": {
+  "home": 0.114,
+  "draw": 0.214,
+  "away": 0.672,
+  "source": "Polymarket fifwc-tun-jpn-2026-06-21 (CLOB last trade prices immediately before kickoff 2026-06-21T04:00:00+00:00)",
+  "kind": "market",
+  "note": "Tunisia vs Japan; 90-minute 3-way moneyline markets, normalized to sum to 1. Japan (away) were clear favorites"
+ },
+ "760450": {
+  "home": 0.701,
+  "draw": 0.204,
+  "away": 0.095,
+  "source": "Polymarket fifwc-ury-cvi-2026-06-21 (CLOB price history, last trade T-10min before kickoff)",
+  "kind": "market",
+  "note": "Uruguay vs Cape Verde; raw prices H .705 / D .205 / A .095 normalized; 90-minute 3-way market"
+ },
+ "760451": {
+  "home": 0.692,
+  "draw": 0.204,
+  "away": 0.104,
+  "source": "Polymarket fifwc-bel-irn-2026-06-21 (CLOB price history, last trade T-10min before kickoff)",
+  "kind": "market",
+  "note": "Belgium vs Iran; raw prices H .695 / D .205 / A .105 normalized; 90-minute 3-way market"
+ },
+ "760452": {
+  "home": 0.164,
+  "draw": 0.244,
+  "away": 0.592,
+  "source": "Polymarket fifwc-nzl-egy-2026-06-21 (CLOB price history, last trade T-10min before kickoff)",
+  "kind": "market",
+  "note": "New Zealand vs Egypt; raw prices H .165 / D .245 / A .595 normalized; 90-minute 3-way market"
+ },
+ "760453": {
+  "home": 0.889,
+  "draw": 0.075,
+  "away": 0.036,
+  "source": "Polymarket fifwc-esp-ksa-2026-06-21 (CLOB price history, last trade T-10min before kickoff)",
+  "kind": "market",
+  "note": "Spain vs Saudi Arabia; raw prices H .895 / D .075 / A .0365 normalized; 90-minute 3-way market"
+ },
+ "760454": {
+  "home": 0.393,
+  "draw": 0.284,
+  "away": 0.323,
+  "source": "Polymarket fifwc-nor-sen-2026-06-22 (CLOB price history, last trade T-10min before kickoff)",
+  "kind": "market",
+  "note": "Norway vs Senegal; raw prices H .395 / D .285 / A .325 normalized; 90-minute 3-way market"
+ },
+ "760455": {
+  "home": 0.134,
+  "draw": 0.204,
+  "away": 0.662,
+  "source": "Polymarket fifwc-jor-alg-2026-06-22 (CLOB price history, last trade T-10min before kickoff)",
+  "kind": "market",
+  "note": "Jordan vs Algeria; raw prices H .135 / D .205 / A .665 normalized; 90-minute 3-way market"
+ },
+ "760456": {
+  "home": 0.672,
+  "draw": 0.224,
+  "away": 0.104,
+  "source": "Polymarket fifwc-arg-aut-2026-06-22 (CLOB price history, last trade T-10min before kickoff)",
+  "kind": "market",
+  "note": "Argentina vs Austria; raw prices H .675 / D .225 / A .105 normalized; 90-minute 3-way market"
+ },
+ "760457": {
+  "home": 0.912,
+  "draw": 0.065,
+  "away": 0.023,
+  "source": "Polymarket fifwc-fra-irq-2026-06-22 (CLOB price history, last trade T-10min before kickoff)",
+  "kind": "market",
+  "note": "France vs Iraq; raw prices H .905 / D .065 / A .0225 normalized; 90-minute 3-way market"
+ },
+ "760458": {
+  "home": 0.839,
+  "draw": 0.116,
+  "away": 0.045,
+  "source": "Polymarket fifwc-eng-gha-2026-06-23 (CLOB price history, last trade T-10min before kickoff)",
+  "kind": "market",
+  "note": "England vs Ghana; raw prices H .835 / D .115 / A .045 normalized; 90-minute 3-way market"
+ },
+ "760459": {
+  "home": 0.638,
+  "draw": 0.236,
+  "away": 0.126,
+  "source": "Polymarket fifwc-col-cdr-2026-06-23 (CLOB price history, last price ~1 min before kickoff)",
+  "kind": "market",
+  "note": "3-way 90-minute moneyline; raw pre-match prices 0.635/0.235/0.125 (sum 0.995) normalized to 1"
+ },
+ "760460": {
+  "home": 0.114,
+  "draw": 0.204,
+  "away": 0.682,
+  "source": "Polymarket fifwc-pan-hrv-2026-06-23 (CLOB price history, last price ~1 min before kickoff)",
+  "kind": "market",
+  "note": "3-way 90-minute moneyline; raw pre-match prices 0.115/0.205/0.685 (sum 1.005) normalized to 1"
+ },
+ "760461": {
+  "home": 0.851,
+  "draw": 0.104,
+  "away": 0.045,
+  "source": "Polymarket fifwc-prt-uzb-2026-06-23 (CLOB price history, last price ~1 min before kickoff)",
+  "kind": "market",
+  "note": "3-way 90-minute moneyline; raw pre-match prices 0.855/0.105/0.045 (sum 1.005) normalized to 1"
+ },
+ "760462": {
+  "home": 0.688,
+  "draw": 0.186,
+  "away": 0.126,
+  "source": "Polymarket fifwc-bih-qat-2026-06-24 (CLOB price history, last price ~1 min before kickoff)",
+  "kind": "market",
+  "note": "3-way 90-minute moneyline; raw pre-match prices 0.685/0.185/0.125 (sum 0.995) normalized to 1"
+ },
+ "760463": {
+  "home": 0.377,
+  "draw": 0.327,
+  "away": 0.296,
+  "source": "Polymarket fifwc-che-can-2026-06-24 (CLOB price history, last price ~1 min before kickoff)",
+  "kind": "market",
+  "note": "3-way 90-minute moneyline; raw pre-match prices 0.375/0.325/0.295 (sum 0.995) normalized to 1"
+ },
+ "760464": {
+  "home": 0.759,
+  "draw": 0.156,
+  "away": 0.085,
+  "source": "Polymarket fifwc-mar-hai-2026-06-24 (CLOB price history, last price ~1 min before kickoff)",
+  "kind": "market",
+  "note": "3-way 90-minute moneyline; raw pre-match prices 0.755/0.155/0.085 (sum 0.995) normalized to 1"
+ },
+ "760465": {
+  "home": 0.085,
+  "draw": 0.176,
+  "away": 0.739,
+  "source": "Polymarket fifwc-sco-bra-2026-06-24 (CLOB price history, last price ~1 min before kickoff)",
+  "kind": "market",
+  "note": "3-way 90-minute moneyline; raw pre-match prices 0.085/0.175/0.735 (sum 0.995) normalized to 1"
+ },
+ "760466": {
+  "home": 0.178,
+  "draw": 0.269,
+  "away": 0.553,
+  "source": "Polymarket fifwc-rsa-kr-2026-06-24 (CLOB price history, last price ~1 min before kickoff)",
+  "kind": "market",
+  "note": "3-way 90-minute moneyline; raw pre-match prices 0.175/0.265/0.545 (sum 0.985) normalized to 1"
+ },
+ "760467": {
+  "home": 0.196,
+  "draw": 0.236,
+  "away": 0.568,
+  "source": "Polymarket fifwc-cze-mex-2026-06-24 (CLOB price history, last price ~1 min before kickoff)",
+  "kind": "market",
+  "note": "3-way 90-minute moneyline; raw pre-match prices 0.195/0.235/0.565 (sum 0.995) normalized to 1"
+ },
+ "760468": {
+  "home": 0.212,
+  "draw": 0.219,
+  "away": 0.569,
+  "source": "Polymarket fifwc-ecu-ger-2026-06-25 (CLOB price history ~5 min pre-kickoff, normalized)",
+  "kind": "market",
+  "note": "Germany clear favorites; Ecuador 2-1 win was an upset"
+ },
+ "760469": {
+  "home": 0.379,
+  "draw": 0.399,
+  "away": 0.222,
+  "source": "Polymarket fifwc-par-aus-2026-06-25 (CLOB price history ~5 min pre-kickoff, normalized)",
+  "kind": "market",
+  "note": "Draw priced as most likely outcome (mutually beneficial final group game); ended 0-0"
+ },
+ "760470": {
+  "home": 0.296,
+  "draw": 0.246,
+  "away": 0.457,
+  "source": "Polymarket fifwc-tur-usa-2026-06-25 (CLOB price history ~5 min pre-kickoff, normalized)",
+  "kind": "market",
+  "note": "USA modest favorites despite rotated squad; Türkiye 3-2 win was an upset"
+ },
+ "760471": {
+  "home": 0.416,
+  "draw": 0.281,
+  "away": 0.302,
+  "source": "Polymarket fifwc-jpn-swe-2026-06-25 (CLOB price history ~5 min pre-kickoff, normalized)",
+  "kind": "market",
+  "note": "Japan slight favorites; 1-1 draw"
+ },
+ "760472": {
+  "home": 0.039,
+  "draw": 0.085,
+  "away": 0.876,
+  "source": "Polymarket fifwc-tun-nld-2026-06-25 (CLOB price history ~5 min pre-kickoff, normalized)",
+  "kind": "market",
+  "note": "Netherlands heavy favorites; won 3-1 as expected"
+ },
+ "760473": {
+  "home": 0.057,
+  "draw": 0.117,
+  "away": 0.826,
+  "source": "Polymarket fifwc-kor-civ-2026-06-25 (CLOB price history ~5 min pre-kickoff, normalized)",
+  "kind": "market",
+  "note": "Ivory Coast heavy favorites over Curaçao; won 2-0 as expected"
+ },
+ "760474": {
+  "home": 0.801,
+  "draw": 0.124,
+  "away": 0.075,
+  "source": "Polymarket fifwc-sen-irq-2026-06-26 (CLOB price history ~5 min pre-kickoff, normalized)",
+  "kind": "market",
+  "note": "Senegal heavy favorites; won 5-0 as expected"
+ },
+ "760475": {
+  "home": 0.116,
+  "draw": 0.156,
+  "away": 0.728,
+  "source": "Polymarket fifwc-nor-fra-2026-06-26 (CLOB price history ~5 min pre-kickoff, normalized)",
+  "kind": "market",
+  "note": "France clear favorites even vs Haaland's Norway (France rotated); won 4-1 as expected"
+ },
+ "760476": {
+  "home": 0.373,
+  "draw": 0.353,
+  "away": 0.274,
+  "source": "Polymarket fifwc-egy-irn-2026-06-26 (CLOB price history ~5 min pre-kickoff, normalized)",
+  "kind": "market",
+  "note": "Near coin-flip with high draw probability; ended 1-1"
+ },
+ "760477": {
+  "home": 0.065,
+  "draw": 0.106,
+  "away": 0.829,
+  "source": "Polymarket fifwc-nzl-bel-2026-06-26 (CLOB price history, last pre-kickoff prices)",
+  "kind": "market",
+  "note": "Kickoff 2026-06-27T03:00Z; raw prices 0.065/0.105/0.825 normalized"
+ },
+ "760478": {
+  "home": 0.377,
+  "draw": 0.276,
+  "away": 0.347,
+  "source": "Polymarket fifwc-cvi-ksa-2026-06-26 (CLOB price history, last pre-kickoff prices)",
+  "kind": "market",
+  "note": "Kickoff 2026-06-27T00:00Z; raw prices 0.375/0.275/0.345 normalized"
+ },
+ "760479": {
+  "home": 0.156,
+  "draw": 0.276,
+  "away": 0.568,
+  "source": "Polymarket fifwc-ury-esp-2026-06-26 (CLOB price history, last pre-kickoff prices)",
+  "kind": "market",
+  "note": "Kickoff 2026-06-27T00:00Z; raw prices 0.155/0.275/0.565 normalized"
+ },
+ "760480": {
+  "home": 0.542,
+  "draw": 0.294,
+  "away": 0.164,
+  "source": "Polymarket fifwc-hrv-gha-2026-06-27 (CLOB price history, last pre-kickoff prices)",
+  "kind": "market",
+  "note": "Kickoff 2026-06-27T21:00Z; raw prices 0.545/0.295/0.165 normalized"
+ },
+ "760481": {
+  "home": 0.234,
+  "draw": 0.234,
+  "away": 0.532,
+  "source": "Polymarket fifwc-col-prt-2026-06-27 (CLOB price history, last pre-kickoff prices)",
+  "kind": "market",
+  "note": "Kickoff 2026-06-27T23:30Z; raw prices 0.235/0.235/0.535 normalized"
+ },
+ "760482": {
+  "home": 0.582,
+  "draw": 0.244,
+  "away": 0.174,
+  "source": "Polymarket fifwc-cdr-uzb-2026-06-27 (CLOB price history, last pre-kickoff prices)",
+  "kind": "market",
+  "note": "Kickoff 2026-06-27T23:30Z; raw prices 0.585/0.245/0.175 normalized"
+ },
+ "760483": {
+  "home": 0.042,
+  "draw": 0.096,
+  "away": 0.862,
+  "source": "Polymarket fifwc-jor-arg-2026-06-27 (CLOB price history, last pre-kickoff prices)",
+  "kind": "market",
+  "note": "Kickoff 2026-06-28T02:00Z; raw prices 0.0415/0.095/0.855 normalized"
+ },
+ "760484": {
+  "home": 0.271,
+  "draw": 0.448,
+  "away": 0.281,
+  "source": "Polymarket fifwc-alg-aut-2026-06-27 (CLOB price history, last pre-kickoff prices)",
+  "kind": "market",
+  "note": "Kickoff 2026-06-28T02:00Z; raw prices 0.275/0.455/0.285 normalized; draw favored as both sides advanced with a draw"
+ },
+ "760485": {
+  "home": 0.045,
+  "draw": 0.104,
+  "away": 0.851,
+  "source": "Polymarket fifwc-pan-eng-2026-06-27 (CLOB price history, last pre-kickoff prices)",
+  "kind": "market",
+  "note": "Kickoff 2026-06-27T21:00Z; raw prices 0.045/0.105/0.855 normalized"
+ },
+ "760486": {
+  "home": 0.188,
+  "draw": 0.289,
+  "away": 0.523,
+  "source": "Polymarket fifwc-rsa-can-2026-06-28 (CLOB price history, last pre-kickoff prices)",
+  "kind": "market",
+  "note": "90-minute 3-way market; raw pre-match prices RSA 0.185 / draw 0.285 / CAN 0.515, normalized from sum 0.985"
+ },
+ "760487": {
+  "home": 0.547,
+  "draw": 0.271,
+  "away": 0.182,
+  "source": "Polymarket fifwc-bra-jpn-2026-06-29 (CLOB price history, last pre-kickoff prices)",
+  "kind": "market",
+  "note": "90-minute 3-way market; raw pre-match prices BRA 0.555 / draw 0.275 / JPN 0.185, normalized from sum 1.015"
+ },
+ "760488": {
+  "home": 0.403,
+  "draw": 0.313,
+  "away": 0.284,
+  "source": "Polymarket fifwc-nld-mar-2026-06-29 (CLOB price history, last pre-kickoff prices)",
+  "kind": "market",
+  "note": "90-minute 3-way market (match went to pens after 1-1); raw pre-match prices NED 0.405 / draw 0.315 / MAR 0.285, normalized from sum 1.005"
+ },
+ "760489": {
+  "home": 0.731,
+  "draw": 0.184,
+  "away": 0.085,
+  "source": "Polymarket fifwc-ger-par-2026-06-29 (CLOB price history, last pre-kickoff prices)",
+  "kind": "market",
+  "note": "90-minute 3-way market (match went to pens after 1-1); raw pre-match prices GER 0.735 / draw 0.185 / PAR 0.085, normalized from sum 1.005"
+ },
+ "760490": {
+  "home": 0.254,
+  "draw": 0.303,
+  "away": 0.443,
+  "source": "Polymarket fifwc-civ-nor-2026-06-30 (CLOB price history, last pre-kickoff prices)",
+  "kind": "market",
+  "note": "90-minute 3-way market; raw pre-match prices CIV 0.255 / draw 0.305 / NOR 0.445, normalized from sum 1.005"
+ },
+ "760491": {
+  "home": 0.417,
+  "draw": 0.357,
+  "away": 0.226,
+  "source": "Polymarket fifwc-mex-ecu-2026-06-30 (CLOB price history, last pre-kickoff prices)",
+  "kind": "market",
+  "note": "90-minute 3-way market; raw pre-match prices MEX 0.415 / draw 0.355 / ECU 0.225, normalized from sum 0.995"
+ },
+ "760492": {
+  "home": 0.766,
+  "draw": 0.157,
+  "away": 0.076,
+  "source": "Polymarket fifwc-fra-swe-2026-06-30 (CLOB price history, last pre-kickoff prices)",
+  "kind": "market",
+  "note": "90-minute 3-way market; raw pre-match prices FRA 0.755 / draw 0.155 / SWE 0.075, normalized from sum 0.985"
+ },
+ "760493": {
+  "home": 0.502,
+  "draw": 0.274,
+  "away": 0.224,
+  "source": "Polymarket fifwc-bel-sen-2026-07-01 (CLOB price history, last pre-kickoff prices)",
+  "kind": "market",
+  "note": "90-minute 3-way market; raw pre-match prices BEL 0.505 / draw 0.275 / SEN 0.225, normalized from sum 1.005"
+ },
+ "760494": {
+  "home": 0.719,
+  "draw": 0.186,
+  "away": 0.096,
+  "source": "Polymarket fifwc-usa-bih-2026-07-01 (CLOB price history, last pre-kickoff prices)",
+  "kind": "market",
+  "note": "90-minute 3-way market; raw pre-match prices USA 0.715 / draw 0.185 / BIH 0.095, normalized from sum 0.995"
+ },
+ "760495": {
+  "home": 0.759,
+  "draw": 0.186,
+  "away": 0.055,
+  "source": "Polymarket pre-match prices (event fifwc-eng-cdr-2026-07-01, CLOB price history ~10 min before 16:00 UTC kickoff: England 0.755, Draw 0.185, DR Congo 0.055; normalized)",
+  "kind": "market",
+  "note": "Consistent with closing sportsbook lines (FanDuel -370/+410/+1300)"
+ },
+ "760496": {
+  "home": 0.55875,
+  "draw": 0.2675,
+  "away": 0.18625,
+  "source": "Polymarket",
+  "kind": "market",
+  "note": "Portugal vs Croatia, slug fifwc-prt-hrv-2026-07-02"
+ },
+ "760497": {
+  "home": 0.74875,
+  "draw": 0.17875,
+  "away": 0.07875,
+  "source": "Polymarket",
+  "kind": "market",
+  "note": "Spain vs Austria, slug fifwc-esp-aut-2026-07-02"
+ },
+ "760498": {
+  "home": 0.47375,
+  "draw": 0.29875,
+  "away": 0.23125,
+  "source": "Polymarket",
+  "kind": "market",
+  "note": "Switzerland vs Algeria, slug fifwc-che-alg-2026-07-02"
+ },
+ "760499": {
+  "home": 0.285,
+  "draw": 0.335,
+  "away": 0.385,
+  "source": "Polymarket",
+  "kind": "market",
+  "note": "Australia vs Egypt, slug fifwc-aus-egy-2026-07-03"
+ },
+ "760500": {
+  "home": 0.845,
+  "draw": 0.115,
+  "away": 0.0435,
+  "source": "Polymarket",
+  "kind": "market",
+  "note": "Argentina vs Cabo Verde, slug fifwc-arg-cvi-2026-07-03"
+ },
+ "760501": {
+  "home": 0.645,
+  "draw": 0.245,
+  "away": 0.125,
+  "source": "Polymarket",
+  "kind": "market",
+  "note": "Colombia vs Ghana, slug fifwc-col-gha-2026-07-03"
+ },
+ "760502": {
+  "home": 0.185,
+  "draw": 0.275,
+  "away": 0.545,
+  "source": "Polymarket",
+  "kind": "market",
+  "note": "Canada vs Morocco, slug fifwc-can-mar-2026-07-04"
+ },
+ "760503": {
+  "home": 0.045,
+  "draw": 0.125,
+  "away": 0.835,
+  "source": "Polymarket",
+  "kind": "market",
+  "note": "Paraguay vs France, slug fifwc-par-fra-2026-07-04"
+ },
+ "760504": {
+  "home": 0.515,
+  "draw": 0.265,
+  "away": 0.215,
+  "source": "Polymarket",
+  "kind": "market",
+  "note": "Brazil vs Norway, slug fifwc-bra-nor-2026-07-05"
+ },
+ "760505": {
+  "home": 0.345,
+  "draw": 0.295,
+  "away": 0.365,
+  "source": "Kalshi",
+  "kind": "market",
+  "note": "Mexico vs England not listed on Polymarket as of 2026-07-01; Kalshi regulation-time moneyline bid/ask midpoints, event KXWCGAME-26JUL05MEXENG"
+ },
+ "760507": {
+  "home": 0.375,
+  "draw": 0.275,
+  "away": 0.365,
+  "source": "Kalshi",
+  "kind": "market",
+  "note": "USA vs Belgium not listed on Polymarket as of 2026-07-01; Kalshi regulation-time moneyline bid/ask midpoints, event KXWCGAME-26JUL06USABEL"
+ }
+}

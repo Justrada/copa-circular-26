@@ -1,0 +1,191 @@
+import type { DataBundle, Match, Tournament } from '../types'
+import { knownAsOf, matchById } from './data'
+
+export interface Picks {
+  v: 1
+  name: string
+  winners: Record<string, string> // matchId -> teamId
+  conf: Record<string, 1 | 2 | 3> // matchId -> confidence stars
+  scores: Record<string, [number, number]> // matchId -> predicted regulation/ET score
+  retro: boolean
+}
+
+export const emptyPicks = (retro: boolean): Picks => ({
+  v: 1,
+  name: '',
+  winners: {},
+  conf: {},
+  scores: {},
+  retro,
+})
+
+const KEY = (retro: boolean) => (retro ? 'cc26-picks-retro' : 'cc26-picks')
+
+export function loadPicks(retro: boolean): Picks {
+  try {
+    const raw = localStorage.getItem(KEY(retro))
+    if (raw) return { ...emptyPicks(retro), ...JSON.parse(raw), retro }
+  } catch {
+    /* fresh start */
+  }
+  return emptyPicks(retro)
+}
+
+export function savePicks(p: Picks): void {
+  localStorage.setItem(KEY(p.retro), JSON.stringify(p))
+}
+
+// --- URL sharing ---------------------------------------------------------
+
+function b64url(s: string): string {
+  return btoa(unescape(encodeURIComponent(s))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')
+}
+function unb64url(s: string): string {
+  return decodeURIComponent(escape(atob(s.replace(/-/g, '+').replace(/_/g, '/'))))
+}
+
+export function encodePicks(p: Picks): string {
+  const slim = {
+    n: p.name || undefined,
+    r: p.retro ? 1 : undefined,
+    w: p.winners,
+    c: Object.keys(p.conf).length ? p.conf : undefined,
+    s: Object.keys(p.scores).length ? p.scores : undefined,
+  }
+  return b64url(JSON.stringify(slim))
+}
+
+export function decodePicks(encoded: string): Picks | null {
+  try {
+    const slim = JSON.parse(unb64url(encoded))
+    return {
+      v: 1,
+      name: slim.n ?? '',
+      retro: slim.r === 1,
+      winners: slim.w ?? {},
+      conf: slim.c ?? {},
+      scores: slim.s ?? {},
+    }
+  } catch {
+    return null
+  }
+}
+
+// --- pick propagation ----------------------------------------------------
+
+/**
+ * The two candidate teams for a knockout match under a pickset:
+ * the real team when the slot is decided, otherwise the user's pick
+ * propagated from the source match.
+ */
+export function candidates(
+  t: Tournament,
+  picks: Picks,
+  m: Match,
+  side: 'home' | 'away'
+): string | null {
+  const direct = side === 'home' ? m.homeId : m.awayId
+  if (direct) return direct
+  const feed = m.feeds?.[side]
+  if (!feed) return null
+  const src = matchById(t, feed.matchId)
+  if (!src) return null
+  if (src.status === 'ft') return feed.kind === 'winner' ? src.winnerId : src.loserId
+  if (feed.kind === 'winner') return validPick(t, picks, src)
+  // loser feed (third-place): the propagated loser is the source's non-picked side
+  const picked = validPick(t, picks, src)
+  if (!picked) return null
+  const h = candidates(t, picks, src, 'home')
+  const a = candidates(t, picks, src, 'away')
+  return picked === h ? a : picked === a ? h : null
+}
+
+/** The user's pick for a match, voided if it no longer matches either slot. */
+export function validPick(t: Tournament, picks: Picks, m: Match): string | null {
+  const pick = picks.winners[m.id]
+  if (!pick) return null
+  const h = candidates(t, picks, m, 'home')
+  const a = candidates(t, picks, m, 'away')
+  return pick === h || pick === a ? pick : null
+}
+
+export function isLocked(m: Match, retro: boolean): boolean {
+  if (retro) return false
+  return new Date(m.date).getTime() <= Date.now()
+}
+
+export function isPickable(m: Match): boolean {
+  return m.stage !== 'group'
+}
+
+// --- scoring -------------------------------------------------------------
+
+export const ROUND_WEIGHT: Record<string, number> = {
+  r32: 1,
+  r16: 2,
+  qf: 3,
+  sf: 4,
+  third: 2,
+  final: 5,
+}
+
+export interface MatchResult {
+  matchId: string
+  outcome: 'correct' | 'wrong' | 'pending' | 'void'
+  points: number
+  exact: boolean
+}
+
+export interface Scorecard {
+  results: Record<string, MatchResult>
+  points: number
+  correct: number
+  wrong: number
+  pending: number
+  exact: number
+}
+
+/**
+ * Points: correct = round weight + 2×(confidence−1); wrong = −(confidence−1).
+ * Exact regulation scoreline adds a flat +2.
+ */
+export function scorePicks(data: DataBundle, picks: Picks, asOf: Date | null): Scorecard {
+  const t = data.tournament
+  const card: Scorecard = { results: {}, points: 0, correct: 0, wrong: 0, pending: 0, exact: 0 }
+  for (const m of t.matches) {
+    if (m.stage === 'group') continue
+    const pick = picks.winners[m.id]
+    if (!pick) continue
+    const valid = validPick(t, picks, m)
+    if (!valid) {
+      card.results[m.id] = { matchId: m.id, outcome: 'void', points: 0, exact: false }
+      continue
+    }
+    if (!knownAsOf(m, asOf)) {
+      card.results[m.id] = { matchId: m.id, outcome: 'pending', points: 0, exact: false }
+      card.pending++
+      continue
+    }
+    const conf = picks.conf[m.id] ?? 1
+    const correct = m.winnerId === valid
+    let points = correct ? ROUND_WEIGHT[m.stage] + 2 * (conf - 1) : -(conf - 1)
+    let exact = false
+    const s = picks.scores[m.id]
+    if (correct && s && s[0] === m.homeScore && s[1] === m.awayScore) {
+      points += 2
+      exact = true
+      card.exact++
+    }
+    card.results[m.id] = { matchId: m.id, outcome: correct ? 'correct' : 'wrong', points, exact }
+    card.points += points
+    if (correct) card.correct++
+    else card.wrong++
+  }
+  return card
+}
+
+/** The team the pickset sends all the way to the title. */
+export function pickedChampion(t: Tournament, picks: Picks): string | null {
+  const final = t.matches.find((m) => m.stage === 'final')
+  return final ? validPick(t, picks, final) : null
+}

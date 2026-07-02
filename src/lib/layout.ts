@@ -1,0 +1,110 @@
+import type { Match, Stage } from '../types'
+
+// The SVG lives in viewBox "-500 -500 1000 1000", centered on the final.
+export const RINGS: Record<string, number> = {
+  r32: 340,
+  r16: 262,
+  qf: 188,
+  sf: 118,
+}
+export const GROUP_RING = { inner: 408, outer: 500 }
+export const SLOT_COUNT: Record<string, number> = { r32: 16, r16: 8, qf: 4, sf: 2 }
+
+// Match-node card sizes per stage (width, height)
+export const NODE_SIZE: Record<Stage, [number, number]> = {
+  group: [0, 0],
+  r32: [64, 34],
+  r16: [70, 36],
+  qf: [78, 40],
+  sf: [86, 42],
+  third: [104, 40],
+  final: [148, 84],
+}
+
+export function deg2rad(d: number): number {
+  return (d * Math.PI) / 180
+}
+
+export function polar(angleDeg: number, r: number): [number, number] {
+  const a = deg2rad(angleDeg)
+  return [r * Math.cos(a), r * Math.sin(a)]
+}
+
+/** Center angle (degrees) for a knockout slot. -90° is 12 o'clock; clockwise. */
+export function slotAngle(stage: string, index: number): number {
+  const n = SLOT_COUNT[stage]
+  return ((index + 0.5) * 360) / n - 90
+}
+
+export function matchPos(m: Match): [number, number] {
+  if (m.stage === 'final') return [0, 0]
+  if (m.stage === 'third') return [0, 168]
+  return polar(slotAngle(m.stage, m.bracketIndex), RINGS[m.stage])
+}
+
+/** Cubic bezier between two polar points, bowing through mid-radius — a soft radial link. */
+export function radialLink(a0: number, r0: number, a1: number, r1: number): string {
+  const [x0, y0] = polar(a0, r0)
+  const [x1, y1] = polar(a1, r1)
+  const rm = (r0 + r1) / 2
+  const [cx0, cy0] = polar(a0, rm)
+  const [cx1, cy1] = polar(a1, rm)
+  return `M${x0.toFixed(1)},${y0.toFixed(1)} C${cx0.toFixed(1)},${cy0.toFixed(1)} ${cx1.toFixed(1)},${cy1.toFixed(1)} ${x1.toFixed(1)},${y1.toFixed(1)}`
+}
+
+/** Link from a knockout match to the match it feeds. Endpoints sit on node edges. */
+export function feedLinkPath(from: Match, to: Match): string {
+  if (to.stage === 'final' || to.stage === 'third') {
+    const [x0, y0] = matchPos(from)
+    const [x1, y1] = matchPos(to)
+    const mx = (x0 + x1) / 2
+    const my = (y0 + y1) / 2
+    return `M${x0},${y0} Q${mx},${my} ${x1},${y1}`
+  }
+  const a0 = slotAngle(from.stage, from.bracketIndex)
+  const a1 = slotAngle(to.stage, to.bracketIndex)
+  return radialLink(a0, RINGS[from.stage] - 14, a1, RINGS[to.stage] + 14)
+}
+
+export const GROUP_LETTERS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']
+
+/** Angular span of a group's 30° sector. */
+export function groupSector(gi: number): { start: number; end: number; mid: number } {
+  const start = gi * 30 - 90
+  return { start, end: start + 30, mid: start + 15 }
+}
+
+/** Position + tangential rotation for a team chip inside its group sector (rank 1 outermost). */
+export function chipTransform(gi: number, rank: number): string {
+  const { mid } = groupSector(gi)
+  const r = GROUP_RING.outer - 14 - (rank - 1) * 21
+  const [x, y] = polar(mid, r)
+  // Tangential text, flipped on the lower half so nothing reads upside down
+  let rot = mid + 90
+  if (mid > 0 && mid < 180) rot = mid - 90
+  return `translate(${x.toFixed(1)},${y.toFixed(1)}) rotate(${rot.toFixed(1)})`
+}
+
+/** SVG arc path for a group sector band (annulus segment). */
+export function sectorPath(gi: number, rInner: number, rOuter: number): string {
+  const { start, end } = groupSector(gi)
+  const pad = 0.8
+  const [x0, y0] = polar(start + pad, rOuter)
+  const [x1, y1] = polar(end - pad, rOuter)
+  const [x2, y2] = polar(end - pad, rInner)
+  const [x3, y3] = polar(start + pad, rInner)
+  return `M${x0.toFixed(1)},${y0.toFixed(1)} A${rOuter},${rOuter} 0 0 1 ${x1.toFixed(1)},${y1.toFixed(1)} L${x2.toFixed(1)},${y2.toFixed(1)} A${rInner},${rInner} 0 0 0 ${x3.toFixed(1)},${y3.toFixed(1)} Z`
+}
+
+/** Ribbon from a team's group chip down to its R32 slot. */
+export function ribbonPath(gi: number, rank: number, r32Index: number): string {
+  const { mid } = groupSector(gi)
+  const chipR = GROUP_RING.outer - 14 - (rank - 1) * 21
+  const a1 = slotAngle('r32', r32Index)
+  return radialLink(mid, chipR - 10, a1, RINGS.r32 + 20)
+}
+
+/** Anchor for the round label rings (12 o'clock). */
+export function ringLabelPos(stage: string): [number, number] {
+  return [0, -(RINGS[stage] + 34)]
+}
