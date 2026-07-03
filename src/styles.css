@@ -184,10 +184,8 @@ main.view-circle { overflow: hidden; }
 .chip-abbrev { fill: var(--text); font-size: 11px; font-weight: 700; }
 .chip-pts { fill: var(--muted); font-size: 9.5px; }
 
-.ribbon { fill: none; stroke: var(--muted); stroke-width: 1; opacity: 0.14; pointer-events: none; }
-.ribbon.fav { stroke: var(--mine); stroke-width: 1.8; opacity: 0.55; }
+.ribbon { fill: none; pointer-events: none; }
 .ribbon.lit { stroke: var(--accent); stroke-width: 2.6; opacity: 1; }
-.has-path .ribbon:not(.lit) { opacity: 0.05; }
 
 .link { fill: none; stroke: var(--line); stroke-width: 1.6; opacity: 0.9; pointer-events: none; }
 .link.fav { stroke: var(--mine); stroke-width: 2.2; opacity: 0.6; }

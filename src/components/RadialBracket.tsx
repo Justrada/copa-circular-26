@@ -49,7 +49,10 @@ export default function RadialBracket({
 
   const koMatches = useMemo(() => t.matches.filter((m) => m.stage !== 'group'), [t])
   const angles = useMemo(() => computeKnockoutAngles(t), [t])
-  const sectorOf = useMemo(() => (untangle ? computeSectorOrder(t, angles) : IDENTITY_ORDER), [t, angles, untangle])
+  const sectorOf = useMemo(
+    () => (untangle ? computeSectorOrder(t, angles, favorites) : IDENTITY_ORDER),
+    [t, angles, untangle, favorites]
+  )
 
   // Ribbons can't tween their path shape — fade them out while sectors rotate
   const [reordering, setReordering] = useState(false)
@@ -130,7 +133,7 @@ export default function RadialBracket({
             favorites={favorites}
           />
           <g className={`ribbons-wrap ${reordering ? 'fade' : ''}`}>
-            <Ribbons t={t} angles={angles} sectorOf={sectorOf} selectedTeam={selectedTeam} favorites={favorites} />
+            <Ribbons t={t} angles={angles} sectorOf={sectorOf} selectedTeam={selectedTeam} />
           </g>
           <Links t={t} angles={angles} koMatches={koMatches} pathIds={pathIds} favPaths={favPaths} />
           {favRoutes.length > 0 && (
@@ -320,41 +323,28 @@ function Sector({
   )
 }
 
+/** Only the selected team's qualification ribbon renders — a floor of 32 faint
+ *  ribbons read as noise, so the group→R32 hop appears on demand. */
 function Ribbons({
   t,
   angles,
   sectorOf,
   selectedTeam,
-  favorites,
 }: {
   t: Props['data']['tournament']
   angles: Map<string, number>
   sectorOf: Record<string, number>
   selectedTeam: string | null
-  favorites: Set<string>
 }) {
-  const ribbons = useMemo(() => {
-    const out: { teamId: string; d: string }[] = []
-    for (const m of t.matches) {
-      if (m.stage !== 'r32') continue
-      for (const side of ['home', 'away'] as const) {
-        const id = side === 'home' ? m.homeId : m.awayId
-        if (!id) continue
-        const team = t.teams[id]
-        out.push({ teamId: id, d: ribbonPath(sectorOf[team.group], team.groupRank, matchAngle(m, angles)) })
-      }
-    }
-    return out
-  }, [t, angles, sectorOf])
+  if (!selectedTeam) return null
+  const team = t.teams[selectedTeam]
+  const m = t.matches.find(
+    (x) => x.stage === 'r32' && (x.homeId === selectedTeam || x.awayId === selectedTeam)
+  )
+  if (!team || !m) return null
   return (
     <g className="ribbons">
-      {ribbons.map((r) => (
-        <path
-          key={r.teamId}
-          d={r.d}
-          className={`ribbon ${selectedTeam === r.teamId ? 'lit' : ''} ${favorites.has(r.teamId) ? 'fav' : ''}`}
-        />
-      ))}
+      <path d={ribbonPath(sectorOf[team.group], team.groupRank, matchAngle(m, angles))} className="ribbon lit" />
     </g>
   )
 }

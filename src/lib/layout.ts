@@ -146,7 +146,11 @@ export const IDENTITY_ORDER: Record<string, number> = Object.fromEntries(GROUP_L
  * route to their Round-of-32 slots: greedy assignment on a 12×12 cost matrix,
  * then pairwise-swap hill climbing (converges instantly at this size).
  */
-export function computeSectorOrder(t: Tournament, angles: Map<string, number>): Record<string, number> {
+export function computeSectorOrder(
+  t: Tournament,
+  angles: Map<string, number>,
+  favorites: Set<string> = new Set()
+): Record<string, number> {
   const slotAngleByTeam = new Map<string, number>()
   for (const m of t.matches) {
     if (m.stage !== 'r32') continue
@@ -158,12 +162,13 @@ export function computeSectorOrder(t: Tournament, angles: Map<string, number>): 
     const d = Math.abs(a - b) % 360
     return d > 180 ? 360 - d : d
   }
+  // Starred teams count 4× — their group parks next to THEIR entry slot
   const cost = (letter: string, sector: number) => {
     const mid = sector * 30 - 75 // groupSector(sector).mid
     let c = 0
     for (const id of t.groups[letter] ?? []) {
       const a = slotAngleByTeam.get(id)
-      if (a != null) c += angDist(mid, a)
+      if (a != null) c += angDist(mid, a) * (favorites.has(id) ? 4 : 1)
     }
     return c
   }
