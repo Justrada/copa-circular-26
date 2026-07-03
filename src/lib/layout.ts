@@ -1,4 +1,4 @@
-import type { Match, Stage, Tournament } from '../types'
+import type { Feed, Match, Stage, Tournament } from '../types'
 
 // The SVG lives in viewBox "-500 -500 1000 1000", centered on the final.
 export const RINGS: Record<string, number> = {
@@ -36,10 +36,43 @@ export function slotAngle(stage: string, index: number): number {
   return ((index + 0.5) * 360) / n - 90
 }
 
-export function matchPos(m: Match): [number, number] {
+/**
+ * Angular position per knockout match, derived from the bracket TREE rather
+ * than schedule order: the final owns the full circle and each match splits
+ * its arc between its two feeder matches. Every parent therefore sits exactly
+ * midway between its children and links merge inward without ever crossing.
+ */
+export function computeKnockoutAngles(t: Tournament): Map<string, number> {
+  const angles = new Map<string, number>()
+  const byId = new Map(t.matches.map((m) => [m.id, m]))
+  const final = t.matches.find((m) => m.stage === 'final')
+  if (!final) return angles
+  const assign = (m: Match, a0: number, a1: number) => {
+    angles.set(m.id, (a0 + a1) / 2)
+    const kids = [m.feeds?.home, m.feeds?.away]
+      .filter((f): f is Feed => !!f && f.kind === 'winner')
+      .map((f) => byId.get(f.matchId))
+      .filter((x): x is Match => !!x)
+    if (kids.length === 2) {
+      const mid = (a0 + a1) / 2
+      assign(kids[0], a0, mid)
+      assign(kids[1], mid, a1)
+    } else if (kids.length === 1) {
+      assign(kids[0], a0, a1)
+    }
+  }
+  assign(final, -90, 270)
+  return angles
+}
+
+export function matchAngle(m: Match, angles: Map<string, number>): number {
+  return angles.get(m.id) ?? slotAngle(m.stage, m.bracketIndex)
+}
+
+export function matchPos(m: Match, angles: Map<string, number>): [number, number] {
   if (m.stage === 'final') return [0, 0]
   if (m.stage === 'third') return [0, 168]
-  return polar(slotAngle(m.stage, m.bracketIndex), RINGS[m.stage])
+  return polar(matchAngle(m, angles), RINGS[m.stage])
 }
 
 /** Cubic bezier between two polar points, bowing through mid-radius — a soft radial link. */
@@ -53,17 +86,15 @@ export function radialLink(a0: number, r0: number, a1: number, r1: number): stri
 }
 
 /** Link from a knockout match to the match it feeds. Endpoints sit on node edges. */
-export function feedLinkPath(from: Match, to: Match): string {
+export function feedLinkPath(from: Match, to: Match, angles: Map<string, number>): string {
   if (to.stage === 'final' || to.stage === 'third') {
-    const [x0, y0] = matchPos(from)
-    const [x1, y1] = matchPos(to)
+    const [x0, y0] = matchPos(from, angles)
+    const [x1, y1] = matchPos(to, angles)
     const mx = (x0 + x1) / 2
     const my = (y0 + y1) / 2
     return `M${x0},${y0} Q${mx},${my} ${x1},${y1}`
   }
-  const a0 = slotAngle(from.stage, from.bracketIndex)
-  const a1 = slotAngle(to.stage, to.bracketIndex)
-  return radialLink(a0, RINGS[from.stage] - 14, a1, RINGS[to.stage] + 14)
+  return radialLink(matchAngle(from, angles), RINGS[from.stage] - 14, matchAngle(to, angles), RINGS[to.stage] + 14)
 }
 
 export const GROUP_LETTERS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']
@@ -97,11 +128,10 @@ export function sectorPath(gi: number, rInner: number, rOuter: number): string {
 }
 
 /** Ribbon from a team's group chip down to its R32 slot. */
-export function ribbonPath(gi: number, rank: number, r32Index: number): string {
+export function ribbonPath(gi: number, rank: number, r32Angle: number): string {
   const { mid } = groupSector(gi)
   const chipR = GROUP_RING.outer - 15 - (rank - 1) * 23
-  const a1 = slotAngle('r32', r32Index)
-  return radialLink(mid, chipR - 11, a1, RINGS.r32 + 22)
+  return radialLink(mid, chipR - 11, r32Angle, RINGS.r32 + 22)
 }
 
 /** Anchor for the round label rings (12 o'clock). */
@@ -116,12 +146,12 @@ export const IDENTITY_ORDER: Record<string, number> = Object.fromEntries(GROUP_L
  * route to their Round-of-32 slots: greedy assignment on a 12×12 cost matrix,
  * then pairwise-swap hill climbing (converges instantly at this size).
  */
-export function computeSectorOrder(t: Tournament): Record<string, number> {
+export function computeSectorOrder(t: Tournament, angles: Map<string, number>): Record<string, number> {
   const slotAngleByTeam = new Map<string, number>()
   for (const m of t.matches) {
     if (m.stage !== 'r32') continue
     for (const id of [m.homeId, m.awayId]) {
-      if (id) slotAngleByTeam.set(id, slotAngle('r32', m.bracketIndex))
+      if (id) slotAngleByTeam.set(id, matchAngle(m, angles))
     }
   }
   const angDist = (a: number, b: number) => {

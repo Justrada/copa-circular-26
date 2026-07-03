@@ -19,8 +19,11 @@ Pages by `.github/workflows/deploy.yml` (push + nightly cron).
 - Match IDs are ESPN event ids ("760414"…"760517"); event-id order == bracket-slot order per round
   (with FEED_OVERRIDES in fetch-data.mjs where ESPN's placeholder numbering diverged from FIFA).
 - Stages: `group | r32 | r16 | qf | sf | third | final`.
-- The radial layout is hand-rolled polar math in `src/lib/layout.ts` (viewBox -500..500,
-  fixed ring radii). Rich content never renders inside the SVG — match taps open `MatchSheet`.
+- The radial layout is hand-rolled polar math in `src/lib/layout.ts` (viewBox -512..512,
+  fixed ring radii). Knockout ANGLES are tree-derived, not schedule-derived:
+  `computeKnockoutAngles` recursively splits the circle from the final down through winner
+  feeds, so every match sits midway between its feeders and links never cross. Rich content
+  never renders inside the SVG — match taps open `MatchSheet`.
 - User picks live in localStorage + URL hash (`#p=<base64url>`); no backend anywhere.
 - i18n: every user-facing string goes through `src/lib/i18n.ts` (en + es).
 - Fair-use posture: embed/link only, never rehost; no FIFA marks; keep the non-affiliation

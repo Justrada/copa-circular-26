@@ -7,8 +7,10 @@ import {
   IDENTITY_ORDER,
   NODE_SIZE,
   RINGS,
+  computeKnockoutAngles,
   computeSectorOrder,
   feedLinkPath,
+  matchAngle,
   matchPos,
   polar,
   ribbonPath,
@@ -46,7 +48,8 @@ export default function RadialBracket({
   const [zoomed, setZoomed] = useState(false)
 
   const koMatches = useMemo(() => t.matches.filter((m) => m.stage !== 'group'), [t])
-  const sectorOf = useMemo(() => (untangle ? computeSectorOrder(t) : IDENTITY_ORDER), [t, untangle])
+  const angles = useMemo(() => computeKnockoutAngles(t), [t])
+  const sectorOf = useMemo(() => (untangle ? computeSectorOrder(t, angles) : IDENTITY_ORDER), [t, angles, untangle])
 
   // Ribbons can't tween their path shape — fade them out while sectors rotate
   const [reordering, setReordering] = useState(false)
@@ -97,11 +100,11 @@ export default function RadialBracket({
       for (let i = 0; i + 1 < p.route.length; i++) {
         const a = matchById(t, p.route[i])
         const b = matchById(t, p.route[i + 1])
-        if (a && b) out.push(feedLinkPath(a, b))
+        if (a && b) out.push(feedLinkPath(a, b, angles))
       }
     }
     return out
-  }, [favorites, selectedTeam, t, picks])
+  }, [favorites, selectedTeam, t, picks, angles])
 
   const upsets = useMemo(() => {
     const map = new Map<string, NonNullable<ReturnType<typeof upsetInfo>>>()
@@ -127,9 +130,9 @@ export default function RadialBracket({
             favorites={favorites}
           />
           <g className={`ribbons-wrap ${reordering ? 'fade' : ''}`}>
-            <Ribbons t={t} sectorOf={sectorOf} selectedTeam={selectedTeam} favorites={favorites} />
+            <Ribbons t={t} angles={angles} sectorOf={sectorOf} selectedTeam={selectedTeam} favorites={favorites} />
           </g>
-          <Links t={t} koMatches={koMatches} pathIds={pathIds} favPaths={favPaths} />
+          <Links t={t} angles={angles} koMatches={koMatches} pathIds={pathIds} favPaths={favPaths} />
           {favRoutes.length > 0 && (
             <g className="predicted-layer">
               {favRoutes.map((d, i) => (
@@ -143,6 +146,7 @@ export default function RadialBracket({
                 key={m.id}
                 data={data}
                 m={m}
+                angles={angles}
                 asOf={asOf}
                 picks={picks}
                 scorecard={scorecard}
@@ -158,6 +162,7 @@ export default function RadialBracket({
           {predicted && (
             <PredictedOverlay
               t={t}
+              angles={angles}
               predicted={predicted}
               actualExitId={actualExit?.id ?? null}
               lang={lang}
@@ -317,11 +322,13 @@ function Sector({
 
 function Ribbons({
   t,
+  angles,
   sectorOf,
   selectedTeam,
   favorites,
 }: {
   t: Props['data']['tournament']
+  angles: Map<string, number>
   sectorOf: Record<string, number>
   selectedTeam: string | null
   favorites: Set<string>
@@ -334,11 +341,11 @@ function Ribbons({
         const id = side === 'home' ? m.homeId : m.awayId
         if (!id) continue
         const team = t.teams[id]
-        out.push({ teamId: id, d: ribbonPath(sectorOf[team.group], team.groupRank, m.bracketIndex) })
+        out.push({ teamId: id, d: ribbonPath(sectorOf[team.group], team.groupRank, matchAngle(m, angles)) })
       }
     }
     return out
-  }, [t, sectorOf])
+  }, [t, angles, sectorOf])
   return (
     <g className="ribbons">
       {ribbons.map((r) => (
@@ -354,11 +361,13 @@ function Ribbons({
 
 function Links({
   t,
+  angles,
   koMatches,
   pathIds,
   favPaths,
 }: {
   t: Props['data']['tournament']
+  angles: Map<string, number>
   koMatches: Match[]
   pathIds: Set<string> | null
   favPaths: Map<string, Set<string>>
@@ -371,11 +380,11 @@ function Links({
         const feed = m.feeds[side]
         if (!feed || feed.kind === 'loser') continue
         const src = matchById(t, feed.matchId)
-        if (src) out.push({ key: `${m.id}-${side}`, d: feedLinkPath(src, m), from: src.id, to: m.id })
+        if (src) out.push({ key: `${m.id}-${side}`, d: feedLinkPath(src, m, angles), from: src.id, to: m.id })
       }
     }
     return out
-  }, [t, koMatches])
+  }, [t, angles, koMatches])
   const isFav = (from: string, to: string) => {
     for (const set of favPaths.values()) if (set.has(from) && set.has(to)) return true
     return false
@@ -396,11 +405,13 @@ function Links({
 /** Dashed predicted route + divergence markers, drawn above everything. */
 function PredictedOverlay({
   t,
+  angles,
   predicted,
   actualExitId,
   lang,
 }: {
   t: Props['data']['tournament']
+  angles: Map<string, number>
   predicted: NonNullable<ReturnType<typeof predictedRoute>>
   actualExitId: string | null
   lang: Lang
@@ -409,12 +420,12 @@ function PredictedOverlay({
   for (let i = 0; i + 1 < predicted.route.length; i++) {
     const a = matchById(t, predicted.route[i])
     const b = matchById(t, predicted.route[i + 1])
-    if (a && b) segs.push(feedLinkPath(a, b))
+    if (a && b) segs.push(feedLinkPath(a, b, angles))
   }
   const marker = (matchId: string, kind: 'predicted' | 'actual') => {
     const m = matchById(t, matchId)
     if (!m) return null
-    const [x, y] = matchPos(m)
+    const [x, y] = matchPos(m, angles)
     const [, h] = NODE_SIZE[m.stage]
     const above = kind === 'actual'
     const my = above ? y - h / 2 - 13 : y + h / 2 + 13
@@ -450,6 +461,7 @@ const UPSET_LABEL = { minor: 'upset', major: 'bigUpset', shock: 'shockUpset' } a
 function MatchNode({
   data,
   m,
+  angles,
   asOf,
   picks,
   scorecard,
@@ -462,6 +474,7 @@ function MatchNode({
 }: {
   data: DataBundle
   m: Match
+  angles: Map<string, number>
   asOf: Date | null
   picks: Picks
   scorecard: Scorecard
@@ -473,7 +486,7 @@ function MatchNode({
   lang: Lang
 }) {
   const t = data.tournament
-  const [x, y] = matchPos(m)
+  const [x, y] = matchPos(m, angles)
   const [w, h] = NODE_SIZE[m.stage]
   const known = knownAsOf(m, asOf)
   const homeId = slotTeamId(t, m, 'home', asOf)
