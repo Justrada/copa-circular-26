@@ -94,6 +94,16 @@ for (const e of events) {
   const real = (side) => (teams[side.team.id] ? side.team.id : null)
   const score = (side) => (finished || live ? Number(side.score ?? 0) : null)
   const pens = (side) => (side.shootoutScore != null ? Number(side.shootoutScore) : null)
+  const timeline = (c.details ?? [])
+    .filter((d) => (d.scoringPlay && !d.shootout) || d.redCard)
+    .map((d) => ({
+      kind: d.redCard ? 'red' : 'goal',
+      teamId: String(d.team?.id ?? ''),
+      player: d.athletesInvolved?.[0]?.shortName ?? d.athletesInvolved?.[0]?.displayName ?? '',
+      clock: d.clock?.displayValue ?? '',
+      pen: !!d.penaltyKick,
+      og: !!d.ownGoal,
+    }))
   const m = {
     id: e.id,
     stage,
@@ -114,6 +124,7 @@ for (const e of events) {
     winnerId: finished ? (home.winner ? real(home) : away.winner ? real(away) : null) : null,
     headline: c.headlines?.[0]?.shortLinkText ?? null,
     attendance: c.attendance || null,
+    events: timeline.length ? timeline : undefined,
   }
   m.loserId = m.winnerId ? (m.winnerId === m.homeId ? m.awayId : m.homeId) : null
   matches.push(m)

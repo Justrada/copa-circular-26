@@ -27,6 +27,15 @@ export interface Feed {
   kind: 'winner' | 'loser'
 }
 
+export interface MatchEvent {
+  kind: 'goal' | 'red'
+  teamId: string
+  player: string
+  clock: string
+  pen: boolean
+  og: boolean
+}
+
 export interface Match {
   id: string
   stage: Stage
@@ -48,6 +57,7 @@ export interface Match {
   loserId: string | null
   headline: string | null
   attendance: number | null
+  events?: MatchEvent[]
   feeds?: { home: Feed | null; away: Feed | null }
 }
 

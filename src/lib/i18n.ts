@@ -102,6 +102,11 @@ const STRINGS = {
   noPicksYet: { en: 'no picks yet', es: 'aún sin picks' },
   predictedOut: { en: 'You predicted them out here', es: 'Aquí los tenías eliminados' },
   actualOut: { en: 'Knocked out here', es: 'Eliminados aquí' },
+  today: { en: 'Today at the Cup', es: 'Hoy en la Copa' },
+  outlook: { en: 'Outlook', es: 'Panorama' },
+  expected: { en: 'expected finish', es: 'proyección' },
+  boldest: { en: 'boldest surviving call', es: 'tu apuesta más valiente' },
+  shareCard: { en: 'Share card', es: 'Tarjeta' },
 } as const
 
 export type StringKey = keyof typeof STRINGS

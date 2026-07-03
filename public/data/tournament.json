@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-07-03T10:10:22.859Z",
+ "generatedAt": "2026-07-03T18:45:00.799Z",
  "season": "2026 FIFA World Cup",
  "teams": {
   "164": {
@@ -88,8 +88,8 @@
    "shortName": "Canada",
    "abbrev": "CAN",
    "logo": "https://a.espncdn.com/i/teamlogos/countries/500/can.png",
-   "color": "ed2224",
-   "alternateColor": "000000",
+   "color": "000000",
+   "alternateColor": "ed2224",
    "group": "B",
    "groupRank": 2,
    "played": 3,
@@ -188,8 +188,8 @@
    "shortName": "England",
    "abbrev": "ENG",
    "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-   "color": "ffffff",
-   "alternateColor": "EA1F29",
+   "color": "EA1F29",
+   "alternateColor": "FFFFFF",
    "group": "L",
    "groupRank": 1,
    "played": 3,
@@ -289,7 +289,7 @@
    "abbrev": "BEL",
    "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
    "color": "E30613",
-   "alternateColor": "000000",
+   "alternateColor": "6ECFF6",
    "group": "G",
    "groupRank": 1,
    "played": 3,
@@ -309,7 +309,7 @@
    "abbrev": "NOR",
    "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
    "color": "C8102E",
-   "alternateColor": "000000",
+   "alternateColor": "C8102E",
    "group": "I",
    "groupRank": 2,
    "played": 3,
@@ -668,8 +668,8 @@
    "shortName": "USA",
    "abbrev": "USA",
    "logo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-   "color": "d42339",
-   "alternateColor": "213065",
+   "color": "213065",
+   "alternateColor": "d42339",
    "group": "D",
    "groupRank": 1,
    "played": 3,
@@ -1058,6 +1058,32 @@
    "winnerId": "451",
    "headline": "Oh, Hwang goals see South Korea edge Czechia in thriller",
    "attendance": 44985,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "450",
+     "player": "L. Krejcí",
+     "clock": "59'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "451",
+     "player": "H. In-Beom",
+     "clock": "67'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "451",
+     "player": "O. Hyeon-Gyu",
+     "clock": "80'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "450"
   },
   {
@@ -1080,6 +1106,48 @@
    "winnerId": "203",
    "headline": "Mexico kick off WC with win over SA ft. 3 red cards",
    "attendance": 80824,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "203",
+     "player": "J. Quiñones",
+     "clock": "9'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "red",
+     "teamId": "467",
+     "player": "S. Sithole",
+     "clock": "49'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "203",
+     "player": "R. Jiménez",
+     "clock": "67'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "red",
+     "teamId": "467",
+     "player": "T. Zwane",
+     "clock": "84'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "red",
+     "teamId": "203",
+     "player": "C. Montes",
+     "clock": "90'+2'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "467"
   },
   {
@@ -1102,6 +1170,24 @@
    "winnerId": null,
    "headline": "Larin goal helps Canada earn first WC point ever",
    "attendance": 43002,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "452",
+     "player": "J. Lukic",
+     "clock": "21'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "206",
+     "player": "C. Larin",
+     "clock": "78'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": null
   },
   {
@@ -1124,6 +1210,48 @@
    "winnerId": "660",
    "headline": "U.S. beats Paraguay in opener on Balogun double",
    "attendance": 70492,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "660",
+     "player": "D. Bobadilla",
+     "clock": "7'",
+     "pen": false,
+     "og": true
+    },
+    {
+     "kind": "goal",
+     "teamId": "660",
+     "player": "F. Balogun",
+     "clock": "31'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "660",
+     "player": "F. Balogun",
+     "clock": "45'+5'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "210",
+     "player": "Maurício",
+     "clock": "73'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "660",
+     "player": "G. Reyna",
+     "clock": "90'+8'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "210"
   },
   {
@@ -1146,6 +1274,16 @@
    "winnerId": "580",
    "headline": "Scotland beat Haiti for 1st WC win in 36 years",
    "attendance": 64146,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "580",
+     "player": "J. McGinn",
+     "clock": "28'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "2654"
   },
   {
@@ -1168,6 +1306,24 @@
    "winnerId": null,
    "headline": "Vini Jr scores but Brazil held by impressive Morocco",
    "attendance": 80663,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "2869",
+     "player": "I. Saibari",
+     "clock": "21'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "205",
+     "player": "Vinícius Júnior",
+     "clock": "32'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": null
   },
   {
@@ -1190,6 +1346,24 @@
    "winnerId": null,
    "headline": "Qatar stun Switzerland to tie, snatch 1st WC point",
    "attendance": 67966,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "475",
+     "player": "B. Embolo",
+     "clock": "17'",
+     "pen": true,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "4398",
+     "player": "M. Muheim",
+     "clock": "90'+4'",
+     "pen": false,
+     "og": true
+    }
+   ],
    "loserId": null
   },
   {
@@ -1212,6 +1386,24 @@
    "winnerId": "628",
    "headline": "Australia shock Türkiye to go level with USMNT",
    "attendance": 52497,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "628",
+     "player": "N. Irankunda",
+     "clock": "27'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "628",
+     "player": "C. Metcalfe",
+     "clock": "75'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "465"
   },
   {
@@ -1234,6 +1426,72 @@
    "winnerId": "481",
    "headline": "Havertz double leads Germany in WC opening rout",
    "attendance": 68021,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "481",
+     "player": "F. Nmecha",
+     "clock": "6'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "11678",
+     "player": "L. Comenencia",
+     "clock": "21'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "481",
+     "player": "N. Schlotterbeck",
+     "clock": "38'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "481",
+     "player": "K. Havertz",
+     "clock": "45'+5'",
+     "pen": true,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "481",
+     "player": "J. Musiala",
+     "clock": "47'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "481",
+     "player": "N. Brown",
+     "clock": "68'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "481",
+     "player": "D. Undav",
+     "clock": "78'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "481",
+     "player": "K. Havertz",
+     "clock": "88'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "11678"
   },
   {
@@ -1256,6 +1514,16 @@
    "winnerId": "4789",
    "headline": "Utd's Amad scores late as Ivory Coast top Ecuador",
    "attendance": 68274,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "4789",
+     "player": "A. Diallo",
+     "clock": "90'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "209"
   },
   {
@@ -1278,6 +1546,56 @@
    "winnerId": "466",
    "headline": "Ayari scores twice as Sweden routs Tunisia 5-1",
    "attendance": 50987,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "466",
+     "player": "Y. Ayari",
+     "clock": "7'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "466",
+     "player": "A. Isak",
+     "clock": "30'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "659",
+     "player": "O. Rekik",
+     "clock": "43'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "466",
+     "player": "V. Gyökeres",
+     "clock": "59'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "466",
+     "player": "M. Svanberg",
+     "clock": "84'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "466",
+     "player": "Y. Ayari",
+     "clock": "90'+6'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "659"
   },
   {
@@ -1300,6 +1618,40 @@
    "winnerId": null,
    "headline": "Kamada scores late equaliser as Japan hold Netherlands to draw",
    "attendance": 69285,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "449",
+     "player": "V. van Dijk",
+     "clock": "51'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "627",
+     "player": "K. Nakamura",
+     "clock": "57'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "449",
+     "player": "C. Summerville",
+     "clock": "64'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "627",
+     "player": "D. Kamada",
+     "clock": "89'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": null
   },
   {
@@ -1322,6 +1674,24 @@
    "winnerId": null,
    "headline": "Egypt, Belgium tie as Lukaku makes instant impact",
    "attendance": 66775,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "2620",
+     "player": "E. Ashour",
+     "clock": "20'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "459",
+     "player": "M. Hany",
+     "clock": "66'",
+     "pen": false,
+     "og": true
+    }
+   ],
    "loserId": null
   },
   {
@@ -1344,6 +1714,40 @@
    "winnerId": null,
    "headline": "Iran and New Zealand play out thrilling 2-2 draw",
    "attendance": 70108,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "2666",
+     "player": "E. Just",
+     "clock": "7'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "469",
+     "player": "R. Rezaeian",
+     "clock": "32'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "2666",
+     "player": "E. Just",
+     "clock": "54'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "469",
+     "player": "M. Mohebbi",
+     "clock": "64'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": null
   },
   {
@@ -1388,6 +1792,24 @@
    "winnerId": null,
    "headline": "Bielsa's Uruguay rescue point against dogged Saudi",
    "attendance": 62764,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "655",
+     "player": "A. Al-Amri",
+     "clock": "41'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "212",
+     "player": "M. Araújo",
+     "clock": "80'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": null
   },
   {
@@ -1410,6 +1832,48 @@
    "winnerId": "464",
    "headline": "Haaland nets brace on WC debut, Norway beat Iraq",
    "attendance": 63106,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "464",
+     "player": "E. Haaland",
+     "clock": "29'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "4375",
+     "player": "A. Hussein",
+     "clock": "39'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "464",
+     "player": "E. Haaland",
+     "clock": "43'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "464",
+     "player": "L. Østigard",
+     "clock": "76'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "464",
+     "player": "A. Hussein",
+     "clock": "90'+6'",
+     "pen": false,
+     "og": true
+    }
+   ],
    "loserId": "4375"
   },
   {
@@ -1432,6 +1896,40 @@
    "winnerId": "474",
    "headline": "Austria get first WC win in 36 years against Jordan",
    "attendance": 68527,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "474",
+     "player": "R. Schmid",
+     "clock": "21'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "2917",
+     "player": "A. Olwan",
+     "clock": "50'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "474",
+     "player": "Y. Al-Arab",
+     "clock": "76'",
+     "pen": false,
+     "og": true
+    },
+    {
+     "kind": "goal",
+     "teamId": "474",
+     "player": "M. Arnautovic",
+     "clock": "90'+12'",
+     "pen": true,
+     "og": false
+    }
+   ],
    "loserId": "2917"
   },
   {
@@ -1454,6 +1952,40 @@
    "winnerId": "478",
    "headline": "Mbappe scores brace as France make statement in 3-1 win over Senegal",
    "attendance": 80545,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "478",
+     "player": "K. Mbappé",
+     "clock": "66'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "478",
+     "player": "B. Barcola",
+     "clock": "82'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "654",
+     "player": "I. Mbaye",
+     "clock": "90'+5'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "478",
+     "player": "K. Mbappé",
+     "clock": "90'+6'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "654"
   },
   {
@@ -1476,6 +2008,32 @@
    "winnerId": "202",
    "headline": "Messi nets record hat trick in 3-0 win over Algeria",
    "attendance": 69045,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "202",
+     "player": "L. Messi",
+     "clock": "17'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "202",
+     "player": "L. Messi",
+     "clock": "60'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "202",
+     "player": "L. Messi",
+     "clock": "76'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "624"
   },
   {
@@ -1498,6 +2056,16 @@
    "winnerId": "4469",
    "headline": "Ghana strike late for precious win over Panama",
    "attendance": 42942,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "4469",
+     "player": "C. Yirenkyi",
+     "clock": "90'+5'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "2659"
   },
   {
@@ -1520,6 +2088,24 @@
    "winnerId": null,
    "headline": "Cristiano Ronaldo's Portugal held by Congo DR in World Cup opener",
    "attendance": 68777,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "482",
+     "player": "J. Neves",
+     "clock": "6'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "2850",
+     "player": "Y. Wissa",
+     "clock": "45'+5'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": null
   },
   {
@@ -1542,6 +2128,40 @@
    "winnerId": "208",
    "headline": "Díaz scores as Colombia edge battling Uzbekistan",
    "attendance": 80824,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "208",
+     "player": "D. Muñoz",
+     "clock": "40'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "2570",
+     "player": "A. Fayzullaev",
+     "clock": "60'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "208",
+     "player": "L. Díaz",
+     "clock": "65'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "208",
+     "player": "J. Campaz",
+     "clock": "90'+9'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "2570"
   },
   {
@@ -1564,6 +2184,56 @@
    "winnerId": "448",
    "headline": null,
    "attendance": 70389,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "448",
+     "player": "H. Kane",
+     "clock": "12'",
+     "pen": true,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "477",
+     "player": "M. Baturina",
+     "clock": "36'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "448",
+     "player": "H. Kane",
+     "clock": "42'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "477",
+     "player": "P. Musa",
+     "clock": "45'+5'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "448",
+     "player": "J. Bellingham",
+     "clock": "47'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "448",
+     "player": "M. Rashford",
+     "clock": "85'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "477"
   },
   {
@@ -1586,6 +2256,24 @@
    "winnerId": null,
    "headline": "South Africa snatch Czechia draw after late penalty",
    "attendance": 67442,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "450",
+     "player": "M. Sadílek",
+     "clock": "6'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "467",
+     "player": "T. Mokoena",
+     "clock": "83'",
+     "pen": true,
+     "og": false
+    }
+   ],
    "loserId": null
   },
   {
@@ -1608,6 +2296,56 @@
    "winnerId": "475",
    "headline": "Switzerland turn on class late to ease past Bosnia",
    "attendance": 70026,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "475",
+     "player": "J. Manzambi",
+     "clock": "74'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "red",
+     "teamId": "452",
+     "player": "T. Muharemovic",
+     "clock": "80'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "475",
+     "player": "R. Vargas",
+     "clock": "84'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "475",
+     "player": "J. Manzambi",
+     "clock": "90'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "452",
+     "player": "E. Mahmic",
+     "clock": "90'+3'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "475",
+     "player": "G. Xhaka",
+     "clock": "90'+7'",
+     "pen": true,
+     "og": false
+    }
+   ],
    "loserId": "452"
   },
   {
@@ -1630,6 +2368,72 @@
    "winnerId": "206",
    "headline": "David hat-trick sees Canada thrash Qatar for first World Cup win",
    "attendance": 52497,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "206",
+     "player": "C. Larin",
+     "clock": "16'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "206",
+     "player": "J. David",
+     "clock": "29'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "red",
+     "teamId": "4398",
+     "player": "H. Ahmed",
+     "clock": "33'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "206",
+     "player": "J. David",
+     "clock": "45'+3'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "red",
+     "teamId": "4398",
+     "player": "A. Madibo",
+     "clock": "53'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "206",
+     "player": "N. Saliba",
+     "clock": "64'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "206",
+     "player": "M. Manai",
+     "clock": "75'",
+     "pen": false,
+     "og": true
+    },
+    {
+     "kind": "goal",
+     "teamId": "206",
+     "player": "J. David",
+     "clock": "90'+2'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "4398"
   },
   {
@@ -1652,6 +2456,16 @@
    "winnerId": "203",
    "headline": "Mexico edge South Korea, confirm progress to knockouts",
    "attendance": 45522,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "203",
+     "player": "L. Romo",
+     "clock": "50'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "451"
   },
   {
@@ -1674,6 +2488,24 @@
    "winnerId": "660",
    "headline": "U.S. into World Cup knockouts after dominant win over Australia",
    "attendance": 66925,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "660",
+     "player": "C. Burgess",
+     "clock": "11'",
+     "pen": false,
+     "og": true
+    },
+    {
+     "kind": "goal",
+     "teamId": "660",
+     "player": "A. Freeman",
+     "clock": "43'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "628"
   },
   {
@@ -1696,6 +2528,24 @@
    "winnerId": "210",
    "headline": "10-man Paraguay eliminate Turkey with 1-0 win",
    "attendance": 68827,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "210",
+     "player": "M. Galarza",
+     "clock": "2'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "red",
+     "teamId": "210",
+     "player": "M. Almirón",
+     "clock": "45'+3'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "465"
   },
   {
@@ -1718,6 +2568,32 @@
    "winnerId": "205",
    "headline": "Matheus Cunha scores twice as rampant Brazil eliminate Haiti",
    "attendance": 68324,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "205",
+     "player": "M. Cunha",
+     "clock": "23'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "205",
+     "player": "M. Cunha",
+     "clock": "36'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "205",
+     "player": "Vinícius Júnior",
+     "clock": "45'+3'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "2654"
   },
   {
@@ -1740,6 +2616,16 @@
    "winnerId": "2869",
    "headline": "Saibari scores again as Morocco see off Scotland",
    "attendance": 64146,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "2869",
+     "player": "I. Saibari",
+     "clock": "2'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "580"
   },
   {
@@ -1784,6 +2670,56 @@
    "winnerId": "449",
    "headline": "Netherlands thump Sweden 5-1 in statement win",
    "attendance": 68777,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "449",
+     "player": "B. Brobbey",
+     "clock": "5'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "449",
+     "player": "B. Brobbey",
+     "clock": "17'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "449",
+     "player": "C. Gakpo",
+     "clock": "47'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "449",
+     "player": "C. Gakpo",
+     "clock": "54'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "466",
+     "player": "A. Elanga",
+     "clock": "59'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "449",
+     "player": "C. Summerville",
+     "clock": "89'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "466"
   },
   {
@@ -1806,6 +2742,32 @@
    "winnerId": "481",
    "headline": "Late Undav goal earns Germany win vs. Ivory Coast",
    "attendance": 43036,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "4789",
+     "player": "F. Kessié",
+     "clock": "30'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "481",
+     "player": "D. Undav",
+     "clock": "68'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "481",
+     "player": "D. Undav",
+     "clock": "90'+4'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "4789"
   },
   {
@@ -1828,6 +2790,40 @@
    "winnerId": "627",
    "headline": "Japan rout Tunisia 4-0, eliminate Hervé Renard from the World Cup",
    "attendance": 51243,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "627",
+     "player": "D. Kamada",
+     "clock": "4'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "627",
+     "player": "A. Ueda",
+     "clock": "31'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "627",
+     "player": "J. Ito",
+     "clock": "69'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "627",
+     "player": "A. Ueda",
+     "clock": "83'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "659"
   },
   {
@@ -1850,6 +2846,40 @@
    "winnerId": null,
    "headline": "Impressive Cape Verde hold Uruguay to 2-2 draw",
    "attendance": 64003,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "2597",
+     "player": "K. Pina",
+     "clock": "21'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "212",
+     "player": "M. Araújo",
+     "clock": "44'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "212",
+     "player": "A. Canobbio",
+     "clock": "45'+6'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "2597",
+     "player": "H. Varela",
+     "clock": "61'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": null
   },
   {
@@ -1872,6 +2902,16 @@
    "winnerId": null,
    "headline": "Iran keeper stands tall in draw vs. 10-man Belgium",
    "attendance": 70317,
+   "events": [
+    {
+     "kind": "red",
+     "teamId": "459",
+     "player": "N. Ngoy",
+     "clock": "66'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": null
   },
   {
@@ -1894,6 +2934,40 @@
    "winnerId": "2620",
    "headline": "Salah leads rally as Egypt get first-ever WC win",
    "attendance": 52497,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "2666",
+     "player": "F. Surman",
+     "clock": "15'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "2620",
+     "player": "M. Zico",
+     "clock": "58'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "2620",
+     "player": "M. Salah",
+     "clock": "67'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "2620",
+     "player": "Trézéguet",
+     "clock": "82'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "2666"
   },
   {
@@ -1916,6 +2990,40 @@
    "winnerId": "164",
    "headline": "Yamal marks first WC start with goal in Spain win",
    "attendance": 68239,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "164",
+     "player": "L. Yamal",
+     "clock": "10'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "164",
+     "player": "M. Oyarzabal",
+     "clock": "21'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "164",
+     "player": "M. Oyarzabal",
+     "clock": "24'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "164",
+     "player": "H. Al-Tambakti",
+     "clock": "49'",
+     "pen": false,
+     "og": true
+    }
+   ],
    "loserId": "655"
   },
   {
@@ -1938,6 +3046,48 @@
    "winnerId": "464",
    "headline": "Haaland nets 2 more as Norway clinch knockouts",
    "attendance": 80663,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "464",
+     "player": "M. Holmgren Pedersen",
+     "clock": "43'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "464",
+     "player": "E. Haaland",
+     "clock": "48'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "654",
+     "player": "I. Sarr",
+     "clock": "53'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "464",
+     "player": "E. Haaland",
+     "clock": "58'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "654",
+     "player": "I. Sarr",
+     "clock": "90'+3'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "654"
   },
   {
@@ -1960,6 +3110,32 @@
    "winnerId": "624",
    "headline": "Algeria come from behind to beat Jordan and bolster qualification hopes",
    "attendance": 68371,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "2917",
+     "player": "N. Al-Rashdan",
+     "clock": "36'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "624",
+     "player": "N. Benbouali",
+     "clock": "69'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "624",
+     "player": "A. Gouiri",
+     "clock": "82'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "2917"
   },
   {
@@ -1982,6 +3158,24 @@
    "winnerId": "202",
    "headline": "Messi bags two records as Argentina beat Austria",
    "attendance": 70649,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "202",
+     "player": "L. Messi",
+     "clock": "38'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "202",
+     "player": "L. Messi",
+     "clock": "90'+5'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "474"
   },
   {
@@ -2004,6 +3198,32 @@
    "winnerId": "478",
    "headline": "Mbappé scores twice in rain-delayed France win",
    "attendance": 68324,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "478",
+     "player": "K. Mbappé",
+     "clock": "14'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "478",
+     "player": "K. Mbappé",
+     "clock": "54'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "478",
+     "player": "O. Dembélé",
+     "clock": "66'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "4375"
   },
   {
@@ -2048,6 +3268,16 @@
    "winnerId": "208",
    "headline": "Colombia edge Congo DR, reach Round of 32",
    "attendance": 45358,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "208",
+     "player": "D. Muñoz",
+     "clock": "76'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "2850"
   },
   {
@@ -2070,6 +3300,16 @@
    "winnerId": "477",
    "headline": "Panama out of World Cup after loss to Croatia",
    "attendance": 43036,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "477",
+     "player": "A. Budimir",
+     "clock": "54'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "2659"
   },
   {
@@ -2092,6 +3332,48 @@
    "winnerId": "482",
    "headline": "Ronaldo at the double as Portugal rout Uzbekistan",
    "attendance": 68777,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "482",
+     "player": "C. Ronaldo",
+     "clock": "6'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "482",
+     "player": "N. Mendes",
+     "clock": "17'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "482",
+     "player": "C. Ronaldo",
+     "clock": "39'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "482",
+     "player": "A. Nematov",
+     "clock": "60'",
+     "pen": false,
+     "og": true
+    },
+    {
+     "kind": "goal",
+     "teamId": "482",
+     "player": "R. Leão",
+     "clock": "87'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "2570"
   },
   {
@@ -2114,6 +3396,40 @@
    "winnerId": "452",
    "headline": "Bosnia beat Qatar, likely to face U.S. in knockouts",
    "attendance": 66925,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "452",
+     "player": "K. Alajbegovic",
+     "clock": "29'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "452",
+     "player": "M. Abunada",
+     "clock": "34'",
+     "pen": false,
+     "og": true
+    },
+    {
+     "kind": "goal",
+     "teamId": "4398",
+     "player": "H. Al-Haydos",
+     "clock": "42'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "452",
+     "player": "E. Mahmic",
+     "clock": "80'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "4398"
   },
   {
@@ -2136,6 +3452,32 @@
    "winnerId": "475",
    "headline": "Switzerland beat Canada to top group as co-hosts fail to seal home round-of-32 match",
    "attendance": 52497,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "475",
+     "player": "R. Vargas",
+     "clock": "46'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "475",
+     "player": "J. Manzambi",
+     "clock": "57'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "206",
+     "player": "P. David",
+     "clock": "76'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "206"
   },
   {
@@ -2158,6 +3500,56 @@
    "winnerId": "2869",
    "headline": "Morocco survive Haiti scare, beat underdogs 4-2",
    "attendance": 68239,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "2654",
+     "player": "Y. Bounou",
+     "clock": "10'",
+     "pen": false,
+     "og": true
+    },
+    {
+     "kind": "goal",
+     "teamId": "2869",
+     "player": "A. Hakimi",
+     "clock": "39'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "2654",
+     "player": "W. Isidor",
+     "clock": "43'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "2869",
+     "player": "I. Saibari",
+     "clock": "45'+1'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "2869",
+     "player": "S. Rahimi",
+     "clock": "78'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "2869",
+     "player": "G. Yassine",
+     "clock": "89'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "2654"
   },
   {
@@ -2180,6 +3572,32 @@
    "winnerId": "205",
    "headline": "Vini Jr nets double as Brazil top group with win",
    "attendance": 64478,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "205",
+     "player": "Vinícius Júnior",
+     "clock": "7'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "205",
+     "player": "Vinícius Júnior",
+     "clock": "45'+3'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "205",
+     "player": "M. Cunha",
+     "clock": "60'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "580"
   },
   {
@@ -2202,6 +3620,16 @@
    "winnerId": "467",
    "headline": "S. Africa stun S. Korea, make 1st WC knockouts",
    "attendance": 51243,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "467",
+     "player": "T. Maseko",
+     "clock": "63'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "451"
   },
   {
@@ -2224,6 +3652,32 @@
    "winnerId": "203",
    "headline": "Perfect Mexico send Czechia out with 3-0 win",
    "attendance": 80824,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "203",
+     "player": "M. Chávez",
+     "clock": "55'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "203",
+     "player": "J. Quiñones",
+     "clock": "61'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "203",
+     "player": "Á. Fidalgo",
+     "clock": "90'+4'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "450"
   },
   {
@@ -2246,6 +3700,32 @@
    "winnerId": "209",
    "headline": "Ecuador stun Germany to enter World Cup knockouts",
    "attendance": 80663,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "481",
+     "player": "L. Sané",
+     "clock": "2'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "209",
+     "player": "N. Angulo",
+     "clock": "9'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "209",
+     "player": "G. Plata",
+     "clock": "77'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "481"
   },
   {
@@ -2290,6 +3770,48 @@
    "winnerId": "465",
    "headline": "Türkiye beats much-changed USMNT with last-gasp goal",
    "attendance": 70492,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "660",
+     "player": "A. Trusty",
+     "clock": "3'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "465",
+     "player": "A. Güler",
+     "clock": "10'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "465",
+     "player": "B. Yilmaz",
+     "clock": "31'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "660",
+     "player": "S. Berhalter",
+     "clock": "49'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "465",
+     "player": "K. Ayhan",
+     "clock": "90'+8'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "660"
   },
   {
@@ -2312,6 +3834,24 @@
    "winnerId": null,
    "headline": "Japan, Sweden share points, book knockout spots",
    "attendance": 70137,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "627",
+     "player": "D. Maeda",
+     "clock": "56'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "466",
+     "player": "A. Elanga",
+     "clock": "62'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": null
   },
   {
@@ -2334,6 +3874,40 @@
    "winnerId": "449",
    "headline": "Netherlands see off Tunisia, set up Morocco clash",
    "attendance": 68391,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "449",
+     "player": "E. Skhiri",
+     "clock": "3'",
+     "pen": false,
+     "og": true
+    },
+    {
+     "kind": "goal",
+     "teamId": "449",
+     "player": "B. Brobbey",
+     "clock": "7'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "659",
+     "player": "H. Mastouri",
+     "clock": "54'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "449",
+     "player": "J. van Hecke",
+     "clock": "62'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "659"
   },
   {
@@ -2356,6 +3930,24 @@
    "winnerId": "4789",
    "headline": "Ivory Coast make WC knockouts for the first time with 2-0 win over Curaçao",
    "attendance": 68324,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "4789",
+     "player": "N. Pépé",
+     "clock": "7'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "4789",
+     "player": "N. Pépé",
+     "clock": "64'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "11678"
   },
   {
@@ -2378,6 +3970,56 @@
    "winnerId": "654",
    "headline": "Senegal thrash Iraq, on course for knockouts",
    "attendance": 43036,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "654",
+     "player": "H. Diarra",
+     "clock": "4'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "red",
+     "teamId": "4375",
+     "player": "R. Sulaka",
+     "clock": "13'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "654",
+     "player": "I. Sarr",
+     "clock": "56'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "654",
+     "player": "P. Gueye",
+     "clock": "59'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "654",
+     "player": "P. Gueye",
+     "clock": "71'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "654",
+     "player": "I. Ndiaye",
+     "clock": "82'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "4375"
   },
   {
@@ -2400,6 +4042,48 @@
    "winnerId": "478",
    "headline": "Dembélé hat-trick helps France past much-changed Norway",
    "attendance": 64146,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "478",
+     "player": "O. Dembélé",
+     "clock": "7'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "478",
+     "player": "O. Dembélé",
+     "clock": "20'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "464",
+     "player": "T. Aasgaard",
+     "clock": "21'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "478",
+     "player": "O. Dembélé",
+     "clock": "32'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "478",
+     "player": "D. Doué",
+     "clock": "90'+4'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "464"
   },
   {
@@ -2422,6 +4106,24 @@
    "winnerId": null,
    "headline": "VAR denies Iran late winner as Egypt advance",
    "attendance": 66925,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "2620",
+     "player": "M. Saber",
+     "clock": "5'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "469",
+     "player": "R. Rezaeian",
+     "clock": "14'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": null
   },
   {
@@ -2444,6 +4146,56 @@
    "winnerId": "459",
    "headline": "Belgium through as group winners, with NZ out",
    "attendance": 52497,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "459",
+     "player": "L. Trossard",
+     "clock": "28'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "459",
+     "player": "L. Trossard",
+     "clock": "50'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "459",
+     "player": "K. De Bruyne",
+     "clock": "66'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "2666",
+     "player": "E. Just",
+     "clock": "84'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "459",
+     "player": "R. Lukaku",
+     "clock": "86'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "459",
+     "player": "A. Saelemaekers",
+     "clock": "90'+4'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "2666"
   },
   {
@@ -2488,6 +4240,24 @@
    "winnerId": "164",
    "headline": "Spain beat Uruguay to win World Cup group",
    "attendance": 45065,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "164",
+     "player": "Á. Baena",
+     "clock": "42'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "red",
+     "teamId": "212",
+     "player": "A. Canobbio",
+     "clock": "90'+5'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "212"
   },
   {
@@ -2510,6 +4280,32 @@
    "winnerId": "477",
    "headline": "Croatia edge Ghana to advance to WC knockouts",
    "attendance": 68324,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "477",
+     "player": "P. Sucic",
+     "clock": "31'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "4469",
+     "player": "D. Luckassen",
+     "clock": "73'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "477",
+     "player": "N. Vlasic",
+     "clock": "83'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "4469"
   },
   {
@@ -2554,6 +4350,40 @@
    "winnerId": "2850",
    "headline": "Congo DR seal historic 1st-ever spot in WC knockouts",
    "attendance": 68239,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "2570",
+     "player": "E. Shomurodov",
+     "clock": "10'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "2850",
+     "player": "Y. Wissa",
+     "clock": "68'",
+     "pen": true,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "2850",
+     "player": "F. Mayele",
+     "clock": "78'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "2850",
+     "player": "Y. Wissa",
+     "clock": "90'+1'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "2570"
   },
   {
@@ -2576,6 +4406,40 @@
    "winnerId": "202",
    "headline": "Messi sets another WC record as Argentina make it three wins in three",
    "attendance": 70649,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "202",
+     "player": "G. Lo Celso",
+     "clock": "19'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "202",
+     "player": "L. Martínez",
+     "clock": "31'",
+     "pen": true,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "2917",
+     "player": "M. Al-Tamari",
+     "clock": "55'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "202",
+     "player": "L. Messi",
+     "clock": "80'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "2917"
   },
   {
@@ -2598,6 +4462,56 @@
    "winnerId": null,
    "headline": "Austria and Algeria draw 3-3 to advance to KOs, send Iran home",
    "attendance": 69045,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "474",
+     "player": "M. Arnautovic",
+     "clock": "28'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "624",
+     "player": "R. Belghali",
+     "clock": "45'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "474",
+     "player": "M. Sabitzer",
+     "clock": "55'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "624",
+     "player": "R. Mahrez",
+     "clock": "60'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "624",
+     "player": "R. Mahrez",
+     "clock": "90'+3'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "474",
+     "player": "S. Kalajdzic",
+     "clock": "90'+6'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": null
   },
   {
@@ -2620,6 +4534,24 @@
    "winnerId": "448",
    "headline": "Bellingham, Kane net again as England top group",
    "attendance": 80663,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "448",
+     "player": "J. Bellingham",
+     "clock": "62'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "448",
+     "player": "H. Kane",
+     "clock": "67'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "2659"
   },
   {
@@ -2642,6 +4574,16 @@
    "winnerId": "206",
    "headline": "Eustáquio heroics send Canada to WCup last-16",
    "attendance": 69237,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "206",
+     "player": "S. Eustáquio",
+     "clock": "90'+2'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "467"
   },
   {
@@ -2664,6 +4606,32 @@
    "winnerId": "205",
    "headline": "Brazil's Martinelli scores late winner to knock Japan out of World Cup",
    "attendance": 68777,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "627",
+     "player": "K. Sano",
+     "clock": "29'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "205",
+     "player": "Casemiro",
+     "clock": "56'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "205",
+     "player": "G. Martinelli",
+     "clock": "90'+5'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "627"
   },
   {
@@ -2686,6 +4654,24 @@
    "winnerId": "2869",
    "headline": "Netherlands out of WC after shootout loss to Morocco",
    "attendance": 51243,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "449",
+     "player": "C. Gakpo",
+     "clock": "72'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "2869",
+     "player": "I. Diop",
+     "clock": "90'+1'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "449"
   },
   {
@@ -2708,6 +4694,24 @@
    "winnerId": "210",
    "headline": "Paraguay upset Germany on pens, reach WC last 16",
    "attendance": 63945,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "210",
+     "player": "J. Enciso",
+     "clock": "42'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "481",
+     "player": "K. Havertz",
+     "clock": "54'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "481"
   },
   {
@@ -2730,6 +4734,32 @@
    "winnerId": "464",
    "headline": "Haaland strikes late to send Norway into last-16",
    "attendance": 69665,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "464",
+     "player": "A. Nusa",
+     "clock": "39'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "4789",
+     "player": "A. Diallo",
+     "clock": "74'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "464",
+     "player": "E. Haaland",
+     "clock": "86'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "4789"
   },
   {
@@ -2752,6 +4782,32 @@
    "winnerId": "203",
    "headline": "Jiménez, Quiñones help Mexico past Ecuador, into R16",
    "attendance": 80824,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "203",
+     "player": "J. Quiñones",
+     "clock": "22'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "203",
+     "player": "R. Jiménez",
+     "clock": "31'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "red",
+     "teamId": "209",
+     "player": "P. Hincapié",
+     "clock": "90'+5'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "209"
   },
   {
@@ -2774,6 +4830,32 @@
    "winnerId": "478",
    "headline": "Mbappé stars, France thump Sweden at World Cup",
    "attendance": 80663,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "478",
+     "player": "K. Mbappé",
+     "clock": "45'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "478",
+     "player": "B. Barcola",
+     "clock": "53'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "478",
+     "player": "K. Mbappé",
+     "clock": "74'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "466"
   },
   {
@@ -2796,6 +4878,48 @@
    "winnerId": "459",
    "headline": "Belgium stay alive, beat Senegal on Tielemans' pen",
    "attendance": 66925,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "654",
+     "player": "H. Diarra",
+     "clock": "24'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "654",
+     "player": "I. Sarr",
+     "clock": "51'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "459",
+     "player": "R. Lukaku",
+     "clock": "86'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "459",
+     "player": "Y. Tielemans",
+     "clock": "89'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "459",
+     "player": "Y. Tielemans",
+     "clock": "120'+5'",
+     "pen": true,
+     "og": false
+    }
+   ],
    "loserId": "654"
   },
   {
@@ -2818,6 +4942,32 @@
    "winnerId": "660",
    "headline": "U.S. beats Bosnia to reach World Cup round of 16",
    "attendance": 68827,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "660",
+     "player": "F. Balogun",
+     "clock": "45'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "red",
+     "teamId": "660",
+     "player": "F. Balogun",
+     "clock": "64'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "660",
+     "player": "M. Tillman",
+     "clock": "82'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "452"
   },
   {
@@ -2840,6 +4990,32 @@
    "winnerId": "448",
    "headline": "Kane saves England against Congo DR at World Cup",
    "attendance": 68239,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "2850",
+     "player": "B. Cipenga",
+     "clock": "7'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "448",
+     "player": "H. Kane",
+     "clock": "75'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "448",
+     "player": "H. Kane",
+     "clock": "86'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "2850"
   },
   {
@@ -2862,6 +5038,32 @@
    "winnerId": "482",
    "headline": "Portugal eliminate Croatia at WC after VAR call",
    "attendance": 43036,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "477",
+     "player": "I. Perisic",
+     "clock": "53'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "482",
+     "player": "C. Ronaldo",
+     "clock": "68'",
+     "pen": true,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "482",
+     "player": "G. Ramos",
+     "clock": "90'+4'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "477"
   },
   {
@@ -2884,6 +5086,32 @@
    "winnerId": "164",
    "headline": "Oyarzabal stars, Spain KO Austria from World Cup",
    "attendance": 70492,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "164",
+     "player": "M. Oyarzabal",
+     "clock": "36'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "164",
+     "player": "P. Porro",
+     "clock": "66'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "164",
+     "player": "M. Oyarzabal",
+     "clock": "89'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "474"
   },
   {
@@ -2906,6 +5134,24 @@
    "winnerId": "475",
    "headline": "Switzerland eliminate Algeria from WC with 2-0 win",
    "attendance": 52497,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "475",
+     "player": "B. Embolo",
+     "clock": "10'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "475",
+     "player": "D. Ndoye",
+     "clock": "46'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": "624"
   },
   {
@@ -2915,19 +5161,29 @@
    "date": "2026-07-03T18:00Z",
    "venue": "AT&T Stadium",
    "city": "Arlington, Texas",
-   "status": "scheduled",
-   "statusDetail": "Scheduled",
+   "status": "live",
+   "statusDetail": "45'",
    "homeId": "628",
    "awayId": "2620",
    "homePlaceholder": null,
    "awayPlaceholder": null,
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 0,
+   "awayScore": 1,
    "homePens": null,
    "awayPens": null,
    "winnerId": null,
    "headline": null,
    "attendance": null,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "2620",
+     "player": "E. Ashour",
+     "clock": "13'",
+     "pen": false,
+     "og": false
+    }
+   ],
    "loserId": null
   },
   {

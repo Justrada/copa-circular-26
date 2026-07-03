@@ -102,6 +102,33 @@ export default function MatchSheet({ data, m, asOf, picks, onPick, onConf, onSco
         {m.attendance ? ` · ${tr('attendance', lang)} ${m.attendance.toLocaleString()}` : ''}
       </div>
 
+      {known && !!m.events?.length && (
+        <div className="timeline">
+          <div className="tl-col tl-home">
+            {m.events
+              .filter((ev) => ev.teamId === m.homeId)
+              .map((ev, i) => (
+                <span key={i} className={`tl-ev ${ev.kind}`}>
+                  {ev.kind === 'red' ? '🟥' : '⚽'} {ev.clock} {ev.player}
+                  {ev.pen ? ' (p)' : ''}
+                  {ev.og ? ' (og)' : ''}
+                </span>
+              ))}
+          </div>
+          <div className="tl-col tl-away">
+            {m.events
+              .filter((ev) => ev.teamId === m.awayId)
+              .map((ev, i) => (
+                <span key={i} className={`tl-ev ${ev.kind}`}>
+                  {ev.player}
+                  {ev.pen ? ' (p)' : ''}
+                  {ev.og ? ' (og)' : ''} {ev.clock} {ev.kind === 'red' ? '🟥' : '⚽'}
+                </span>
+              ))}
+          </div>
+        </div>
+      )}
+
       {odds && home && away && (
         <section className="odds-bar-wrap">
           <div className="section-title">{tr(known ? 'marketOdds' : 'currentOdds', lang)}</div>

@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { actualExitMatch, knownAsOf, matchById, slotHint, slotTeamId, teamPath, upsetInfo } from '../lib/data'
 import { stageName, t as tr } from '../lib/i18n'
 import {
@@ -7,10 +7,8 @@ import {
   IDENTITY_ORDER,
   NODE_SIZE,
   RINGS,
-  chipTransform,
   computeSectorOrder,
   feedLinkPath,
-  groupSector,
   matchPos,
   polar,
   ribbonPath,
@@ -50,6 +48,19 @@ export default function RadialBracket({
   const koMatches = useMemo(() => t.matches.filter((m) => m.stage !== 'group'), [t])
   const sectorOf = useMemo(() => (untangle ? computeSectorOrder(t) : IDENTITY_ORDER), [t, untangle])
 
+  // Ribbons can't tween their path shape — fade them out while sectors rotate
+  const [reordering, setReordering] = useState(false)
+  const firstRender = useRef(true)
+  useEffect(() => {
+    if (firstRender.current) {
+      firstRender.current = false
+      return
+    }
+    setReordering(true)
+    const id = setTimeout(() => setReordering(false), 720)
+    return () => clearTimeout(id)
+  }, [untangle])
+
   const selectedTeam = selection?.kind === 'team' ? selection.id : null
 
   // Matches on the selected team's actual path
@@ -75,6 +86,23 @@ export default function RadialBracket({
     return map
   }, [favorites, t])
 
+  // Faint predicted routes for favorites (capped to keep the spaghetti down)
+  const favRoutes = useMemo(() => {
+    const out: string[] = []
+    let count = 0
+    for (const id of favorites) {
+      if (id === selectedTeam) continue
+      if (++count > 6) break
+      const p = predictedRoute(t, picks, id)
+      for (let i = 0; i + 1 < p.route.length; i++) {
+        const a = matchById(t, p.route[i])
+        const b = matchById(t, p.route[i + 1])
+        if (a && b) out.push(feedLinkPath(a, b))
+      }
+    }
+    return out
+  }, [favorites, selectedTeam, t, picks])
+
   const upsets = useMemo(() => {
     const map = new Map<string, NonNullable<ReturnType<typeof upsetInfo>>>()
     for (const m of t.matches) {
@@ -88,7 +116,7 @@ export default function RadialBracket({
   return (
     <div className={`radial-wrap ${pathIds ? 'has-path' : ''} ${zoomed ? 'zoomed' : ''}`}>
       <SvgZoom onScaleChange={(k) => setZoomed(k > 1.35)}>
-        <svg viewBox="-512 -512 1024 1024" className="radial-svg" role="img" aria-label="World Cup 2026 circular bracket">
+        <svg id="bracket-svg" viewBox="-512 -512 1024 1024" className="radial-svg" role="img" aria-label="World Cup 2026 circular bracket">
           <RingBands lang={lang} />
           <GroupRing
             t={t}
@@ -98,8 +126,17 @@ export default function RadialBracket({
             pathIds={pathIds}
             favorites={favorites}
           />
-          <Ribbons t={t} sectorOf={sectorOf} selectedTeam={selectedTeam} favorites={favorites} />
+          <g className={`ribbons-wrap ${reordering ? 'fade' : ''}`}>
+            <Ribbons t={t} sectorOf={sectorOf} selectedTeam={selectedTeam} favorites={favorites} />
+          </g>
           <Links t={t} koMatches={koMatches} pathIds={pathIds} favPaths={favPaths} />
+          {favRoutes.length > 0 && (
+            <g className="predicted-layer">
+              {favRoutes.map((d, i) => (
+                <path key={i} d={d} className="plink faint" />
+              ))}
+            </g>
+          )}
           <g className="nodes">
             {koMatches.map((m) => (
               <MatchNode
@@ -152,6 +189,36 @@ function RingBands({ lang }: { lang: Lang }) {
   )
 }
 
+/** Tween an angle toward its target along the shortest arc (attribute transforms
+ *  rotate around the SVG user-space origin — the circle center — reliably). */
+function useAnimatedAngle(target: number): number {
+  const [angle, setAngle] = useState(target)
+  const cur = useRef(target)
+  useEffect(() => {
+    const from = cur.current
+    const delta = ((((target - from) % 360) + 540) % 360) - 180
+    if (Math.abs(delta) < 0.01) {
+      cur.current = target
+      setAngle(target)
+      return
+    }
+    const start = performance.now()
+    const DURATION = 700
+    let raf = 0
+    const tick = (now: number) => {
+      const p = Math.min(1, (now - start) / DURATION)
+      const eased = 1 - Math.pow(1 - p, 3)
+      const a = from + delta * eased
+      cur.current = a
+      setAngle(a)
+      if (p < 1) raf = requestAnimationFrame(tick)
+    }
+    raf = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(raf)
+  }, [target])
+  return angle
+}
+
 function GroupRing({
   t,
   sectorOf,
@@ -169,24 +236,64 @@ function GroupRing({
 }) {
   return (
     <g className="group-ring">
-      {GROUP_LETTERS.map((letter) => {
-        const gi = sectorOf[letter]
-        const { mid } = groupSector(gi)
-        const [lx, ly] = polar(mid, GROUP_RING.outer + 14)
-        return (
-          <g key={letter}>
-            <path d={sectorPath(gi, GROUP_RING.inner, GROUP_RING.outer)} className={`sector sector-${gi % 2}`} />
-            <text x={lx} y={ly} className="group-letter" dominantBaseline="middle">
-              {letter}
-            </text>
+      {GROUP_LETTERS.map((letter) => (
+        <Sector
+          key={letter}
+          t={t}
+          letter={letter}
+          gi={sectorOf[letter]}
+          selection={selection}
+          onSelect={onSelect}
+          pathIds={pathIds}
+          favorites={favorites}
+        />
+      ))}
+    </g>
+  )
+}
+
+function Sector({
+  t,
+  letter,
+  gi,
+  selection,
+  onSelect,
+  pathIds,
+  favorites,
+}: {
+  t: Props['data']['tournament']
+  letter: string
+  gi: number
+  selection: Selection | null
+  onSelect: Props['onSelect']
+  pathIds: Set<string> | null
+  favorites: Set<string>
+}) {
+  const R = useAnimatedAngle(gi * 30)
+  // Group content is drawn in the canonical sector-0 wedge (-90°..-60°) and rotated into place
+  const sector0 = sectorPath(0, GROUP_RING.inner, GROUP_RING.outer)
+  const [lx0, ly0] = polar(-75, GROUP_RING.outer + 14)
+  const finalMid = (((gi * 30 - 75) % 360) + 360) % 360
+  const flip = finalMid > 0 && finalMid < 180
+  const chipLocalRot = flip ? -165 : 15
+  return (
+    <g transform={`rotate(${R.toFixed(2)})`}>
+      <path d={sector0} className={`sector sector-${gi % 2}`} />
+      <g transform={`translate(${lx0.toFixed(1)},${ly0.toFixed(1)})`}>
+        <text className="group-letter" transform={`rotate(${(-R).toFixed(2)})`} dominantBaseline="middle">
+          {letter}
+        </text>
+      </g>
             {(t.groups[letter] ?? []).map((teamId) => {
               const team = t.teams[teamId]
               const isSel = selection?.kind === 'team' && selection.id === teamId
               const dimmed = pathIds && !isSel
+              const r = GROUP_RING.outer - 15 - (team.groupRank - 1) * 23
+              const [cx, cy] = polar(-75, r)
               return (
                 <g
                   key={teamId}
-                  transform={chipTransform(gi, team.groupRank)}
+                  transform={`translate(${cx.toFixed(1)},${cy.toFixed(1)}) rotate(${chipLocalRot})`}
                   className={`chip ${team.advanced ? 'advanced' : 'eliminated'} ${isSel ? 'selected' : ''} ${dimmed ? 'dim' : ''} ${favorites.has(teamId) ? 'fav' : ''}`}
                   onClick={(e) => {
                     e.stopPropagation()
@@ -204,9 +311,6 @@ function GroupRing({
                 </g>
               )
             })}
-          </g>
-        )
-      })}
     </g>
   )
 }

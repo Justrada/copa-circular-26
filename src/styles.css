@@ -76,6 +76,49 @@ a { color: var(--accent); }
 .share-btn.wa { background: #14532d; }
 .share-btn.rd { background: #7c2d12; }
 
+/* ---------- today strip + outlook ---------- */
+.today-strip {
+  display: flex; gap: 7px; align-items: center; overflow-x: auto;
+  padding: 4px 16px 8px; scrollbar-width: none;
+}
+.today-strip::-webkit-scrollbar { display: none; }
+.today-title { flex: none; font-size: 10.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+.today-chip {
+  flex: none; display: flex; gap: 6px; align-items: center; font-size: 12px; font-weight: 700;
+  padding: 5px 11px; border-radius: 999px; background: var(--panel); border: 1px solid var(--line);
+}
+.today-chip:hover { border-color: var(--accent); }
+.today-chip .today-label { color: var(--muted); font-weight: 600; font-size: 11px; }
+.today-chip.ft .today-label { color: var(--accent); font-weight: 800; }
+.today-chip.live { border-color: var(--danger); }
+.today-live { color: var(--danger); animation: pulse 1.2s infinite; font-size: 9px; }
+.today-star { color: var(--mine); }
+.today-chip.fav { border-color: rgba(255, 209, 102, 0.6); box-shadow: 0 0 8px rgba(255, 209, 102, 0.25); }
+
+.outlook { padding: 0 16px 6px; }
+.outlook-head { font-size: 12.5px; color: var(--muted); padding: 2px 0; }
+.outlook-head b { color: var(--accent); }
+.outlook-bold { color: var(--mine); }
+.outlook-caret { margin-left: 6px; }
+.outlook-list {
+  list-style: none; margin: 6px 0 0; padding: 8px 12px; max-width: 460px;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+}
+.outlook-list li { display: flex; gap: 10px; font-size: 12px; padding: 2.5px 0; }
+.ol-stage { color: var(--muted); width: 105px; }
+.ol-team { font-weight: 700; flex: 1; }
+.ol-prob { color: var(--theirs); width: 42px; text-align: right; }
+.ol-pts { color: var(--accent); width: 36px; text-align: right; }
+.ol-market { color: var(--muted); border-top: 1px solid var(--line); margin-top: 4px; padding-top: 6px !important; }
+
+/* ---------- scorers timeline ---------- */
+.timeline { display: flex; gap: 12px; justify-content: space-between; margin: 2px 0 6px; }
+.tl-col { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+.tl-home { align-items: flex-start; }
+.tl-away { align-items: flex-end; text-align: right; }
+.tl-ev { font-size: 11px; color: var(--muted); }
+.tl-ev.red { color: #f87171; }
+
 /* ---------- time slider / banners ---------- */
 .time-slider {
   display: flex; gap: 12px; align-items: center; padding: 7px 16px;
@@ -123,6 +166,8 @@ main.view-circle { overflow: hidden; }
 .sector-0 { fill: rgba(61, 220, 132, 0.05); stroke: var(--line); stroke-width: 0.5; }
 .sector-1 { fill: rgba(125, 211, 252, 0.05); stroke: var(--line); stroke-width: 0.5; }
 .group-letter { fill: var(--accent2); font-size: 18px; font-weight: 800; text-anchor: middle; }
+.ribbons-wrap { transition: opacity 0.22s; }
+.ribbons-wrap.fade { opacity: 0; }
 
 .chip { cursor: pointer; }
 .chip-bg { fill: var(--panel); stroke: var(--line); stroke-width: 0.8; }
@@ -155,6 +200,8 @@ main.view-circle { overflow: hidden; }
   fill: none; stroke: var(--mine); stroke-width: 2.6; stroke-dasharray: 7 6;
   stroke-linecap: round; opacity: 0.95; animation: dashflow 1.6s linear infinite;
 }
+.plink.faint { stroke-width: 1.6; opacity: 0.4; animation: none; }
+.has-path .plink.faint { opacity: 0.08; }
 @keyframes dashflow { to { stroke-dashoffset: -26; } }
 .exit-marker circle { stroke-width: 1.6; }
 .exit-marker.actual circle { fill: var(--danger); stroke: var(--bg); }

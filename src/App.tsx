@@ -1,17 +1,21 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import FavoritesSidebar from './components/FavoritesSidebar'
 import GroupsView from './components/GroupsView'
 import LinearBracket from './components/LinearBracket'
 import MatchSheet from './components/MatchSheet'
+import OutlookPanel from './components/OutlookPanel'
 import RadialBracket from './components/RadialBracket'
 import ScorePanel from './components/ScorePanel'
 import ShareBar from './components/ShareBar'
 import TimeSlider from './components/TimeSlider'
+import TodayStrip from './components/TodayStrip'
 import { loadData, matchById, team } from './lib/data'
 import { t as tr } from './lib/i18n'
+import { inLiveWindow, refreshLiveScores } from './lib/live'
 import type { Picks } from './lib/picks'
-import { decodePicks, isLocked, isPickable, loadPicks, savePicks, scorePicks } from './lib/picks'
-import type { DataBundle, Lang, Selection, View } from './types'
+import { decodePicks, isLocked, isPickable, loadPicks, pickedChampion, savePicks, scorePicks } from './lib/picks'
+import { buildShareCard, shareOrDownload } from './lib/sharecard'
+import type { DataBundle, Lang, Selection, Tournament, View } from './types'
 
 const STAGE_ORDER = ['r32', 'r16', 'qf', 'sf', 'third', 'final']
 
@@ -53,6 +57,19 @@ export default function App() {
     loadData().then(setData, (e) => setError(String(e)))
     const mm = location.hash.match(/#p=([A-Za-z0-9_-]+)/)
     if (mm) setTheirs(decodePicks(mm[1]))
+  }, [])
+
+  // Match-day live mode: poll ESPN every 2 minutes while a match window is open
+  const liveRef = useRef<Tournament | null>(null)
+  liveRef.current = data?.tournament ?? null
+  useEffect(() => {
+    const id = setInterval(async () => {
+      const t = liveRef.current
+      if (!t || !inLiveWindow(t)) return
+      const fresh = await refreshLiveScores(t)
+      if (fresh) setData((d) => (d ? { ...d, tournament: fresh } : d))
+    }, 120_000)
+    return () => clearInterval(id)
   }, [])
 
   useEffect(() => localStorage.setItem('cc26-lang', lang), [lang])
@@ -126,6 +143,28 @@ export default function App() {
     setSelection({ kind: 'match', id: first.id })
   }
   const onConf = (matchId: string, conf: 1 | 2 | 3) => setPicks({ ...picks, conf: { ...picks.conf, [matchId]: conf } })
+  const shareCard = async () => {
+    if (view !== 'circle') {
+      setView('circle')
+      await new Promise((r) => setTimeout(r, 450))
+    }
+    const svg = document.getElementById('bracket-svg') as SVGSVGElement | null
+    if (!svg) throw new Error('bracket svg not found')
+    const decided = scorecard.correct + scorecard.wrong
+    const champId = pickedChampion(t, picks)
+    const sub = [
+      decided ? `${scorecard.correct}/${decided} ${lang === 'es' ? 'aciertos' : 'picks right'} · ${scorecard.points} pts` : tr('tagline', lang),
+      champId ? `🏆 ${t.teams[champId].name}` : '',
+    ]
+      .filter(Boolean)
+      .join('  ·  ')
+    const blob = await buildShareCard(svg, {
+      title: "⚽ Copa Circular '26",
+      sub,
+      footer: `${location.origin}${location.pathname}`,
+    })
+    await shareOrDownload(blob, 'copa-circular-26-bracket.png', sub)
+  }
   const onScore = (matchId: string, score: [number, number] | null) => {
     const scores = { ...picks.scores }
     if (score) scores[matchId] = score
@@ -176,7 +215,12 @@ export default function App() {
 
       <div className="statusbar" onClick={(e) => e.stopPropagation()}>
         <ScorePanel data={data} picks={picks} scorecard={scorecard} theirs={theirs} theirCard={theirCard} champion={data.champion} lang={lang} />
-        <ShareBar data={data} picks={picks} scorecard={scorecard} lang={lang} />
+        <ShareBar data={data} picks={picks} scorecard={scorecard} lang={lang} onCard={shareCard} />
+      </div>
+
+      <div onClick={(e) => e.stopPropagation()}>
+        <TodayStrip data={data} favorites={favorites} onSelect={setSelection} lang={lang} />
+        <OutlookPanel data={data} picks={picks} scorecard={scorecard} lang={lang} />
       </div>
 
       {timeTravel && (

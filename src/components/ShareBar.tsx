@@ -9,10 +9,12 @@ interface Props {
   picks: Picks
   scorecard: Scorecard
   lang: Lang
+  onCard: () => Promise<void>
 }
 
-export default function ShareBar({ data, picks, scorecard, lang }: Props) {
+export default function ShareBar({ data, picks, scorecard, lang, onCard }: Props) {
   const [copied, setCopied] = useState(false)
+  const [rendering, setRendering] = useState(false)
   const t = data.tournament
 
   const url = () => {
@@ -76,6 +78,22 @@ export default function ShareBar({ data, picks, scorecard, lang }: Props) {
         }}
       >
         {copied ? tr('copied', lang) : tr('copyLink', lang)}
+      </button>
+      <button
+        className="share-btn card"
+        disabled={rendering}
+        onClick={async () => {
+          setRendering(true)
+          try {
+            await onCard()
+          } catch (err) {
+            console.error('share card failed', err)
+          } finally {
+            setRendering(false)
+          }
+        }}
+      >
+        {rendering ? '…' : `📸 ${tr('shareCard', lang)}`}
       </button>
     </div>
   )

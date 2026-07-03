@@ -685,70 +685,70 @@
   "away": 0.41,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-03T10:10:22.859Z"
+  "capturedAt": "2026-07-03T09:01:59.821Z"
  },
  "760500": {
-  "home": 0.839,
-  "draw": 0.113,
-  "away": 0.048,
+  "home": 0.829,
+  "draw": 0.118,
+  "away": 0.053,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-03T10:10:22.859Z"
+  "capturedAt": "2026-07-03T18:45:00.797Z"
  },
  "760501": {
-  "home": 0.669,
-  "draw": 0.218,
-  "away": 0.113,
+  "home": 0.667,
+  "draw": 0.221,
+  "away": 0.112,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-03T10:10:22.859Z"
+  "capturedAt": "2026-07-03T18:45:00.799Z"
  },
  "760502": {
-  "home": 0.192,
+  "home": 0.21,
   "draw": 0.274,
-  "away": 0.534,
+  "away": 0.516,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-03T10:10:22.859Z"
+  "capturedAt": "2026-07-03T18:45:00.799Z"
  },
  "760503": {
   "home": 0.053,
-  "draw": 0.137,
-  "away": 0.81,
+  "draw": 0.146,
+  "away": 0.802,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-03T10:10:22.859Z"
+  "capturedAt": "2026-07-03T18:45:00.799Z"
  },
  "760504": {
-  "home": 0.513,
+  "home": 0.517,
   "draw": 0.253,
-  "away": 0.234,
+  "away": 0.231,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-03T10:10:22.859Z"
+  "capturedAt": "2026-07-03T18:45:00.799Z"
  },
  "760505": {
-  "home": 0.299,
-  "draw": 0.303,
+  "home": 0.303,
+  "draw": 0.299,
   "away": 0.398,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-03T10:10:22.859Z"
+  "capturedAt": "2026-07-03T18:45:00.799Z"
  },
  "760506": {
-  "home": 0.24,
-  "draw": 0.267,
-  "away": 0.493,
+  "home": 0.236,
+  "draw": 0.259,
+  "away": 0.505,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-03T10:10:22.859Z"
+  "capturedAt": "2026-07-03T18:45:00.799Z"
  },
  "760507": {
-  "home": 0.376,
-  "draw": 0.282,
-  "away": 0.342,
+  "home": 0.367,
+  "draw": 0.28,
+  "away": 0.353,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-03T10:10:22.859Z"
+  "capturedAt": "2026-07-03T18:45:00.799Z"
  }
 }
