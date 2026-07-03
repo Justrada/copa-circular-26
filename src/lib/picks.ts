@@ -189,3 +189,46 @@ export function pickedChampion(t: Tournament, picks: Picks): string | null {
   const final = t.matches.find((m) => m.stage === 'final')
   return final ? validPick(t, picks, final) : null
 }
+
+export interface PredictedRoute {
+  route: string[] // ordered KO match ids along the picked route (last = predicted exit, if any)
+  winIds: Set<string> // matches the user picked this team to win
+  exitId: string | null // match where the user picked the opponent
+  champion: boolean
+}
+
+/**
+ * The route the USER's picks send a team on, traced from raw picks (not
+ * validity-checked) so the prediction stays visible even after reality
+ * diverges — that divergence is exactly what we want to show.
+ */
+export function predictedRoute(t: Tournament, picks: Picks, teamId: string): PredictedRoute {
+  const out: PredictedRoute = { route: [], winIds: new Set(), exitId: null, champion: false }
+  const start = t.matches.find((m) => m.stage === 'r32' && (m.homeId === teamId || m.awayId === teamId))
+  if (!start) return out
+  const nextByWinnerFeed = new Map<string, string>()
+  for (const m of t.matches) {
+    for (const side of ['home', 'away'] as const) {
+      const f = m.feeds?.[side]
+      if (f?.kind === 'winner') nextByWinnerFeed.set(f.matchId, m.id)
+    }
+  }
+  let cur: string | undefined = start.id
+  while (cur) {
+    out.route.push(cur)
+    const pick = picks.winners[cur]
+    if (!pick) break
+    if (pick !== teamId) {
+      out.exitId = cur
+      break
+    }
+    out.winIds.add(cur)
+    const next = nextByWinnerFeed.get(cur)
+    if (!next) {
+      out.champion = true
+      break
+    }
+    cur = next
+  }
+  return out
+}

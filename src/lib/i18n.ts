@@ -82,6 +82,26 @@ const STRINGS = {
     es: 'Cómo funciona: toca cualquier partido próximo (borde dorado punteado) y elige a tu ganador — o usa “Completa tu bracket” para recorrerlos todos. Las estrellas de confianza y el marcador exacto dan puntos extra; los puntos verdes/rojos marcan tus aciertos cada noche.',
   },
   gotIt: { en: 'Got it', es: 'Entendido' },
+  watching: { en: 'Watching', es: 'Siguiendo' },
+  addTeam: { en: 'Add a team', es: 'Agregar equipo' },
+  noFavsYet: {
+    en: 'Star the teams you care about — they glow on the circle and their roads stay lit.',
+    es: 'Marca con estrella a tus equipos — brillan en el círculo y sus caminos quedan iluminados.',
+  },
+  untangle: { en: 'Untangle', es: 'Desenredar' },
+  untangleHint: {
+    en: 'Reorder group sectors so qualification ribbons take the shortest route to the Round of 32',
+    es: 'Reordena los grupos para que las cintas tomen la ruta más corta a dieciseisavos',
+  },
+  favorite: { en: 'Favorite', es: 'Favorito' },
+  outInGroups: { en: 'Out in the groups', es: 'Eliminado en grupos' },
+  outAt: { en: 'Out', es: 'Fuera en' },
+  nextMatch: { en: 'Next', es: 'Próximo' },
+  awaitingOpponent: { en: 'Awaiting opponent', es: 'Espera rival' },
+  yourCall: { en: 'Your call', es: 'Tu pronóstico' },
+  noPicksYet: { en: 'no picks yet', es: 'aún sin picks' },
+  predictedOut: { en: 'You predicted them out here', es: 'Aquí los tenías eliminados' },
+  actualOut: { en: 'Knocked out here', es: 'Eliminados aquí' },
 } as const
 
 export type StringKey = keyof typeof STRINGS

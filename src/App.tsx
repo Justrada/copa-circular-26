@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import FavoritesSidebar from './components/FavoritesSidebar'
 import GroupsView from './components/GroupsView'
 import LinearBracket from './components/LinearBracket'
 import MatchSheet from './components/MatchSheet'
@@ -28,6 +29,25 @@ export default function App() {
   const [theirs, setTheirs] = useState<Picks | null>(null)
   const [wizardOn, setWizardOn] = useState(false)
   const [coachSeen, setCoachSeen] = useState(() => localStorage.getItem('cc26-coach') === '1')
+  const [favorites, setFavorites] = useState<Set<string>>(() => {
+    try {
+      return new Set(JSON.parse(localStorage.getItem('cc26-favs') ?? '[]'))
+    } catch {
+      return new Set()
+    }
+  })
+  const [sidebarOn, setSidebarOn] = useState(false)
+  const [untangle, setUntangle] = useState(() => localStorage.getItem('cc26-untangle') !== '0')
+
+  const toggleFav = (teamId: string) => {
+    setFavorites((prev) => {
+      const next = new Set(prev)
+      if (next.has(teamId)) next.delete(teamId)
+      else next.add(teamId)
+      localStorage.setItem('cc26-favs', JSON.stringify([...next]))
+      return next
+    })
+  }
 
   useEffect(() => {
     loadData().then(setData, (e) => setError(String(e)))
@@ -135,6 +155,19 @@ export default function App() {
           <button className={`toggle ${timeTravel ? 'on' : ''}`} onClick={() => { setTimeTravel(!timeTravel); if (timeTravel) setAsOf(null) }}>
             🕰 {tr('timeTravel', lang)}
           </button>
+          <button
+            className={`toggle ${untangle ? 'on' : ''}`}
+            title={tr('untangleHint', lang)}
+            onClick={() => {
+              localStorage.setItem('cc26-untangle', untangle ? '0' : '1')
+              setUntangle(!untangle)
+            }}
+          >
+            ✦ {tr('untangle', lang)}
+          </button>
+          <button className={`toggle ${sidebarOn ? 'on' : ''}`} onClick={() => setSidebarOn(!sidebarOn)}>
+            ★ {tr('watching', lang)}{favorites.size ? ` · ${favorites.size}` : ''}
+          </button>
           <button className="toggle lang" onClick={() => setLang(lang === 'en' ? 'es' : 'en')}>
             {lang === 'en' ? 'ES' : 'EN'}
           </button>
@@ -180,7 +213,17 @@ export default function App() {
 
       <main className={`view-${view}`}>
         {view === 'circle' && (
-          <RadialBracket data={data} asOf={asOf} selection={selection} onSelect={setSelection} picks={picks} scorecard={scorecard} lang={lang} />
+          <RadialBracket
+            data={data}
+            asOf={asOf}
+            selection={selection}
+            onSelect={setSelection}
+            picks={picks}
+            scorecard={scorecard}
+            favorites={favorites}
+            untangle={untangle}
+            lang={lang}
+          />
         )}
         {view === 'bracket' && (
           <LinearBracket data={data} asOf={asOf} picks={picks} theirs={theirs} scorecard={scorecard} onSelect={setSelection} lang={lang} />
@@ -204,6 +247,21 @@ export default function App() {
         </button>
       )}
 
+      {sidebarOn && (
+        <FavoritesSidebar
+          data={data}
+          favorites={favorites}
+          picks={picks}
+          onToggle={toggleFav}
+          onSelectTeam={(id) => {
+            setSelection({ kind: 'team', id })
+            setView('circle')
+          }}
+          onClose={() => setSidebarOn(false)}
+          lang={lang}
+        />
+      )}
+
       {selMatch && (
         <MatchSheet
           data={data}
@@ -213,6 +271,8 @@ export default function App() {
           onPick={onPick}
           onConf={onConf}
           onScore={onScore}
+          favorites={favorites}
+          onToggleFav={toggleFav}
           onSelectTeam={(id) => {
             setWizardOn(false)
             setSelection({ kind: 'team', id })

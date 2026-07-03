@@ -47,6 +47,14 @@ export function teamPath(t: Tournament, teamId: string): Match[] {
     .sort((a, b) => a.date.localeCompare(b.date))
 }
 
+/** The knockout match where a team was actually eliminated, if it has been. */
+export function actualExitMatch(t: Tournament, teamId: string): Match | null {
+  return (
+    t.matches.find((m) => m.stage !== 'group' && m.stage !== 'third' && m.status === 'ft' && m.loserId === teamId) ??
+    null
+  )
+}
+
 /** Upset classification for a finished match with pre-match odds. */
 export function upsetInfo(m: Match, odds: Record<string, OddsEntry>): UpsetInfo | null {
   if (m.status !== 'ft') return null

@@ -1,12 +1,14 @@
 import { useMemo, useState } from 'react'
-import { knownAsOf, matchById, slotHint, slotTeamId, teamPath, upsetInfo } from '../lib/data'
+import { actualExitMatch, knownAsOf, matchById, slotHint, slotTeamId, teamPath, upsetInfo } from '../lib/data'
 import { stageName, t as tr } from '../lib/i18n'
 import {
   GROUP_LETTERS,
   GROUP_RING,
+  IDENTITY_ORDER,
   NODE_SIZE,
   RINGS,
   chipTransform,
+  computeSectorOrder,
   feedLinkPath,
   groupSector,
   matchPos,
@@ -15,7 +17,7 @@ import {
   sectorPath,
 } from '../lib/layout'
 import type { Picks, Scorecard } from '../lib/picks'
-import { isLocked, isPickable, validPick } from '../lib/picks'
+import { isLocked, isPickable, predictedRoute, validPick } from '../lib/picks'
 import type { DataBundle, Lang, Match, Selection } from '../types'
 import SvgZoom from './SvgZoom'
 
@@ -26,21 +28,52 @@ interface Props {
   onSelect: (sel: Selection | null) => void
   picks: Picks
   scorecard: Scorecard
+  favorites: Set<string>
+  untangle: boolean
   lang: Lang
 }
 
-export default function RadialBracket({ data, asOf, selection, onSelect, picks, scorecard, lang }: Props) {
+export default function RadialBracket({
+  data,
+  asOf,
+  selection,
+  onSelect,
+  picks,
+  scorecard,
+  favorites,
+  untangle,
+  lang,
+}: Props) {
   const { tournament: t } = data
   const [zoomed, setZoomed] = useState(false)
 
   const koMatches = useMemo(() => t.matches.filter((m) => m.stage !== 'group'), [t])
+  const sectorOf = useMemo(() => (untangle ? computeSectorOrder(t) : IDENTITY_ORDER), [t, untangle])
 
-  // Matches on the selected team's path (played + future slots they'd occupy via reality)
+  const selectedTeam = selection?.kind === 'team' ? selection.id : null
+
+  // Matches on the selected team's actual path
   const pathIds = useMemo(() => {
-    if (selection?.kind !== 'team') return null
-    const ids = new Set(teamPath(t, selection.id).map((m) => m.id))
-    return ids
-  }, [selection, t])
+    if (!selectedTeam) return null
+    return new Set(teamPath(t, selectedTeam).map((m) => m.id))
+  }, [selectedTeam, t])
+
+  // The route the user's picks send the selected team on
+  const predicted = useMemo(
+    () => (selectedTeam ? predictedRoute(t, picks, selectedTeam) : null),
+    [selectedTeam, t, picks]
+  )
+  const actualExit = useMemo(
+    () => (selectedTeam ? actualExitMatch(t, selectedTeam) : null),
+    [selectedTeam, t]
+  )
+
+  // Actual-path match sets for every favorite (for always-lit paths + glow)
+  const favPaths = useMemo(() => {
+    const map = new Map<string, Set<string>>()
+    for (const id of favorites) map.set(id, new Set(teamPath(t, id).map((m) => m.id)))
+    return map
+  }, [favorites, t])
 
   const upsets = useMemo(() => {
     const map = new Map<string, NonNullable<ReturnType<typeof upsetInfo>>>()
@@ -57,9 +90,16 @@ export default function RadialBracket({ data, asOf, selection, onSelect, picks, 
       <SvgZoom onScaleChange={(k) => setZoomed(k > 1.35)}>
         <svg viewBox="-512 -512 1024 1024" className="radial-svg" role="img" aria-label="World Cup 2026 circular bracket">
           <RingBands lang={lang} />
-          <GroupRing t={t} selection={selection} onSelect={onSelect} pathIds={pathIds} />
-          <Ribbons t={t} selection={selection} />
-          <Links t={t} koMatches={koMatches} pathIds={pathIds} />
+          <GroupRing
+            t={t}
+            sectorOf={sectorOf}
+            selection={selection}
+            onSelect={onSelect}
+            pathIds={pathIds}
+            favorites={favorites}
+          />
+          <Ribbons t={t} sectorOf={sectorOf} selectedTeam={selectedTeam} favorites={favorites} />
+          <Links t={t} koMatches={koMatches} pathIds={pathIds} favPaths={favPaths} />
           <g className="nodes">
             {koMatches.map((m) => (
               <MatchNode
@@ -70,13 +110,22 @@ export default function RadialBracket({ data, asOf, selection, onSelect, picks, 
                 picks={picks}
                 scorecard={scorecard}
                 upset={upsets.get(m.id)}
-                onPath={!pathIds || pathIds.has(m.id)}
+                onPath={!pathIds || pathIds.has(m.id) || !!(predicted && predicted.route.includes(m.id))}
+                fav={!!(m.homeId && favorites.has(m.homeId)) || !!(m.awayId && favorites.has(m.awayId))}
                 selected={selection?.kind === 'match' && selection.id === m.id}
                 onSelect={onSelect}
                 lang={lang}
               />
             ))}
           </g>
+          {predicted && (
+            <PredictedOverlay
+              t={t}
+              predicted={predicted}
+              actualExitId={actualExit?.id ?? null}
+              lang={lang}
+            />
+          )}
         </svg>
       </SvgZoom>
     </div>
@@ -105,18 +154,23 @@ function RingBands({ lang }: { lang: Lang }) {
 
 function GroupRing({
   t,
+  sectorOf,
   selection,
   onSelect,
   pathIds,
+  favorites,
 }: {
   t: Props['data']['tournament']
+  sectorOf: Record<string, number>
   selection: Selection | null
   onSelect: Props['onSelect']
   pathIds: Set<string> | null
+  favorites: Set<string>
 }) {
   return (
     <g className="group-ring">
-      {GROUP_LETTERS.map((letter, gi) => {
+      {GROUP_LETTERS.map((letter) => {
+        const gi = sectorOf[letter]
         const { mid } = groupSector(gi)
         const [lx, ly] = polar(mid, GROUP_RING.outer + 14)
         return (
@@ -133,7 +187,7 @@ function GroupRing({
                 <g
                   key={teamId}
                   transform={chipTransform(gi, team.groupRank)}
-                  className={`chip ${team.advanced ? 'advanced' : 'eliminated'} ${isSel ? 'selected' : ''} ${dimmed ? 'dim' : ''}`}
+                  className={`chip ${team.advanced ? 'advanced' : 'eliminated'} ${isSel ? 'selected' : ''} ${dimmed ? 'dim' : ''} ${favorites.has(teamId) ? 'fav' : ''}`}
                   onClick={(e) => {
                     e.stopPropagation()
                     onSelect(isSel ? null : { kind: 'team', id: teamId })
@@ -157,7 +211,17 @@ function GroupRing({
   )
 }
 
-function Ribbons({ t, selection }: { t: Props['data']['tournament']; selection: Selection | null }) {
+function Ribbons({
+  t,
+  sectorOf,
+  selectedTeam,
+  favorites,
+}: {
+  t: Props['data']['tournament']
+  sectorOf: Record<string, number>
+  selectedTeam: string | null
+  favorites: Set<string>
+}) {
   const ribbons = useMemo(() => {
     const out: { teamId: string; d: string }[] = []
     for (const m of t.matches) {
@@ -166,19 +230,18 @@ function Ribbons({ t, selection }: { t: Props['data']['tournament']; selection: 
         const id = side === 'home' ? m.homeId : m.awayId
         if (!id) continue
         const team = t.teams[id]
-        const gi = GROUP_LETTERS.indexOf(team.group)
-        out.push({ teamId: id, d: ribbonPath(gi, team.groupRank, m.bracketIndex) })
+        out.push({ teamId: id, d: ribbonPath(sectorOf[team.group], team.groupRank, m.bracketIndex) })
       }
     }
     return out
-  }, [t])
+  }, [t, sectorOf])
   return (
     <g className="ribbons">
       {ribbons.map((r) => (
         <path
           key={r.teamId}
           d={r.d}
-          className={`ribbon ${selection?.kind === 'team' && selection.id === r.teamId ? 'lit' : ''}`}
+          className={`ribbon ${selectedTeam === r.teamId ? 'lit' : ''} ${favorites.has(r.teamId) ? 'fav' : ''}`}
         />
       ))}
     </g>
@@ -189,10 +252,12 @@ function Links({
   t,
   koMatches,
   pathIds,
+  favPaths,
 }: {
   t: Props['data']['tournament']
   koMatches: Match[]
   pathIds: Set<string> | null
+  favPaths: Map<string, Set<string>>
 }) {
   const links = useMemo(() => {
     const out: { key: string; d: string; from: string; to: string }[] = []
@@ -207,11 +272,71 @@ function Links({
     }
     return out
   }, [t, koMatches])
+  const isFav = (from: string, to: string) => {
+    for (const set of favPaths.values()) if (set.has(from) && set.has(to)) return true
+    return false
+  }
   return (
     <g className="links">
       {links.map((l) => (
-        <path key={l.key} d={l.d} className={`link ${pathIds && pathIds.has(l.from) && pathIds.has(l.to) ? 'lit' : ''}`} />
+        <path
+          key={l.key}
+          d={l.d}
+          className={`link ${pathIds && pathIds.has(l.from) && pathIds.has(l.to) ? 'lit' : ''} ${isFav(l.from, l.to) ? 'fav' : ''}`}
+        />
       ))}
+    </g>
+  )
+}
+
+/** Dashed predicted route + divergence markers, drawn above everything. */
+function PredictedOverlay({
+  t,
+  predicted,
+  actualExitId,
+  lang,
+}: {
+  t: Props['data']['tournament']
+  predicted: NonNullable<ReturnType<typeof predictedRoute>>
+  actualExitId: string | null
+  lang: Lang
+}) {
+  const segs: string[] = []
+  for (let i = 0; i + 1 < predicted.route.length; i++) {
+    const a = matchById(t, predicted.route[i])
+    const b = matchById(t, predicted.route[i + 1])
+    if (a && b) segs.push(feedLinkPath(a, b))
+  }
+  const marker = (matchId: string, kind: 'predicted' | 'actual') => {
+    const m = matchById(t, matchId)
+    if (!m) return null
+    const [x, y] = matchPos(m)
+    const [, h] = NODE_SIZE[m.stage]
+    const above = kind === 'actual'
+    const my = above ? y - h / 2 - 13 : y + h / 2 + 13
+    return (
+      <g key={`${kind}-${matchId}`} transform={`translate(${x},${my})`} className={`exit-marker ${kind}`}>
+        <circle r={9} />
+        <text y={3.5} textAnchor="middle">
+          {kind === 'actual' ? '✕' : '⭘'}
+        </text>
+        <title>{tr(kind === 'actual' ? 'actualOut' : 'predictedOut', lang)}</title>
+      </g>
+    )
+  }
+  const finalM = t.matches.find((m) => m.stage === 'final')
+  return (
+    <g className="predicted-layer">
+      {segs.map((d, i) => (
+        <path key={i} d={d} className="plink" />
+      ))}
+      {predicted.exitId && marker(predicted.exitId, 'predicted')}
+      {actualExitId && marker(actualExitId, 'actual')}
+      {predicted.champion && finalM && (
+        <text x={0} y={-NODE_SIZE.final[1] / 2 - 14} textAnchor="middle" className="crown">
+          👑
+        </text>
+      )}
     </g>
   )
 }
@@ -226,6 +351,7 @@ function MatchNode({
   scorecard,
   upset,
   onPath,
+  fav,
   selected,
   onSelect,
   lang,
@@ -237,6 +363,7 @@ function MatchNode({
   scorecard: Scorecard
   upset?: NonNullable<ReturnType<typeof upsetInfo>>
   onPath: boolean
+  fav: boolean
   selected: boolean
   onSelect: Props['onSelect']
   lang: Lang
@@ -293,7 +420,7 @@ function MatchNode({
   return (
     <g
       transform={`translate(${x.toFixed(1)},${y.toFixed(1)})`}
-      className={`node stage-${m.stage} ${onPath ? 'on-path' : ''} ${selected ? 'selected' : ''} ${m.status === 'live' ? 'live' : ''} ${needsPick ? 'needs-pick' : ''}`}
+      className={`node stage-${m.stage} ${onPath ? 'on-path' : ''} ${selected ? 'selected' : ''} ${m.status === 'live' ? 'live' : ''} ${needsPick ? 'needs-pick' : ''} ${fav ? 'fav' : ''}`}
       onClick={(e) => {
         e.stopPropagation()
         onSelect({ kind: 'match', id: m.id })

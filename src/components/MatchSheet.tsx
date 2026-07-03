@@ -3,7 +3,8 @@ import { bestHighlight, knownAsOf, slotHint, upsetInfo } from '../lib/data'
 import { fmtDate, stageName, t as tr } from '../lib/i18n'
 import type { Picks } from '../lib/picks'
 import { ROUND_WEIGHT, candidates, isLocked, isPickable, validPick } from '../lib/picks'
-import type { DataBundle, Lang, Match, Quote, SocialPost } from '../types'
+import type { DataBundle, Lang, Match, Quote } from '../types'
+import SocialEmbed from './SocialEmbed'
 
 interface Props {
   data: DataBundle
@@ -16,17 +17,12 @@ interface Props {
   onSelectTeam: (teamId: string) => void
   onClose: () => void
   lang: Lang
+  favorites: Set<string>
+  onToggleFav: (teamId: string) => void
   wizard?: { pos: number; total: number; onPrev: () => void; onNext: () => void }
 }
 
-const PLATFORM_ICON: Record<SocialPost['platform'], string> = {
-  x: '𝕏',
-  tiktok: '♪',
-  instagram: '◎',
-  youtube: '▶',
-}
-
-export default function MatchSheet({ data, m, asOf, picks, onPick, onConf, onScore, onSelectTeam, onClose, lang, wizard }: Props) {
+export default function MatchSheet({ data, m, asOf, picks, onPick, onConf, onScore, onSelectTeam, onClose, lang, favorites, onToggleFav, wizard }: Props) {
   const t = data.tournament
   const known = knownAsOf(m, asOf)
   const media = data.media[m.id]
@@ -69,7 +65,15 @@ export default function MatchSheet({ data, m, asOf, picks, onPick, onConf, onSco
       )}
 
       <div className="sheet-score">
-        <SheetTeam team={home} hint={slotHint(t, m, 'home')} winner={known && m.winnerId === m.homeId} onClick={onSelectTeam} />
+        <SheetTeam
+          team={home}
+          hint={slotHint(t, m, 'home')}
+          winner={known && m.winnerId === m.homeId}
+          fav={!!m.homeId && favorites.has(m.homeId)}
+          onClick={onSelectTeam}
+          onFav={onToggleFav}
+          lang={lang}
+        />
         <div className="sheet-mid">
           <div className="scoreline">{scoreline}</div>
           {m.status === 'live' && <div className="live-tag">● {m.statusDetail}</div>}
@@ -81,7 +85,15 @@ export default function MatchSheet({ data, m, asOf, picks, onPick, onConf, onSco
           )}
           {upset && upset.kind === 'expected' && <div className="expected-tag">✓ {tr('expectedWin', lang)}</div>}
         </div>
-        <SheetTeam team={away} hint={slotHint(t, m, 'away')} winner={known && m.winnerId === m.awayId} onClick={onSelectTeam} />
+        <SheetTeam
+          team={away}
+          hint={slotHint(t, m, 'away')}
+          winner={known && m.winnerId === m.awayId}
+          fav={!!m.awayId && favorites.has(m.awayId)}
+          onClick={onSelectTeam}
+          onFav={onToggleFav}
+          lang={lang}
+        />
       </div>
 
       <div className="sheet-venue">
@@ -155,11 +167,7 @@ export default function MatchSheet({ data, m, asOf, picks, onPick, onConf, onSco
           <ul className="social-list">
             {media.social.map((s, i) => (
               <li key={i}>
-                <a href={s.url} target="_blank" rel="noopener noreferrer" className={`social-card ${s.platform}`}>
-                  <span className="social-icon">{PLATFORM_ICON[s.platform]}</span>
-                  <span className="social-note">{s.note}</span>
-                  <span className={`social-kind kind-${s.kind}`}>{s.kind}</span>
-                </a>
+                <SocialEmbed post={s} />
               </li>
             ))}
           </ul>
@@ -194,19 +202,37 @@ function SheetTeam({
   team,
   hint,
   winner,
+  fav,
   onClick,
+  onFav,
+  lang,
 }: {
   team: { id: string; name: string; logo: string } | null
   hint: string
   winner: boolean
+  fav: boolean
   onClick: (teamId: string) => void
+  onFav: (teamId: string) => void
+  lang: Lang
 }) {
   if (!team) return <div className="sheet-team tbd">{hint}</div>
   return (
-    <button className={`sheet-team ${winner ? 'winner' : ''}`} onClick={() => onClick(team.id)}>
-      <img src={team.logo} alt="" width={42} height={30} />
-      <span>{team.name}</span>
-    </button>
+    <div className="sheet-team-wrap">
+      <button className={`sheet-team ${winner ? 'winner' : ''}`} onClick={() => onClick(team.id)}>
+        <img src={team.logo} alt="" width={42} height={30} />
+        <span>{team.name}</span>
+      </button>
+      <button
+        className={`fav-star ${fav ? 'on' : ''}`}
+        title={tr('favorite', lang)}
+        onClick={(e) => {
+          e.stopPropagation()
+          onFav(team.id)
+        }}
+      >
+        {fav ? '★' : '☆'}
+      </button>
+    </div>
   )
 }
 

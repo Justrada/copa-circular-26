@@ -1,4 +1,4 @@
-import type { Match, Stage } from '../types'
+import type { Match, Stage, Tournament } from '../types'
 
 // The SVG lives in viewBox "-500 -500 1000 1000", centered on the final.
 export const RINGS: Record<string, number> = {
@@ -107,4 +107,62 @@ export function ribbonPath(gi: number, rank: number, r32Index: number): string {
 /** Anchor for the round label rings (12 o'clock). */
 export function ringLabelPos(stage: string): [number, number] {
   return [0, -(RINGS[stage] + 34)]
+}
+
+export const IDENTITY_ORDER: Record<string, number> = Object.fromEntries(GROUP_LETTERS.map((l, i) => [l, i]))
+
+/**
+ * Assign groups to sectors so qualification ribbons take the shortest angular
+ * route to their Round-of-32 slots: greedy assignment on a 12×12 cost matrix,
+ * then pairwise-swap hill climbing (converges instantly at this size).
+ */
+export function computeSectorOrder(t: Tournament): Record<string, number> {
+  const slotAngleByTeam = new Map<string, number>()
+  for (const m of t.matches) {
+    if (m.stage !== 'r32') continue
+    for (const id of [m.homeId, m.awayId]) {
+      if (id) slotAngleByTeam.set(id, slotAngle('r32', m.bracketIndex))
+    }
+  }
+  const angDist = (a: number, b: number) => {
+    const d = Math.abs(a - b) % 360
+    return d > 180 ? 360 - d : d
+  }
+  const cost = (letter: string, sector: number) => {
+    const mid = sector * 30 - 75 // groupSector(sector).mid
+    let c = 0
+    for (const id of t.groups[letter] ?? []) {
+      const a = slotAngleByTeam.get(id)
+      if (a != null) c += angDist(mid, a)
+    }
+    return c
+  }
+  const pairs: [string, number, number][] = []
+  for (const l of GROUP_LETTERS) for (let s = 0; s < 12; s++) pairs.push([l, s, cost(l, s)])
+  pairs.sort((a, b) => a[2] - b[2])
+  const order: Record<string, number> = {}
+  const taken = new Set<number>()
+  for (const [l, s] of pairs) {
+    if (order[l] === undefined && !taken.has(s)) {
+      order[l] = s
+      taken.add(s)
+    }
+  }
+  let improved = true
+  while (improved) {
+    improved = false
+    for (let i = 0; i < GROUP_LETTERS.length; i++) {
+      for (let j = i + 1; j < GROUP_LETTERS.length; j++) {
+        const a = GROUP_LETTERS[i]
+        const b = GROUP_LETTERS[j]
+        if (cost(a, order[b]) + cost(b, order[a]) + 1e-9 < cost(a, order[a]) + cost(b, order[b])) {
+          const tmp = order[a]
+          order[a] = order[b]
+          order[b] = tmp
+          improved = true
+        }
+      }
+    }
+  }
+  return order
 }

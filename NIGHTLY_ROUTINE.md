@@ -32,6 +32,16 @@ Work autonomously; do not ask questions. Read CLAUDE.md first.
      celebrations, behind-the-scenes, punditry. Prefer official team/FIFA/broadcaster/Telemundo
      accounts. Only URLs you actually saw in search results or fetched pages. The last30days
      skill is good for surfacing what fans are actually sharing.
+     IMPORTANT — these render as INLINE IFRAME EMBEDS on the site, so URLs must be canonical,
+     public post URLs the embed endpoints understand:
+       X: https://x.com/<user>/status/<id> or twitter.com equivalent (must contain /status/<id>)
+       TikTok: https://www.tiktok.com/@<user>/video/<id>
+       Instagram: https://www.instagram.com/p/<code>/ or /reel/<code>/
+       YouTube: a watch?v= or /shorts/ URL
+     Verify each is public and embeddable before adding: X via
+     https://publish.twitter.com/oembed?url=<url> (expect 200), TikTok via
+     https://www.tiktok.com/oembed?url=<url> (expect 200). A post that fails oEmbed renders
+     as a dead grey box on the site — drop it and find another.
    - One post-match quote (≤40 words) from a player or coach, with speaker, source name, and
      source URL (BBC/ESPN/Guardian/Reuters/FIFA.com match reports or press conferences).
    - A two-sentence recap in English AND the same in natural Spanish
