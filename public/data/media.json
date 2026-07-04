@@ -3032,5 +3032,110 @@
       "en": "Breel Embolo tapped in inside ten minutes and Dan Ndoye struck moments after the restart as Switzerland saw off Algeria 2-0 in Vancouver. The win, on captain Granit Xhaka’s 150th cap, gave the Swiss their first World Cup knockout victory in 88 years.",
       "es": "Breel Embolo empujó el balón dentro de los primeros diez minutos y Dan Ndoye marcó nada más reanudarse el juego para que Suiza superara 2-0 a Argelia en Vancouver. La victoria, en el partido 150 del capitán Granit Xhaka, dio a los suizos su primer triunfo en unos octavos de Mundial en 88 años."
     }
+  },
+  "760499": {
+    "highlights": {
+      "fox": {
+        "videoId": "ACWOG7t8Plk",
+        "title": "Australia vs Egypt Highlights 🌎🏆 2026 FIFA World Cup™ | Round of 32"
+      },
+      "fifa": null
+    },
+    "social": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=blrFBlNoJgU",
+        "kind": "highlight",
+        "note": "FOX Sports — full 4-2 penalty shootout, incl. Salah's Panenka"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=YXp4rUQ2iP8",
+        "kind": "highlight",
+        "note": "ESPN FC — Salah's decisive Panenka penalty"
+      }
+    ],
+    "quotes": [
+      {
+        "speaker": "Mohamed Salah",
+        "text": "If somebody was going to do it, it would be me. I am more experienced than others and I wanted to give them confidence. I decided last minute, I had to do it.",
+        "sourceName": "ESPN",
+        "sourceUrl": "https://www.espn.com/soccer/story/_/id/49262563/mohamed-salah-panenka-egypt-write-history-wc"
+      }
+    ],
+    "recap": {
+      "en": "Emam Ashour struck early for Egypt before a Mohamed Hany own goal levelled it for Australia, and the tie stayed 1-1 through extra time in Arlington. Mohamed Salah then dinked in a Panenka as Egypt won the shootout 4-2 to reach the World Cup Round of 16 for the first time in their history.",
+      "es": "Emam Ashour adelantó pronto a Egipto, pero un autogol de Mohamed Hany igualó el marcador para Australia y el partido terminó 1-1 tras la prórroga en Arlington. Mohamed Salah definió luego con un Panenka y Egipto ganó la tanda 4-2 para alcanzar los octavos de final del Mundial por primera vez en su historia."
+    }
+  },
+  "760500": {
+    "highlights": {
+      "fox": {
+        "videoId": "EC2jOKluGRI",
+        "title": "Argentina vs Cape Verde Highlights 🌎🏆 2026 FIFA World Cup™ | Round of 32"
+      },
+      "fifa": {
+        "videoId": "QsQjNQLU6bQ",
+        "title": "Lionel Messi Goal | Argentina 3-2 Cabo Verde | FIFA World Cup 2026™"
+      }
+    },
+    "social": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=P7_CHy26Kzk",
+        "kind": "goal",
+        "note": "FOX Sports — Messi's 20th career World Cup goal"
+      }
+    ],
+    "quotes": [
+      {
+        "speaker": "Lionel Scaloni",
+        "text": "It would have been crazy to lose, but this is how it is. What are you going to do? Argentina's thing is to know how to suffer and not give up.",
+        "sourceName": "beIN Sports",
+        "sourceUrl": "https://www.beinsports.com/en-us/soccer/fifa-world-cup-2026/articles/it-would-have-been-crazy-to-lose--scaloni-relieved-as-argentina-survive-huge-cape-verde-scare-2026-07-04"
+      }
+    ],
+    "recap": {
+      "en": "Lionel Messi opened the scoring with his 20th career World Cup goal, but debutants Cape Verde twice hit back to force extra time at Hard Rock Stadium. A Dailon Borges own goal in the 111th minute finally settled a five-goal thriller, sending Argentina through 3-2.",
+      "es": "Lionel Messi abrió el marcador con su gol número 20 en Mundiales, pero la debutante Cabo Verde igualó dos veces para forzar la prórroga en el Hard Rock Stadium. Un autogol de Dailon Borges en el minuto 111 decidió un partidazo de cinco goles y clasificó a Argentina por 3-2."
+    }
+  },
+  "760501": {
+    "highlights": {
+      "fox": {
+        "videoId": "9TJRhuQOJuE",
+        "title": "Colombia vs Ghana Highlights 🌎🏆 2026 FIFA World Cup™ | Round of 32"
+      },
+      "fifa": {
+        "videoId": "-ESO5hlxkJQ",
+        "title": "Jhon Arias Goal | Colombia 1-0 Ghana | FIFA World Cup 2026™"
+      }
+    },
+    "social": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=2Xc_Qoxfb8c",
+        "kind": "goal",
+        "note": "FOX Soccer — Jhon Arias' 14th-minute opener"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=DVc9eUBJxH0",
+        "kind": "social",
+        "note": "SuperSport Social Corner — fan reactions"
+      }
+    ],
+    "quotes": [
+      {
+        "speaker": "Néstor Lorenzo",
+        "text": "Football is a team sport. Ultimately you do have little groups in certain areas, but you have to have a unit — a whole — and our squad has been working on that from the very onset.",
+        "sourceName": "AP",
+        "sourceUrl": "https://www.local10.com/sports/2026/07/03/jhon-arias-scores-and-colombia-beats-ghana-1-0-to-reach-the-world-cup-round-of-16/"
+      }
+    ],
+    "recap": {
+      "en": "Jhon Arias struck in the 14th minute and Colombia protected the lead the rest of the way to beat Ghana 1-0 in Kansas City. The narrow win carried Néstor Lorenzo's side into the World Cup Round of 16.",
+      "es": "Jhon Arias marcó en el minuto 14 y Colombia defendió la ventaja el resto del partido para vencer 1-0 a Ghana en Kansas City. La ajustada victoria metió al equipo de Néstor Lorenzo en los octavos de final del Mundial."
+    }
   }
 }
