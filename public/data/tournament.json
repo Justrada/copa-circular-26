@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-07-04T20:58:57.291Z",
+ "generatedAt": "2026-07-04T22:00:01.675Z",
  "season": "2026 FIFA World Cup",
  "teams": {
   "164": {
@@ -5355,14 +5355,14 @@
    "date": "2026-07-04T21:00Z",
    "venue": "Lincoln Financial Field",
    "city": "Philadelphia, Pennsylvania",
-   "status": "scheduled",
-   "statusDetail": "Scheduled",
+   "status": "live",
+   "statusDetail": "HT",
    "homeId": "210",
    "awayId": "478",
    "homePlaceholder": null,
    "awayPlaceholder": null,
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 0,
+   "awayScore": 0,
    "homePens": null,
    "awayPens": null,
    "winnerId": null,

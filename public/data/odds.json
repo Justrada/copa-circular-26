@@ -725,7 +725,7 @@
   "away": 0.231,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-04T20:58:27.687Z"
+  "capturedAt": "2026-07-04T22:00:01.670Z"
  },
  "760505": {
   "home": 0.31,
@@ -733,7 +733,7 @@
   "away": 0.394,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-04T20:58:27.687Z"
+  "capturedAt": "2026-07-04T22:00:01.671Z"
  },
  "760506": {
   "home": 0.241,
@@ -741,7 +741,7 @@
   "away": 0.498,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-04T20:58:27.687Z"
+  "capturedAt": "2026-07-04T22:00:01.671Z"
  },
  "760507": {
   "home": 0.371,
@@ -749,7 +749,7 @@
   "away": 0.351,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-04T20:58:27.687Z"
+  "capturedAt": "2026-07-04T22:00:01.671Z"
  },
  "760508": {
   "home": 0.274,
@@ -757,14 +757,14 @@
   "away": 0.43,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-04T20:58:27.687Z"
+  "capturedAt": "2026-07-04T22:00:01.671Z"
  },
  "760509": {
-  "home": 0.698,
-  "draw": 0.202,
-  "away": 0.1,
+  "home": 0.692,
+  "draw": 0.203,
+  "away": 0.106,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-04T20:58:27.687Z"
+  "capturedAt": "2026-07-04T22:00:01.671Z"
  }
 }
