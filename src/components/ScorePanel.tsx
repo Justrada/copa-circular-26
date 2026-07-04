@@ -46,8 +46,8 @@ export default function ScorePanel({ data, picks, scorecard, theirs, theirCard, 
       {theirs && theirCard && (
         <div className="compare-row">
           <span>
-            {tr('compare', lang)} <b>{theirs.name || 'a friend'}</b>: {theirCard.correct}/{theirCard.correct + theirCard.wrong} ·{' '}
-            {theirCard.points} {tr('points', lang)}
+            {tr('compare', lang)} <b>{theirs.name || tr('aFriend', lang)}</b>: {theirCard.correct}/
+            {theirCard.correct + theirCard.wrong} · {theirCard.points} {tr('points', lang)}
           </span>
           <span className={scorecard.points >= theirCard.points ? 'lead' : 'trail'}>
             {scorecard.points >= theirCard.points ? '🥇' : '🥈'}

@@ -58,13 +58,28 @@ export function encodePicks(p: Picks): string {
 export function decodePicks(encoded: string): Picks | null {
   try {
     const slim = JSON.parse(unb64url(encoded))
+    // The payload is attacker-controlled (it arrives in shared URLs) — sanitize every field
+    const winners: Record<string, string> = {}
+    for (const [k, v] of Object.entries(slim.w ?? {})) {
+      if (typeof v === 'string' && /^\d+$/.test(k)) winners[k] = v
+    }
+    const conf: Record<string, 1 | 2 | 3> = {}
+    for (const [k, v] of Object.entries(slim.c ?? {})) {
+      if (v === 1 || v === 2 || v === 3) conf[k] = v
+    }
+    const scores: Record<string, [number, number]> = {}
+    for (const [k, v] of Object.entries(slim.s ?? {})) {
+      if (Array.isArray(v) && v.length === 2 && v.every((x) => Number.isInteger(x) && x >= 0 && x <= 99)) {
+        scores[k] = [v[0], v[1]]
+      }
+    }
     return {
       v: 1,
-      name: slim.n ?? '',
+      name: typeof slim.n === 'string' ? slim.n.slice(0, 40) : '',
       retro: slim.r === 1,
-      winners: slim.w ?? {},
-      conf: slim.c ?? {},
-      scores: slim.s ?? {},
+      winners,
+      conf,
+      scores,
     }
   } catch {
     return null
@@ -74,38 +89,37 @@ export function decodePicks(encoded: string): Picks | null {
 // --- pick propagation ----------------------------------------------------
 
 /**
- * The two candidate teams for a knockout match under a pickset:
- * the real team when the slot is decided, otherwise the user's pick
- * propagated from the source match.
+ * The two candidate teams for a knockout match under a pickset: the real
+ * team once the feeder is decided (as of `asOf`, for time travel), otherwise
+ * the user's pick propagated from the source match.
  */
 export function candidates(
   t: Tournament,
   picks: Picks,
   m: Match,
-  side: 'home' | 'away'
+  side: 'home' | 'away',
+  asOf: Date | null = null
 ): string | null {
-  const direct = side === 'home' ? m.homeId : m.awayId
-  if (direct) return direct
   const feed = m.feeds?.[side]
-  if (!feed) return null
+  if (!feed) return side === 'home' ? m.homeId : m.awayId
   const src = matchById(t, feed.matchId)
   if (!src) return null
-  if (src.status === 'ft') return feed.kind === 'winner' ? src.winnerId : src.loserId
-  if (feed.kind === 'winner') return validPick(t, picks, src)
+  if (knownAsOf(src, asOf)) return feed.kind === 'winner' ? src.winnerId : src.loserId
+  if (feed.kind === 'winner') return validPick(t, picks, src, asOf)
   // loser feed (third-place): the propagated loser is the source's non-picked side
-  const picked = validPick(t, picks, src)
+  const picked = validPick(t, picks, src, asOf)
   if (!picked) return null
-  const h = candidates(t, picks, src, 'home')
-  const a = candidates(t, picks, src, 'away')
+  const h = candidates(t, picks, src, 'home', asOf)
+  const a = candidates(t, picks, src, 'away', asOf)
   return picked === h ? a : picked === a ? h : null
 }
 
 /** The user's pick for a match, voided if it no longer matches either slot. */
-export function validPick(t: Tournament, picks: Picks, m: Match): string | null {
+export function validPick(t: Tournament, picks: Picks, m: Match, asOf: Date | null = null): string | null {
   const pick = picks.winners[m.id]
   if (!pick) return null
-  const h = candidates(t, picks, m, 'home')
-  const a = candidates(t, picks, m, 'away')
+  const h = candidates(t, picks, m, 'home', asOf)
+  const a = candidates(t, picks, m, 'away', asOf)
   return pick === h || pick === a ? pick : null
 }
 
@@ -156,7 +170,7 @@ export function scorePicks(data: DataBundle, picks: Picks, asOf: Date | null): S
     if (m.stage === 'group') continue
     const pick = picks.winners[m.id]
     if (!pick) continue
-    const valid = validPick(t, picks, m)
+    const valid = validPick(t, picks, m, asOf)
     if (!valid) {
       card.results[m.id] = { matchId: m.id, outcome: 'void', points: 0, exact: false }
       continue
@@ -198,9 +212,11 @@ export interface PredictedRoute {
 }
 
 /**
- * The route the USER's picks send a team on, traced from raw picks (not
- * validity-checked) so the prediction stays visible even after reality
- * diverges — that divergence is exactly what we want to show.
+ * The route the USER's picks send a team on. Picks are read raw (not
+ * validity-checked) so a busted prediction stays visible — that divergence
+ * is the point. Matches that finished WITHOUT a pick (locked before the
+ * user arrived) follow reality forward: an unpicked win still advances the
+ * route so later-round picks are reachable.
  */
 export function predictedRoute(t: Tournament, picks: Picks, teamId: string): PredictedRoute {
   const out: PredictedRoute = { route: [], winIds: new Set(), exitId: null, champion: false }
@@ -216,13 +232,20 @@ export function predictedRoute(t: Tournament, picks: Picks, teamId: string): Pre
   let cur: string | undefined = start.id
   while (cur) {
     out.route.push(cur)
+    const m = matchById(t, cur)
     const pick = picks.winners[cur]
-    if (!pick) break
-    if (pick !== teamId) {
-      out.exitId = cur
-      break
+    let advances = false
+    if (pick) {
+      if (pick !== teamId) {
+        out.exitId = cur
+        break
+      }
+      out.winIds.add(cur)
+      advances = true
+    } else if (m?.status === 'ft' && m.winnerId === teamId) {
+      advances = true // no call made, but reality carried them through
     }
-    out.winIds.add(cur)
+    if (!advances) break
     const next = nextByWinnerFeed.get(cur)
     if (!next) {
       out.champion = true

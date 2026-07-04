@@ -57,7 +57,7 @@ export default function FavoritesSidebar({ data, favorites, picks, onToggle, onS
     <aside className="fav-sidebar" onClick={(e) => e.stopPropagation()}>
       <header className="sheet-head">
         <div className="sheet-stage">★ {tr('watching', lang)}</div>
-        <button className="sheet-close" onClick={onClose} aria-label="Close">
+        <button className="sheet-close" onClick={onClose} aria-label={tr('close', lang)}>
           ✕
         </button>
       </header>

@@ -36,10 +36,16 @@ export async function refreshLiveScores(t: Tournament): Promise<Tournament | nul
       if (!cur) continue
       const finished = c.status?.type?.completed === true
       const live = c.status?.type?.state === 'in'
-      const status = finished ? 'ft' : live ? 'live' : 'scheduled'
+      // Transient ESPN states (post-match confirmation lag) must never downgrade
+      // a match below what the committed data already says
+      if (!finished && !live) continue
       const home = c.competitors?.find((x: { homeAway: string }) => x.homeAway === 'home')
       const away = c.competitors?.find((x: { homeAway: string }) => x.homeAway === 'away')
       if (!home || !away) continue
+      // A KO match reported completed without winner flags would void dependent
+      // picks until the next clean poll — wait for the flags instead
+      if (finished && cur.stage !== 'group' && !home.winner && !away.winner) continue
+      const status = finished ? 'ft' : 'live'
       const score = (side: { score?: string }) => (finished || live ? Number(side.score ?? 0) : null)
       const pens = (side: { shootoutScore?: number }) => (side.shootoutScore != null ? Number(side.shootoutScore) : null)
       const winnerId = finished ? (home.winner ? String(home.team.id) : away.winner ? String(away.team.id) : null) : null
@@ -67,7 +73,10 @@ export async function refreshLiveScores(t: Tournament): Promise<Tournament | nul
         next.status !== cur.status ||
         next.homeScore !== cur.homeScore ||
         next.awayScore !== cur.awayScore ||
-        next.statusDetail !== cur.statusDetail
+        next.homePens !== cur.homePens ||
+        next.awayPens !== cur.awayPens ||
+        next.statusDetail !== cur.statusDetail ||
+        (next.events?.length ?? 0) !== (cur.events?.length ?? 0)
       ) {
         patched.set(e.id, next)
         changed = true

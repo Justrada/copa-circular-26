@@ -10,6 +10,7 @@ import ScorePanel from './components/ScorePanel'
 import ShareBar from './components/ShareBar'
 import TimeSlider from './components/TimeSlider'
 import TodayStrip from './components/TodayStrip'
+import Tour from './components/Tour'
 import { loadData, matchById, team } from './lib/data'
 import { t as tr } from './lib/i18n'
 import { inLiveWindow, refreshLiveScores } from './lib/live'
@@ -33,7 +34,7 @@ export default function App() {
   const [retroPicks, setRetroPicks] = useState<Picks>(() => loadPicks(true))
   const [theirs, setTheirs] = useState<Picks | null>(null)
   const [wizardOn, setWizardOn] = useState(false)
-  const [coachSeen, setCoachSeen] = useState(() => localStorage.getItem('cc26-coach') === '1')
+  const [tourOn, setTourOn] = useState(() => localStorage.getItem('cc26-tour') !== '1')
   const [favorites, setFavorites] = useState<Set<string>>(() => {
     try {
       return new Set(JSON.parse(localStorage.getItem('cc26-favs') ?? '[]'))
@@ -57,9 +58,23 @@ export default function App() {
 
   useEffect(() => {
     loadData().then(setData, (e) => setError(String(e)))
-    const mm = location.hash.match(/#p=([A-Za-z0-9_-]+)/)
-    if (mm) setTheirs(decodePicks(mm[1]))
+    const parseHash = () => {
+      const mm = location.hash.match(/#p=([A-Za-z0-9_-]+)/)
+      setTheirs(mm ? decodePicks(mm[1]) : null)
+    }
+    parseHash()
+    window.addEventListener('hashchange', parseHash)
+    return () => window.removeEventListener('hashchange', parseHash)
   }, [])
+
+  // Minute tick so kickoff locks are re-evaluated while the tab stays open
+  const [nowTick, setNowTick] = useState(0)
+  useEffect(() => {
+    const id = setInterval(() => setNowTick((n) => n + 1), 60_000)
+    return () => clearInterval(id)
+  }, [])
+
+  const wizardTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   // Match-day live mode: poll ESPN every 2 minutes while a match window is open
   const liveRef = useRef<Tournament | null>(null)
@@ -91,7 +106,8 @@ export default function App() {
       .sort(
         (a, b) => STAGE_ORDER.indexOf(a.stage) - STAGE_ORDER.indexOf(b.stage) || a.bracketIndex - b.bracketIndex
       )
-  }, [data, retro])
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- nowTick re-evaluates kickoff locks
+  }, [data, retro, nowTick])
   const unpickedCount = useMemo(
     () => pickQueue.filter((m) => !(retro ? retroPicks : livePicks).winners[m.id]).length,
     [pickQueue, retro, retroPicks, livePicks]
@@ -106,7 +122,9 @@ export default function App() {
   if (error)
     return (
       <div className="boot">
-        <p>Data failed to load ({error}). Refresh?</p>
+        <p>
+          {tr('dataError', lang)} ({error})
+        </p>
       </div>
     )
   if (!data)
@@ -120,6 +138,11 @@ export default function App() {
   const selMatch = selection?.kind === 'match' ? matchById(t, selection.id) : undefined
   const selTeam = selection?.kind === 'team' ? team(t, selection.id) : null
 
+  const stopWizard = () => {
+    if (wizardTimer.current) clearTimeout(wizardTimer.current)
+    wizardTimer.current = null
+    setWizardOn(false)
+  }
   const onPick = (matchId: string, teamId: string | null) => {
     const winners = { ...picks.winners }
     if (teamId) winners[matchId] = teamId
@@ -129,7 +152,9 @@ export default function App() {
       // step to the next unpicked match, giving the star/score row a beat to register
       const idx = pickQueue.findIndex((m) => m.id === matchId)
       const next = pickQueue.find((m, i) => i > idx && !winners[m.id]) ?? pickQueue.find((m) => !winners[m.id])
-      setTimeout(() => {
+      if (wizardTimer.current) clearTimeout(wizardTimer.current)
+      wizardTimer.current = setTimeout(() => {
+        wizardTimer.current = null
         if (next) setSelection({ kind: 'match', id: next.id })
         else {
           setSelection(null)
@@ -206,14 +231,17 @@ export default function App() {
           >
             ✦ {tr('untangle', lang)}
           </button>
-          <button className={`toggle ${sidebarOn ? 'on' : ''}`} onClick={() => setSidebarOn(!sidebarOn)}>
+          <button data-tour="watching" className={`toggle ${sidebarOn ? 'on' : ''}`} onClick={() => setSidebarOn(!sidebarOn)}>
             ★ {tr('watching', lang)}{favorites.size ? ` · ${favorites.size}` : ''}
           </button>
-          <button className={`toggle ${momentsOn ? 'on' : ''}`} onClick={() => setMomentsOn(!momentsOn)}>
+          <button data-tour="moments" className={`toggle ${momentsOn ? 'on' : ''}`} onClick={() => setMomentsOn(!momentsOn)}>
             📜 {tr('moments', lang)}
           </button>
           <button className="toggle lang" onClick={() => setLang(lang === 'en' ? 'es' : 'en')}>
             {lang === 'en' ? 'ES' : 'EN'}
+          </button>
+          <button className="toggle" title={tr('replayTour', lang)} onClick={() => setTourOn(true)}>
+            ?
           </button>
         </nav>
       </header>
@@ -236,19 +264,7 @@ export default function App() {
 
       {retro && <div className="retro-banner">📼 {tr('retroHint', lang)}</div>}
 
-      {!coachSeen && (
-        <div className="coach" onClick={(e) => e.stopPropagation()}>
-          <span>💡 {tr('coach', lang)}</span>
-          <button
-            onClick={() => {
-              localStorage.setItem('cc26-coach', '1')
-              setCoachSeen(true)
-            }}
-          >
-            {tr('gotIt', lang)}
-          </button>
-        </div>
-      )}
+      {tourOn && <Tour onClose={() => setTourOn(false)} lang={lang} />}
 
       {selTeam && (
         <div className="path-pill" onClick={(e) => e.stopPropagation()}>
@@ -315,6 +331,7 @@ export default function App() {
 
       {selMatch && (
         <MatchSheet
+          key={selMatch.id}
           data={data}
           m={selMatch}
           asOf={asOf}
@@ -325,13 +342,13 @@ export default function App() {
           favorites={favorites}
           onToggleFav={toggleFav}
           onSelectTeam={(id) => {
-            setWizardOn(false)
+            stopWizard()
             setSelection({ kind: 'team', id })
             setView('circle')
           }}
           onClose={() => {
             setSelection(null)
-            setWizardOn(false)
+            stopWizard()
           }}
           lang={lang}
           wizard={
@@ -356,8 +373,8 @@ export default function App() {
       <footer onClick={(e) => e.stopPropagation()}>
         <p>{tr('disclaimer', lang)}</p>
         <p className="fine">
-          Data refreshed {new Date(t.generatedAt).toLocaleString()} · results via ESPN · odds via Polymarket/sportsbooks · video via
-          official YouTube embeds
+          {tr('dataRefreshed', lang)} {new Date(t.generatedAt).toLocaleString(lang === 'es' ? 'es-MX' : 'en-US')} ·{' '}
+          {tr('sources', lang)} · {tr('localTime', lang)}
         </p>
       </footer>
     </div>

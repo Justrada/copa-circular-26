@@ -199,7 +199,9 @@ for (const e of events) {
   const o = (c.odds ?? []).find((x) => x && x.provider)
   if (!o?.moneyline) continue
   const m = matches.find((x) => x.id === e.id)
-  if (odds[e.id] && m.status !== 'scheduled') continue
+  // never overwrite once kicked off — check the clock too, since ESPN's status
+  // can lag a few minutes behind the actual kickoff
+  if (odds[e.id] && (m.status !== 'scheduled' || Date.parse(m.date) <= Date.now())) continue
   const h = impliedProb(o.moneyline.home?.close?.odds ?? o.moneyline.home?.open?.odds)
   const a = impliedProb(o.moneyline.away?.close?.odds ?? o.moneyline.away?.open?.odds)
   const d = impliedProb(o.drawOdds?.moneyLine)

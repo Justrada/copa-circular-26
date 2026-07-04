@@ -40,7 +40,7 @@ export default function MomentsFeed({ data, onSelect, onClose, lang }: Props) {
     <aside className="moments-panel" onClick={(e) => e.stopPropagation()}>
       <header className="sheet-head">
         <div className="sheet-stage">📜 {tr('moments', lang)}</div>
-        <button className="sheet-close" onClick={onClose} aria-label="Close">
+        <button className="sheet-close" onClick={onClose} aria-label={tr('close', lang)}>
           ✕
         </button>
       </header>

@@ -4,6 +4,7 @@ import type { ReactNode } from 'react'
 interface Props {
   children: ReactNode
   onScaleChange?: (k: number) => void
+  resetTitle?: string
 }
 
 /**
@@ -11,7 +12,7 @@ interface Props {
  * child nodes fire normally — a click only gets suppressed when the pointer
  * actually dragged (>5px), via stopPropagation in the capture phase.
  */
-export default function SvgZoom({ children, onScaleChange }: Props) {
+export default function SvgZoom({ children, onScaleChange, resetTitle }: Props) {
   const [t, setT] = useState({ x: 0, y: 0, k: 1 })
   const box = useRef<HTMLDivElement>(null)
   const ptrs = useRef(new Map<number, { x: number; y: number }>())
@@ -56,6 +57,12 @@ export default function SvgZoom({ children, onScaleChange }: Props) {
   }
 
   const onPointerMove = (e: React.PointerEvent) => {
+    // A mouse/pen that released outside the box leaves a stale entry (no capture
+    // was taken for a tap) — panning on hover and phantom pinches follow. Purge it.
+    if (e.pointerType !== 'touch' && e.buttons === 0) {
+      if (ptrs.current.delete(e.pointerId) && ptrs.current.size < 2) pinch.current = null
+      return
+    }
     const prev = ptrs.current.get(e.pointerId)
     if (!prev) return
     const cur = { x: e.clientX, y: e.clientY }
@@ -116,7 +123,7 @@ export default function SvgZoom({ children, onScaleChange }: Props) {
         {children}
       </div>
       {(t.k !== 1 || t.x !== 0 || t.y !== 0) && (
-        <button className="zoom-reset" onClick={() => setT({ x: 0, y: 0, k: 1 })} title="Reset view">
+        <button className="zoom-reset" onClick={() => setT({ x: 0, y: 0, k: 1 })} title={resetTitle}>
           ⤾
         </button>
       )}

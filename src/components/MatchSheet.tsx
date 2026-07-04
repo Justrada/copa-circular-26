@@ -33,10 +33,10 @@ export default function MatchSheet({ data, m, asOf, picks, onPick, onConf, onSco
   const highlight = known ? bestHighlight(data.media, m.id) : null
   const [playing, setPlaying] = useState(false)
 
-  const scoreline =
-    known && m.homeScore != null
-      ? `${m.homeScore} – ${m.awayScore}${m.homePens != null ? `  (${m.homePens}–${m.awayPens} ${tr('pens', lang)})` : ''}`
-      : fmtDate(m.date, lang)
+  const showScore = (known || m.status === 'live') && m.homeScore != null
+  const scoreline = showScore
+    ? `${m.homeScore} – ${m.awayScore}${m.homePens != null ? `  (${m.homePens}–${m.awayPens} ${tr('pens', lang)})` : ''}`
+    : fmtDate(m.date, lang)
 
   return (
     <aside className="sheet" onClick={(e) => e.stopPropagation()}>
@@ -45,7 +45,7 @@ export default function MatchSheet({ data, m, asOf, picks, onPick, onConf, onSco
           {stageName(m.stage, lang)}
           {m.stage === 'group' && home ? ` · ${tr('groups', lang).slice(0, 5)} ${home.group}` : ''}
         </div>
-        <button className="sheet-close" onClick={onClose} aria-label="Close">
+        <button className="sheet-close" onClick={onClose} aria-label={tr('close', lang)}>
           ✕
         </button>
       </header>
@@ -102,7 +102,7 @@ export default function MatchSheet({ data, m, asOf, picks, onPick, onConf, onSco
         {m.attendance ? ` · ${tr('attendance', lang)} ${m.attendance.toLocaleString()}` : ''}
       </div>
 
-      {known && !!m.events?.length && (
+      {(known || m.status === 'live') && !!m.events?.length && (
         <div className="timeline">
           <div className="tl-col tl-home">
             {m.events
@@ -111,7 +111,7 @@ export default function MatchSheet({ data, m, asOf, picks, onPick, onConf, onSco
                 <span key={i} className={`tl-ev ${ev.kind}`}>
                   {ev.kind === 'red' ? '🟥' : '⚽'} {ev.clock} {ev.player}
                   {ev.pen ? ' (p)' : ''}
-                  {ev.og ? ' (og)' : ''}
+                  {ev.og ? (lang === 'es' ? ' (a.g.)' : ' (og)') : ''}
                 </span>
               ))}
           </div>
@@ -122,7 +122,7 @@ export default function MatchSheet({ data, m, asOf, picks, onPick, onConf, onSco
                 <span key={i} className={`tl-ev ${ev.kind}`}>
                   {ev.player}
                   {ev.pen ? ' (p)' : ''}
-                  {ev.og ? ' (og)' : ''} {ev.clock} {ev.kind === 'red' ? '🟥' : '⚽'}
+                  {ev.og ? (lang === 'es' ? ' (a.g.)' : ' (og)') : ''} {ev.clock} {ev.kind === 'red' ? '🟥' : '⚽'}
                 </span>
               ))}
           </div>
@@ -287,6 +287,18 @@ function PickControls({
   const pick = validPick(t, picks, m)
   const conf = picks.conf[m.id] ?? 1
   const score = picks.scores[m.id]
+  // Buffer raw text so clearing one field doesn't wipe the other; commit only
+  // when both sides parse (the sheet is keyed by match id, so this resets per match)
+  const [raw, setRaw] = useState<[string, string]>(score ? [String(score[0]), String(score[1])] : ['', ''])
+  const commitScore = (next: [string, string]) => {
+    setRaw(next)
+    const nums = next.map((s) => (s === '' ? null : Math.min(9, Math.max(0, Number(s)))))
+    if (nums[0] != null && nums[1] != null && nums.every((n) => Number.isFinite(n))) {
+      onScore(m.id, [nums[0], nums[1]] as [number, number])
+    } else {
+      onScore(m.id, null)
+    }
+  }
 
   if (locked && !pick) return null
   if (!h && !a) return <p className="pick-hint">{tr('pickEarlier', lang)}</p>
@@ -332,24 +344,18 @@ function PickControls({
               type="number"
               min={0}
               max={9}
-              value={score?.[0] ?? ''}
+              value={raw[0]}
               placeholder="-"
-              onChange={(e) => {
-                const v = e.target.value === '' ? null : ([Number(e.target.value), score?.[1] ?? 0] as [number, number])
-                onScore(m.id, v)
-              }}
+              onChange={(e) => commitScore([e.target.value, raw[1]])}
             />
             :
             <input
               type="number"
               min={0}
               max={9}
-              value={score?.[1] ?? ''}
+              value={raw[1]}
               placeholder="-"
-              onChange={(e) => {
-                const v = e.target.value === '' ? null : ([score?.[0] ?? 0, Number(e.target.value)] as [number, number])
-                onScore(m.id, v)
-              }}
+              onChange={(e) => commitScore([raw[0], e.target.value])}
             />
           </div>
         </>

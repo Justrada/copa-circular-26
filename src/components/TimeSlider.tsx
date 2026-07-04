@@ -45,7 +45,7 @@ export default function TimeSlider({ asOf, onChange, lang }: Props) {
     <div className="time-slider">
       <button
         className="ts-play"
-        title={playing ? 'Pause' : 'Replay the tournament'}
+        title={playing ? tr('pause', lang) : tr('replayTournament', lang)}
         onClick={() => {
           if (playing) {
             setPlaying(false)

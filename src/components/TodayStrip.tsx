@@ -26,7 +26,9 @@ export default function TodayStrip({ data, favorites, onSelect, lang }: Props) {
   if (!items.length) return null
   return (
     <div className="today-strip">
-      <span className="today-title">{tr('today', lang)}</span>
+      <span className="today-title" title={tr('localTime', lang)}>
+        {tr('today', lang)}
+      </span>
       {items.map((m) => {
         const h = m.homeId ? t.teams[m.homeId] : null
         const a = m.awayId ? t.teams[m.awayId] : null
@@ -35,7 +37,7 @@ export default function TodayStrip({ data, favorites, onSelect, lang }: Props) {
           m.status === 'scheduled'
             ? new Date(m.date).toLocaleTimeString(lang === 'es' ? 'es-MX' : 'en-US', { hour: 'numeric', minute: '2-digit' })
             : m.status === 'live'
-              ? m.statusDetail
+              ? `${m.homeScore ?? 0}–${m.awayScore ?? 0} · ${m.statusDetail}`
               : `${m.homeScore}–${m.awayScore}${m.homePens != null ? ' p' : ''}`
         return (
           <button

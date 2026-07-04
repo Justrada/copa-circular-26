@@ -121,7 +121,7 @@ export default function RadialBracket({
 
   return (
     <div className={`radial-wrap ${pathIds ? 'has-path' : ''} ${zoomed ? 'zoomed' : ''}`}>
-      <SvgZoom onScaleChange={(k) => setZoomed(k > 1.35)}>
+      <SvgZoom onScaleChange={(k) => setZoomed(k > 1.35)} resetTitle={tr('resetView', lang)}>
         <svg id="bracket-svg" viewBox="-512 -512 1024 1024" className="radial-svg" role="img" aria-label="World Cup 2026 circular bracket">
           <RingBands lang={lang} />
           <GroupRing
@@ -490,8 +490,9 @@ function MatchNode({
   const row = (side: 'home' | 'away', rowY: number) => {
     const id = side === 'home' ? homeId : awayId
     const team = id ? t.teams[id] : null
-    const score = known ? (side === 'home' ? m.homeScore : m.awayScore) : null
-    const pen = known ? (side === 'home' ? m.homePens : m.awayPens) : null
+    const showScore = known || m.status === 'live'
+    const score = showScore ? (side === 'home' ? m.homeScore : m.awayScore) : null
+    const pen = showScore ? (side === 'home' ? m.homePens : m.awayPens) : null
     const winner = known && m.winnerId != null && m.winnerId === id
     const fs = FS[m.stage]
     return (

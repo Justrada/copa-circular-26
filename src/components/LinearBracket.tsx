@@ -67,15 +67,16 @@ function MatchCard({
   const t = data.tournament
   const known = knownAsOf(m, asOf)
   const upset = known ? upsetInfo(m, data.odds) : null
-  const myPick = validPick(t, picks, m)
-  const theirPick = theirs ? validPick(t, theirs, m) : null
+  const myPick = validPick(t, picks, m, asOf)
+  const theirPick = theirs ? validPick(t, theirs, m, asOf) : null
   const result = scorecard.results[m.id]
 
   const row = (side: 'home' | 'away') => {
     const id = slotTeamId(t, m, side, asOf)
     const team = id ? t.teams[id] : null
-    const score = known ? (side === 'home' ? m.homeScore : m.awayScore) : null
-    const pens = known ? (side === 'home' ? m.homePens : m.awayPens) : null
+    const showScore = known || m.status === 'live'
+    const score = showScore ? (side === 'home' ? m.homeScore : m.awayScore) : null
+    const pens = showScore ? (side === 'home' ? m.homePens : m.awayPens) : null
     const winner = known && m.winnerId != null && id === m.winnerId
     return (
       <div className={`mc-row ${winner ? 'winner' : known ? 'loser' : ''}`}>
