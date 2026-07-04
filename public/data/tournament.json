@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-07-03T18:45:00.799Z",
+ "generatedAt": "2026-07-04T09:30:04.799Z",
  "season": "2026 FIFA World Cup",
  "teams": {
   "164": {
@@ -5161,19 +5161,19 @@
    "date": "2026-07-03T18:00Z",
    "venue": "AT&T Stadium",
    "city": "Arlington, Texas",
-   "status": "live",
-   "statusDetail": "45'",
+   "status": "ft",
+   "statusDetail": "FT-Pens",
    "homeId": "628",
    "awayId": "2620",
    "homePlaceholder": null,
    "awayPlaceholder": null,
-   "homeScore": 0,
+   "homeScore": 1,
    "awayScore": 1,
-   "homePens": null,
-   "awayPens": null,
-   "winnerId": null,
-   "headline": null,
-   "attendance": null,
+   "homePens": 2,
+   "awayPens": 4,
+   "winnerId": "2620",
+   "headline": "Egypt wins in World Cup knockout round debut with 4-2 penalty shootout over Australia",
+   "attendance": 70244,
    "events": [
     {
      "kind": "goal",
@@ -5182,9 +5182,17 @@
      "clock": "13'",
      "pen": false,
      "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "628",
+     "player": "M. Hany",
+     "clock": "55'",
+     "pen": false,
+     "og": true
     }
    ],
-   "loserId": null
+   "loserId": "628"
   },
   {
    "id": "760500",
@@ -5193,20 +5201,62 @@
    "date": "2026-07-03T22:00Z",
    "venue": "Hard Rock Stadium",
    "city": "Miami Gardens, Florida",
-   "status": "scheduled",
-   "statusDetail": "Scheduled",
+   "status": "ft",
+   "statusDetail": "AET",
    "homeId": "202",
    "awayId": "2597",
    "homePlaceholder": null,
    "awayPlaceholder": null,
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 3,
+   "awayScore": 2,
    "homePens": null,
    "awayPens": null,
-   "winnerId": null,
-   "headline": null,
-   "attendance": null,
-   "loserId": null
+   "winnerId": "202",
+   "headline": "Argentina beat Cape Verde 3-2 in extra time",
+   "attendance": 64478,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "202",
+     "player": "L. Messi",
+     "clock": "29'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "2597",
+     "player": "D. Duarte",
+     "clock": "59'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "202",
+     "player": "L. Martínez",
+     "clock": "92'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "2597",
+     "player": "S. Lopes Cabral",
+     "clock": "103'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "202",
+     "player": "D. Borges",
+     "clock": "111'",
+     "pen": false,
+     "og": true
+    }
+   ],
+   "loserId": "2597"
   },
   {
    "id": "760501",
@@ -5215,20 +5265,30 @@
    "date": "2026-07-04T01:30Z",
    "venue": "GEHA Field at Arrowhead Stadium",
    "city": "Kansas City, Missouri",
-   "status": "scheduled",
-   "statusDetail": "Scheduled",
+   "status": "ft",
+   "statusDetail": "FT",
    "homeId": "208",
    "awayId": "4469",
    "homePlaceholder": null,
    "awayPlaceholder": null,
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 1,
+   "awayScore": 0,
    "homePens": null,
    "awayPens": null,
-   "winnerId": null,
-   "headline": null,
-   "attendance": null,
-   "loserId": null
+   "winnerId": "208",
+   "headline": "Arias guides Colombia past Ghana into round of 16",
+   "attendance": 69045,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "208",
+     "player": "J. Arias",
+     "clock": "14'",
+     "pen": false,
+     "og": false
+    }
+   ],
+   "loserId": "4469"
   },
   {
    "id": "760502",
@@ -5432,9 +5492,9 @@
    "status": "scheduled",
    "statusDetail": "Scheduled",
    "homeId": "475",
-   "awayId": null,
+   "awayId": "208",
    "homePlaceholder": null,
-   "awayPlaceholder": "Round of 32 15 Winner",
+   "awayPlaceholder": null,
    "homeScore": null,
    "awayScore": null,
    "homePens": null,
@@ -5463,10 +5523,10 @@
    "city": "Atlanta, Georgia",
    "status": "scheduled",
    "statusDetail": "Scheduled",
-   "homeId": null,
-   "awayId": null,
-   "homePlaceholder": "Round of 32 14 Winner",
-   "awayPlaceholder": "Round of 32 16 Winner",
+   "homeId": "202",
+   "awayId": "2620",
+   "homePlaceholder": null,
+   "awayPlaceholder": null,
    "homeScore": null,
    "awayScore": null,
    "homePens": null,

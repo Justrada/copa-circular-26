@@ -704,51 +704,67 @@
   "capturedAt": "2026-07-03T18:45:00.799Z"
  },
  "760502": {
-  "home": 0.21,
-  "draw": 0.274,
-  "away": 0.516,
+  "home": 0.19,
+  "draw": 0.275,
+  "away": 0.536,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-03T18:45:00.799Z"
+  "capturedAt": "2026-07-04T09:30:04.799Z"
  },
  "760503": {
-  "home": 0.053,
-  "draw": 0.146,
-  "away": 0.802,
+  "home": 0.05,
+  "draw": 0.145,
+  "away": 0.805,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-03T18:45:00.799Z"
+  "capturedAt": "2026-07-04T09:30:04.799Z"
  },
  "760504": {
-  "home": 0.517,
-  "draw": 0.253,
-  "away": 0.231,
+  "home": 0.527,
+  "draw": 0.247,
+  "away": 0.226,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-03T18:45:00.799Z"
+  "capturedAt": "2026-07-04T09:30:04.799Z"
  },
  "760505": {
-  "home": 0.303,
-  "draw": 0.299,
-  "away": 0.398,
+  "home": 0.31,
+  "draw": 0.296,
+  "away": 0.394,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-03T18:45:00.799Z"
+  "capturedAt": "2026-07-04T09:30:04.799Z"
  },
  "760506": {
-  "home": 0.236,
-  "draw": 0.259,
-  "away": 0.505,
+  "home": 0.241,
+  "draw": 0.261,
+  "away": 0.498,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-03T18:45:00.799Z"
+  "capturedAt": "2026-07-04T09:30:04.799Z"
  },
  "760507": {
-  "home": 0.367,
-  "draw": 0.28,
-  "away": 0.353,
+  "home": 0.364,
+  "draw": 0.278,
+  "away": 0.357,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-03T18:45:00.799Z"
+  "capturedAt": "2026-07-04T09:30:04.799Z"
+ },
+ "760508": {
+  "home": 0.284,
+  "draw": 0.293,
+  "away": 0.423,
+  "source": "DraftKings closing line",
+  "kind": "book",
+  "capturedAt": "2026-07-04T09:30:04.799Z"
+ },
+ "760509": {
+  "home": 0.702,
+  "draw": 0.198,
+  "away": 0.1,
+  "source": "DraftKings closing line",
+  "kind": "book",
+  "capturedAt": "2026-07-04T09:30:04.799Z"
  }
 }
