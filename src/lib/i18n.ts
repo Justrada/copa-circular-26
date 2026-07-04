@@ -107,6 +107,9 @@ const STRINGS = {
   expected: { en: 'expected finish', es: 'proyección' },
   boldest: { en: 'boldest surviving call', es: 'tu apuesta más valiente' },
   shareCard: { en: 'Share card', es: 'Tarjeta' },
+  moments: { en: 'Moments', es: 'Momentos' },
+  majorOnly: { en: 'The big stuff', es: 'Lo grande' },
+  showAllMoments: { en: 'Everything', es: 'Todo' },
 } as const
 
 export type StringKey = keyof typeof STRINGS

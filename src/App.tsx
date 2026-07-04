@@ -3,6 +3,7 @@ import FavoritesSidebar from './components/FavoritesSidebar'
 import GroupsView from './components/GroupsView'
 import LinearBracket from './components/LinearBracket'
 import MatchSheet from './components/MatchSheet'
+import MomentsFeed from './components/MomentsFeed'
 import OutlookPanel from './components/OutlookPanel'
 import RadialBracket from './components/RadialBracket'
 import ScorePanel from './components/ScorePanel'
@@ -41,6 +42,7 @@ export default function App() {
     }
   })
   const [sidebarOn, setSidebarOn] = useState(false)
+  const [momentsOn, setMomentsOn] = useState(false)
   const [untangle, setUntangle] = useState(() => localStorage.getItem('cc26-untangle') !== '0')
 
   const toggleFav = (teamId: string) => {
@@ -207,6 +209,9 @@ export default function App() {
           <button className={`toggle ${sidebarOn ? 'on' : ''}`} onClick={() => setSidebarOn(!sidebarOn)}>
             ★ {tr('watching', lang)}{favorites.size ? ` · ${favorites.size}` : ''}
           </button>
+          <button className={`toggle ${momentsOn ? 'on' : ''}`} onClick={() => setMomentsOn(!momentsOn)}>
+            📜 {tr('moments', lang)}
+          </button>
           <button className="toggle lang" onClick={() => setLang(lang === 'en' ? 'es' : 'en')}>
             {lang === 'en' ? 'ES' : 'EN'}
           </button>
@@ -290,6 +295,8 @@ export default function App() {
           ⭐ {tr('fillBracket', lang)} · {unpickedCount}
         </button>
       )}
+
+      {momentsOn && <MomentsFeed data={data} onSelect={setSelection} onClose={() => setMomentsOn(false)} lang={lang} />}
 
       {sidebarOn && (
         <FavoritesSidebar
