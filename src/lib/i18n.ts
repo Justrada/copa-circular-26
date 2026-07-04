@@ -138,6 +138,11 @@ const STRINGS = {
     en: 'Copy your bracket link and anyone who opens it sees their picks against yours, head to head. The share card turns your circle into an image worth posting.',
     es: 'Copia el enlace de tu bracket y quien lo abra verá sus picks contra los tuyos. La tarjeta convierte tu círculo en una imagen lista para publicar.',
   },
+  tourT10: { en: 'Voices from the road', es: 'Voces del camino' },
+  tourB10: {
+    en: "This ticker cycles real posts from fans crossing North America for their first World Cup — click one for the full post and replies. And inside every match: full stats, lineups, and what the stands were actually screaming.",
+    es: 'Esta cinta muestra publicaciones reales de hinchas recorriendo Norteamérica en su primer Mundial — toca una para ver el post completo y sus respuestas. Y dentro de cada partido: estadísticas, alineaciones y lo que gritaba la tribuna.',
+  },
   watching: { en: 'Watching', es: 'Siguiendo' },
   addTeam: { en: 'Add a team', es: 'Agregar equipo' },
   noFavsYet: {
@@ -164,6 +169,12 @@ const STRINGS = {
   boldest: { en: 'boldest surviving call', es: 'tu apuesta más valiente' },
   shareCard: { en: 'Share card', es: 'Tarjeta' },
   moments: { en: 'Moments', es: 'Momentos' },
+  matchStats: { en: 'Match stats', es: 'Estadísticas del partido' },
+  lineups: { en: 'Lineups', es: 'Alineaciones' },
+  cameOn: { en: 'Came on', es: 'Ingresaron' },
+  fanZone: { en: 'The stands', es: 'La hinchada' },
+  fansOnTour: { en: 'Fans on tour', es: 'Hinchas de viaje' },
+  viewPost: { en: 'View post', es: 'Ver publicación' },
   majorOnly: { en: 'The big stuff', es: 'Lo grande' },
   showAllMoments: { en: 'Everything', es: 'Todo' },
 } as const

@@ -1,4 +1,4 @@
-import type { DataBundle, Lang, Quote, SocialPost } from '../types'
+import type { DataBundle, FanPost, Lang, Quote, SocialPost } from '../types'
 import { upsetInfo } from './data'
 import { stageName } from './i18n'
 
@@ -7,12 +7,13 @@ export interface Moment {
   ts: number
   matchId: string
   major: boolean
-  kind: 'result' | 'upset' | 'pens' | 'red' | 'hattrick' | 'social' | 'quote'
+  kind: 'result' | 'upset' | 'pens' | 'red' | 'hattrick' | 'social' | 'quote' | 'fan'
   icon: string
   title: string
   sub?: string
   post?: SocialPost
   quote?: Quote
+  fan?: FanPost
 }
 
 const PLATFORM_ICON: Record<SocialPost['platform'], string> = { x: '𝕏', tiktok: '♪', instagram: '◎', youtube: '▶' }
@@ -152,6 +153,22 @@ export function buildMoments(data: DataBundle, lang: Lang): Moment[] {
         title: p.note,
         sub: `${home.abbrev}–${away.abbrev}`,
         post: p,
+      })
+    }
+
+    // Real fan voices, mixed straight into the timeline; the first one on a
+    // dramatic match makes the headline reel
+    for (const [i, f] of (media?.fans ?? []).entries()) {
+      out.push({
+        id: `${m.id}-fan-${i}`,
+        ts: ts + 9 + i,
+        matchId: m.id,
+        major: !!drama && i === 0,
+        kind: 'fan',
+        icon: '🗣️',
+        title: `“${f.text}”`,
+        sub: `— ${f.author} · ${home.abbrev}–${away.abbrev}`,
+        fan: f,
       })
     }
   }

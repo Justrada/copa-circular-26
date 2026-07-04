@@ -10,9 +10,14 @@ Pages by `.github/workflows/deploy.yml` (push + nightly cron).
 - `odds.json` — script-owned + agent-backfilled. Per-match pre-match win probabilities
   `{home, draw, away, source, kind}`. NEVER overwrite an entry once its match has kicked off —
   fetch-data enforces this; keep it that way.
-- `media.json` — agent-owned. Per-match `{highlights: {fox, fifa}, social[], quotes[], recap:{en,es}}`.
-  Video IDs must be oEmbed-verified before adding; a missing link beats a wrong one.
+- `media.json` — agent-owned. Per-match `{highlights: {fox, fifa}, social[], quotes[], recap:{en,es},
+  fans[]}`. Video IDs must be oEmbed-verified before adding; fan reactions must be verbatim real
+  posts with permalinks; a missing link beats a wrong one.
 - `markets.json` — agent-owned. Polymarket champion market `{champion: {teamName: prob}}`.
+- `stats.json` — script-owned. Per-match team stats + lineups from ESPN's summary endpoint,
+  fetched once per finished match by fetch-data.mjs.
+- `travelers.json` — agent-owned, REBUILT nightly (full replacement). 50-100 recent popular posts
+  from first-time international visitors touring North America, with top comments.
 
 ## Conventions
 

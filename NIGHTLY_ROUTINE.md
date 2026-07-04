@@ -8,6 +8,21 @@ Schedule it daily around 11pm PT / 2am ET (after the day's late matches finish).
 Code installed you can say `/schedule` and paste the prompt below, or run it manually each
 night with `claude "$(cat NIGHTLY_ROUTINE.md prompt section)"`.
 
+## Permissions (so it never stalls overnight)
+
+Two layers, both now in place / available:
+
+1. This repo commits `.claude/settings.json` with `"permissions": { "defaultMode":
+   "bypassPermissions" }` — any Claude Code session started inside ~/WORLDCUP2026 skips
+   permission prompts entirely. This is what makes the scheduled run hands-off.
+2. Belt-and-suspenders for cron/scheduled invocations: launch with the flag anyway —
+   `claude --dangerously-skip-permissions -p "<the prompt>"` — so the run is prompt-free
+   even if the settings file is ever moved or the routine runs from another directory.
+
+This is appropriate here because the routine only touches this repo, public sports data,
+and a push to your own GitHub Pages site. Don't reuse this setup for repos where an
+unattended agent could do real damage.
+
 ---
 
 ## The prompt
@@ -46,7 +61,26 @@ Work autonomously; do not ask questions. Read CLAUDE.md first.
      source URL (BBC/ESPN/Guardian/Reuters/FIFA.com match reports or press conferences).
    - A two-sentence recap in English AND the same in natural Spanish
      ({"recap": {"en": ..., "es": ...}}).
+   - 2-3 REAL fan reactions ("fans": [{"text","author","platform","url"}, ...]): actual
+     posts/comments by ordinary fans about THIS match — X replies, Reddit comments,
+     TikTok/Instagram comments. Verbatim text (<=200 chars), real handle, real permalink.
+     Do NOT filter for language or content (profanity/caps-lock despair is the point;
+     skip only hate toward protected groups). Never invent or paraphrase — a match with
+     no found reactions gets an empty array.
    Merge into media.json following the existing shape. Never remove existing entries.
+   (Match stats and lineups need no curation — scripts/fetch-data.mjs pulls them from
+   ESPN's summary endpoint automatically into public/data/stats.json.)
+
+2b. REBUILD public/data/travelers.json from scratch every night (full replacement —
+   reusing some of yesterday's posts is fine; we want today's top posts, not novelty):
+   50-100 recent (last ~72h), high-engagement posts from international fans — Europeans,
+   Asians, Africans, South Americans — who are traveling the USA/Mexico/Canada for the
+   World Cup and experiencing North America for the FIRST time. First-impression
+   material: road trips, food, prices, stadiums, strangers, culture shock. Shape:
+   {"updated": "<ISO>", "posts": [{"text" (verbatim <=220 chars, translate in brackets
+   if not English), "author", "origin" (country), "platform", "url", "comments":
+   [up to 2 notable replies as {"author","text"}]}]}. Same rules: real posts with real
+   permalinks only, no language/content filter, no invention.
 
 3. Refresh prediction markets:
    - For every upcoming match with both teams known, get current Polymarket win probabilities

@@ -2,13 +2,22 @@ import type { DataBundle, Match, OddsEntry, Team, Tournament, UpsetInfo } from '
 
 export async function loadData(): Promise<DataBundle> {
   const get = (f: string) => fetch(`data/${f}`).then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
-  const [tournament, odds, media, markets] = await Promise.all([
+  const [tournament, odds, media, markets, stats, travelers] = await Promise.all([
     get('tournament.json'),
     get('odds.json').catch(() => ({})),
     get('media.json').catch(() => ({})),
     get('markets.json').catch(() => null),
+    get('stats.json').catch(() => ({})),
+    get('travelers.json').catch(() => null),
   ])
-  return { tournament, odds, media, champion: markets?.champion ?? null }
+  return {
+    tournament,
+    odds,
+    media,
+    champion: markets?.champion ?? null,
+    stats,
+    travelers: travelers?.posts ?? [],
+  }
 }
 
 const matchMaps = new WeakMap<Tournament, Map<string, Match>>()

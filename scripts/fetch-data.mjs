@@ -217,6 +217,54 @@ for (const e of events) {
   }
 }
 
+// ---- match stats & lineups (fetched once per finished match) ----
+const STAT_KEYS = [
+  'possessionPct',
+  'totalShots',
+  'shotsOnTarget',
+  'wonCorners',
+  'foulsCommitted',
+  'offsides',
+  'saves',
+  'accuratePasses',
+  'passPct',
+  'yellowCards',
+  'redCards',
+]
+const statsPath = join(outDir, 'stats.json')
+const statsAll = existsSync(statsPath) ? JSON.parse(readFileSync(statsPath, 'utf8')) : {}
+const needStats = matches.filter((m) => m.status === 'ft' && !statsAll[m.id])
+for (const m of needStats) {
+  try {
+    const s = await getJson(`https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=${m.id}`)
+    const teams = (s.boxscore?.teams ?? []).map((bt) => ({
+      teamId: String(bt.team?.id ?? ''),
+      stats: Object.fromEntries(
+        (bt.statistics ?? []).filter((x) => STAT_KEYS.includes(x.name)).map((x) => [x.name, x.displayValue])
+      ),
+    }))
+    const lineups = (s.rosters ?? []).map((r) => ({
+      teamId: String(r.team?.id ?? ''),
+      formation: r.formation ?? null,
+      players: (r.roster ?? [])
+        .filter((p) => p.starter || p.subbedIn)
+        .map((p) => ({
+          name: p.athlete?.shortName ?? p.athlete?.displayName ?? '',
+          jersey: String(p.jersey ?? ''),
+          pos: p.position?.abbreviation ?? '',
+          starter: !!p.starter,
+          off: !!p.subbedOut,
+          on: !!p.subbedIn && !p.starter,
+        })),
+    }))
+    if (teams.length === 2) statsAll[m.id] = { teams, lineups }
+    await new Promise((r) => setTimeout(r, 250))
+  } catch (err) {
+    console.warn(`stats fetch failed for ${m.id}: ${err.message}`)
+  }
+}
+writeFileSync(statsPath, JSON.stringify(statsAll, null, 1))
+
 // ---- sanity checks, then write ----
 const nTeams = Object.keys(teams).length
 if (nTeams !== 48) throw new Error(`Expected 48 teams, got ${nTeams}`)
@@ -242,5 +290,5 @@ if (!existsSync(join(outDir, 'media.json'))) writeFileSync(join(outDir, 'media.j
 
 const played = matches.filter((m) => m.status === 'ft').length
 console.log(
-  `tournament.json: ${nTeams} teams, ${matches.length} matches (${played} played) | odds.json: ${Object.keys(odds).length} entries`
+  `tournament.json: ${nTeams} teams, ${matches.length} matches (${played} played) | odds.json: ${Object.keys(odds).length} entries | stats.json: ${Object.keys(statsAll).length} matches (+${needStats.length} new)`
 )

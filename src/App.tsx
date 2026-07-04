@@ -8,6 +8,7 @@ import OutlookPanel from './components/OutlookPanel'
 import RadialBracket from './components/RadialBracket'
 import ScorePanel from './components/ScorePanel'
 import ShareBar from './components/ShareBar'
+import Ticker from './components/Ticker'
 import TimeSlider from './components/TimeSlider'
 import TodayStrip from './components/TodayStrip'
 import Tour from './components/Tour'
@@ -369,6 +370,8 @@ export default function App() {
           }
         />
       )}
+
+      <Ticker posts={data.travelers} lang={lang} />
 
       <footer onClick={(e) => e.stopPropagation()}>
         <p>{tr('disclaimer', lang)}</p>

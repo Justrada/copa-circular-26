@@ -507,6 +507,70 @@ main.view-circle { overflow: hidden; }
 .fav-pick.on { border-color: var(--mine); color: var(--mine); }
 .fav-pick-star { font-size: 10px; }
 
+/* ---------- match stats & fan zone ---------- */
+.poss-bar { display: flex; border-radius: 8px; overflow: hidden; font-size: 11px; font-weight: 700; text-align: center; margin-bottom: 8px; }
+.poss-bar span { padding: 5px 6px; white-space: nowrap; min-width: 56px; }
+.poss-home { background: #2563eb; }
+.poss-away { background: #9333ea; text-align: right; }
+.stats-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.stats-table td { padding: 3px 6px; border-bottom: 1px solid rgba(39, 57, 94, 0.45); }
+.stats-table .sl { text-align: center; color: var(--muted); font-size: 11.5px; }
+.stats-table .sv { width: 66px; font-weight: 700; text-align: center; font-variant-numeric: tabular-nums; }
+.lineups { margin-top: 8px; }
+.lineups summary { cursor: pointer; font-size: 12px; color: var(--accent); font-weight: 700; }
+.lineup-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+.lineup-head { font-size: 11.5px; font-weight: 800; color: var(--accent2); margin-bottom: 4px; }
+.lineup-sub-head { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
+.lineup-row { font-size: 11.5px; padding: 1.5px 0; color: #c7d4ee; }
+.lineup-row.sub { color: var(--muted); }
+.lp-num { display: inline-block; width: 20px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.lp-sub.off { color: var(--danger); }
+.lp-sub.on { color: var(--accent); }
+
+.fan-bubble {
+  display: block; margin-bottom: 6px; padding: 9px 12px; border-radius: 12px 12px 12px 3px;
+  background: var(--bg2); border: 1px solid var(--line); font-size: 13px; line-height: 1.45;
+  font-style: italic; color: #d7e2f7; text-decoration: none;
+}
+.fan-bubble:hover { border-color: var(--accent2); }
+.fan-author { display: block; margin-top: 4px; font-size: 11px; font-style: normal; color: var(--muted); }
+.moment.kind-fan .moment-title { font-style: italic; font-weight: 400; color: #d7e2f7; }
+
+/* ---------- traveler ticker ---------- */
+.ticker {
+  position: relative; display: flex; align-items: center; gap: 0;
+  border-top: 1px solid var(--line); background: var(--bg2); height: 34px; overflow: visible;
+}
+.ticker-label {
+  flex: none; z-index: 2; padding: 0 12px; height: 100%; display: flex; align-items: center;
+  font-size: 10.5px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;
+  color: var(--accent2); background: var(--bg2); border-right: 1px solid var(--line); white-space: nowrap;
+}
+.ticker-viewport { flex: 1; overflow: hidden; height: 100%; }
+.ticker-track { display: inline-flex; height: 100%; align-items: center; animation: tickermove linear infinite; will-change: transform; }
+.ticker:hover .ticker-track { animation-play-state: paused; }
+@keyframes tickermove { to { transform: translateX(-50%); } }
+.ticker-seg { display: inline-flex; align-items: center; }
+.ticker-item {
+  flex: none; max-width: 480px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  font-size: 12px; color: #c7d4ee; padding: 0 22px 0 8px; position: relative;
+}
+.ticker-item b { color: var(--accent2); margin-right: 5px; }
+.ticker-item:hover { color: #fff; }
+.ticker-item::after { content: '·'; position: absolute; right: 8px; color: var(--line); }
+.ticker-pop {
+  position: absolute; bottom: 42px; left: 50%; transform: translateX(-50%); z-index: 55;
+  width: min(440px, calc(100vw - 24px)); padding: 12px 14px; border-radius: 12px;
+  background: linear-gradient(180deg, var(--panel2), var(--panel));
+  border: 1px solid var(--accent2); box-shadow: 0 16px 50px rgba(0, 0, 0, 0.6);
+}
+.ticker-pop .sheet-close { position: absolute; top: 6px; right: 6px; }
+.tp-text { margin: 0 18px 6px 0; font-size: 13.5px; line-height: 1.5; font-style: italic; }
+.tp-meta { margin: 0 0 8px; font-size: 11.5px; color: var(--muted); }
+.tp-comment { margin: 4px 0; font-size: 12px; color: #c7d4ee; }
+.tp-comment b { color: var(--accent2); }
+.ticker-pop a { font-size: 12px; }
+
 /* ---------- footer ---------- */
 footer {
   display: flex; flex-wrap: wrap; gap: 4px 18px; align-items: center;

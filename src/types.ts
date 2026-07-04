@@ -98,11 +98,42 @@ export interface Quote {
   sourceUrl: string
 }
 
+export interface FanPost {
+  text: string
+  author: string
+  platform: string
+  url: string
+}
+
 export interface MediaEntry {
   highlights?: { fox?: MediaVideo | null; fifa?: MediaVideo | null }
   social?: SocialPost[]
   quotes?: Quote[]
   recap?: { en: string; es: string }
+  fans?: FanPost[]
+}
+
+export interface LineupPlayer {
+  name: string
+  jersey: string
+  pos: string
+  starter: boolean
+  off: boolean
+  on: boolean
+}
+
+export interface MatchStats {
+  teams: { teamId: string; stats: Record<string, string> }[]
+  lineups: { teamId: string; formation: string | null; players: LineupPlayer[] }[]
+}
+
+export interface TravelerPost {
+  text: string
+  author: string
+  origin: string
+  platform: string
+  url: string
+  comments?: { author: string; text: string }[]
 }
 
 export interface DataBundle {
@@ -110,6 +141,8 @@ export interface DataBundle {
   odds: Record<string, OddsEntry>
   media: Record<string, MediaEntry>
   champion: Record<string, number> | null
+  stats: Record<string, MatchStats>
+  travelers: TravelerPost[]
 }
 
 export type Lang = 'en' | 'es'

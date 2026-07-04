@@ -3,8 +3,23 @@ import { bestHighlight, knownAsOf, slotHint, upsetInfo } from '../lib/data'
 import { fmtDate, stageName, t as tr } from '../lib/i18n'
 import type { Picks } from '../lib/picks'
 import { ROUND_WEIGHT, candidates, isLocked, isPickable, validPick } from '../lib/picks'
-import type { DataBundle, Lang, Match, Quote } from '../types'
+import type { DataBundle, Lang, Match, MatchStats, Quote, Tournament } from '../types'
 import SocialEmbed from './SocialEmbed'
+
+const STAT_LABELS: Record<string, { en: string; es: string }> = {
+  possessionPct: { en: 'Possession', es: 'Posesión' },
+  totalShots: { en: 'Shots', es: 'Tiros' },
+  shotsOnTarget: { en: 'On target', es: 'Al arco' },
+  wonCorners: { en: 'Corners', es: 'Córners' },
+  foulsCommitted: { en: 'Fouls', es: 'Faltas' },
+  offsides: { en: 'Offsides', es: 'Fueras de juego' },
+  saves: { en: 'Saves', es: 'Atajadas' },
+  accuratePasses: { en: 'Passes completed', es: 'Pases completados' },
+  passPct: { en: 'Pass accuracy', es: 'Precisión de pase' },
+  yellowCards: { en: 'Yellow cards', es: 'Amarillas' },
+  redCards: { en: 'Red cards', es: 'Rojas' },
+}
+const STAT_ORDER = Object.keys(STAT_LABELS)
 
 interface Props {
   data: DataBundle
@@ -157,6 +172,8 @@ export default function MatchSheet({ data, m, asOf, picks, onPick, onConf, onSco
       {media?.recap && <p className="recap">{media.recap[lang] || media.recap.en}</p>}
       {m.headline && !media?.recap && <p className="recap">{m.headline}</p>}
 
+      {known && data.stats[m.id] && <StatsSection t={t} m={m} stats={data.stats[m.id]} lang={lang} />}
+
       {highlight && (
         <section>
           <div className="section-title">
@@ -218,10 +235,101 @@ export default function MatchSheet({ data, m, asOf, picks, onPick, onConf, onSco
         </section>
       )}
 
+      {known && !!media?.fans?.length && (
+        <section>
+          <div className="section-title">🗣️ {tr('fanZone', lang)}</div>
+          {media.fans.map((f, i) => (
+            <a key={i} className="fan-bubble" href={f.url} target="_blank" rel="noopener noreferrer">
+              “{f.text}”
+              <span className="fan-author">
+                — {f.author} · {f.platform} ↗
+              </span>
+            </a>
+          ))}
+        </section>
+      )}
+
       {known && !highlight && !media?.social?.length && !media?.quotes?.length && (
         <p className="no-media">{tr('noMediaYet', lang)}</p>
       )}
     </aside>
+  )
+}
+
+function StatsSection({ t, m, stats, lang }: { t: Tournament; m: Match; stats: MatchStats; lang: Lang }) {
+  const byTeam = new Map(stats.teams.map((x) => [x.teamId, x.stats]))
+  const hs = m.homeId ? byTeam.get(m.homeId) : undefined
+  const as = m.awayId ? byTeam.get(m.awayId) : undefined
+  if (!hs || !as || !m.homeId || !m.awayId) return null
+  const fmt = (key: string, v: string | undefined) => {
+    if (v == null) return '–'
+    if (key === 'passPct') return `${Math.round(parseFloat(v) * 100)}%`
+    if (key === 'possessionPct') return `${v}%`
+    return v
+  }
+  const poss = [parseFloat(hs.possessionPct ?? '50'), parseFloat(as.possessionPct ?? '50')]
+  const home = t.teams[m.homeId]
+  const away = t.teams[m.awayId]
+  const lineupFor = (teamId: string) => stats.lineups.find((l) => l.teamId === teamId)
+  const renderLineup = (teamId: string) => {
+    const l = lineupFor(teamId)
+    if (!l) return null
+    const starters = l.players.filter((p) => p.starter)
+    const cameOn = l.players.filter((p) => p.on)
+    return (
+      <div className="lineup-col">
+        <div className="lineup-head">
+          {t.teams[teamId].abbrev}
+          {l.formation ? ` · ${l.formation}` : ''}
+        </div>
+        {starters.map((p) => (
+          <div key={p.jersey + p.name} className="lineup-row">
+            <span className="lp-num">{p.jersey}</span> {p.name}
+            {p.off && <span className="lp-sub off"> ↓</span>}
+          </div>
+        ))}
+        {cameOn.length > 0 && <div className="lineup-sub-head">{tr('cameOn', lang)}</div>}
+        {cameOn.map((p) => (
+          <div key={p.jersey + p.name} className="lineup-row sub">
+            <span className="lp-num">{p.jersey}</span> {p.name}
+            <span className="lp-sub on"> ↑</span>
+          </div>
+        ))}
+      </div>
+    )
+  }
+  return (
+    <section>
+      <div className="section-title">{tr('matchStats', lang)}</div>
+      <div className="poss-bar">
+        <span className="poss-home" style={{ flexGrow: poss[0] }}>
+          {home.abbrev} {poss[0]}%
+        </span>
+        <span className="poss-away" style={{ flexGrow: poss[1] }}>
+          {poss[1]}% {away.abbrev}
+        </span>
+      </div>
+      <table className="stats-table">
+        <tbody>
+          {STAT_ORDER.filter((k) => k !== 'possessionPct' && (hs[k] != null || as[k] != null)).map((k) => (
+            <tr key={k}>
+              <td className="sv">{fmt(k, hs[k])}</td>
+              <td className="sl">{STAT_LABELS[k][lang]}</td>
+              <td className="sv">{fmt(k, as[k])}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      {stats.lineups.length === 2 && (
+        <details className="lineups">
+          <summary>{tr('lineups', lang)}</summary>
+          <div className="lineup-grid">
+            {renderLineup(m.homeId)}
+            {renderLineup(m.awayId)}
+          </div>
+        </details>
+      )}
+    </section>
   )
 }
 

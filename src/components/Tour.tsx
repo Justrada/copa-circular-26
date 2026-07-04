@@ -19,6 +19,7 @@ const STEPS: Step[] = [
   { anchor: '[data-tour="watching"]', title: 'tourT7', body: 'tourB7' },
   { anchor: '[data-tour="moments"]', title: 'tourT8', body: 'tourB8' },
   { anchor: '.share-bar', title: 'tourT9', body: 'tourB9' },
+  { anchor: '.ticker', title: 'tourT10', body: 'tourB10' },
 ]
 
 export default function Tour({ onClose, lang }: { onClose: () => void; lang: Lang }) {

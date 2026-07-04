@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-07-04T14:29:37.917Z",
+ "generatedAt": "2026-07-04T20:58:57.291Z",
  "season": "2026 FIFA World Cup",
  "teams": {
   "164": {
@@ -5297,20 +5297,46 @@
    "date": "2026-07-04T17:00Z",
    "venue": "NRG Stadium",
    "city": "Houston, Texas",
-   "status": "scheduled",
-   "statusDetail": "Scheduled",
+   "status": "ft",
+   "statusDetail": "FT",
    "homeId": "206",
    "awayId": "2869",
    "homePlaceholder": null,
    "awayPlaceholder": null,
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 0,
+   "awayScore": 3,
    "homePens": null,
    "awayPens": null,
-   "winnerId": null,
-   "headline": null,
-   "attendance": null,
-   "loserId": null,
+   "winnerId": "2869",
+   "headline": "Morocco send Canada crashing out of World Cup",
+   "attendance": 68777,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "2869",
+     "player": "A. Ounahi",
+     "clock": "50'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "2869",
+     "player": "A. Ounahi",
+     "clock": "82'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "2869",
+     "player": "S. Rahimi",
+     "clock": "90'+8'",
+     "pen": false,
+     "og": false
+    }
+   ],
+   "loserId": "206",
    "feeds": {
     "home": {
      "matchId": "760486",
@@ -5556,9 +5582,9 @@
    "status": "scheduled",
    "statusDetail": "Scheduled",
    "homeId": null,
-   "awayId": null,
+   "awayId": "2869",
    "homePlaceholder": "Round of 16 1 Winner",
-   "awayPlaceholder": "Round of 16 2 Winner",
+   "awayPlaceholder": null,
    "homeScore": null,
    "awayScore": null,
    "homePens": null,
@@ -5573,7 +5599,7 @@
      "kind": "winner"
     },
     "away": {
-     "matchId": "760503",
+     "matchId": "760502",
      "kind": "winner"
     }
    }
