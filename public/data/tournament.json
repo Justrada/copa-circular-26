@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-07-04T22:00:01.675Z",
+ "generatedAt": "2026-07-05T09:46:06.961Z",
  "season": "2026 FIFA World Cup",
  "teams": {
   "164": {
@@ -5355,20 +5355,30 @@
    "date": "2026-07-04T21:00Z",
    "venue": "Lincoln Financial Field",
    "city": "Philadelphia, Pennsylvania",
-   "status": "live",
-   "statusDetail": "HT",
+   "status": "ft",
+   "statusDetail": "FT",
    "homeId": "210",
    "awayId": "478",
    "homePlaceholder": null,
    "awayPlaceholder": null,
    "homeScore": 0,
-   "awayScore": 0,
+   "awayScore": 1,
    "homePens": null,
    "awayPens": null,
-   "winnerId": null,
-   "headline": null,
-   "attendance": null,
-   "loserId": null,
+   "winnerId": "478",
+   "headline": "Mbappé leads France to WCup quarterfinals",
+   "attendance": 68324,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "478",
+     "player": "K. Mbappé",
+     "clock": "70'",
+     "pen": true,
+     "og": false
+    }
+   ],
+   "loserId": "210",
    "feeds": {
     "home": {
      "matchId": "760489",
@@ -5581,9 +5591,9 @@
    "city": "Foxborough, Massachusetts",
    "status": "scheduled",
    "statusDetail": "Scheduled",
-   "homeId": null,
+   "homeId": "478",
    "awayId": "2869",
-   "homePlaceholder": "Round of 16 1 Winner",
+   "homePlaceholder": null,
    "awayPlaceholder": null,
    "homeScore": null,
    "awayScore": null,
@@ -5595,7 +5605,7 @@
    "loserId": null,
    "feeds": {
     "home": {
-     "matchId": "760502",
+     "matchId": "760503",
      "kind": "winner"
     },
     "away": {
