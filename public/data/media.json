@@ -4794,5 +4794,63 @@
    "en": "Morocco became the first team into the 2026 quarterfinals, ending co-hosts Canada’s dream run with a 3-0 win in Houston. Azzedine Ounahi struck twice after halftime and Soufiane Rahimi added a stoppage-time third, sending Canada out as the first host nation eliminated.",
    "es": "Marruecos se convirtió en el primer equipo en los cuartos de final de 2026, poniendo fin al sueño de la coanfitriona Canadá con una victoria por 3-0 en Houston. Azzedine Ounahi marcó dos veces en la segunda mitad y Soufiane Rahimi añadió el tercero en el descuento, dejando a Canadá como la primera anfitriona eliminada."
   }
+ },
+ "760503": {
+  "highlights": {
+   "fox": {
+    "videoId": "2ANrnnZEE6c",
+    "title": "Paraguay vs France Highlights 🌎🏆 2026 FIFA World Cup™ | Round of 16"
+   },
+   "fifa": {
+    "videoId": "ffLy8YsNOhw",
+    "title": "Kylian Mbappe Goal | Paraguay 0-1 France | FIFA World Cup 2026™"
+   }
+  },
+  "social": [
+   {
+    "platform": "youtube",
+    "url": "https://www.youtube.com/watch?v=YKAGdwFrCck",
+    "kind": "goal",
+    "note": "FOX Sports: Mbappé steps up in the 70th minute — his 19th career World Cup goal, level with Messi on seven this tournament"
+   },
+   {
+    "platform": "x",
+    "url": "https://x.com/LeinonaA69/status/2073685987600052451",
+    "kind": "reaction",
+    "note": "At full time keeper Orlando Gill threw the match ball at Mbappé's back after a snubbed handshake, setting off a post-game scrum"
+   }
+  ],
+  "quotes": [
+   {
+    "speaker": "Kylian Mbappé",
+    "text": "We can also get our hands dirty, we know how to do it. We know how to play ugly football.",
+    "sourceName": "ESPN",
+    "sourceUrl": "https://www.espn.com/soccer/story/_/id/49272367/france-kylian-mbappe-paraguay-tactics-get-our-hands-dirty"
+   }
+  ],
+  "recap": {
+   "en": "Kylian Mbappé's 70th-minute penalty settled a fractious, foul-strewn 1-0 win over a deep-defending Paraguay in 38°C Philadelphia heat, sending France into the quarterfinals. The spot-kick — won when Désiré Doué was upended — took Mbappé level with Lionel Messi on seven goals at the tournament and set up a last-eight tie with Morocco.",
+   "es": "El penal de Kylian Mbappé al minuto 70 definió un áspero triunfo 1-0, plagado de faltas, ante una Paraguay muy replegada y bajo 38°C de calor en Filadelfia, metiendo a Francia en cuartos de final. La pena máxima —tras una falta sobre Désiré Doué— dejó a Mbappé igualado con Lionel Messi con siete goles en el torneo y armó un cruce de cuartos ante Marruecos."
+  },
+  "fans": [
+   {
+    "text": "That referee should never officiate again in WC. Dangerous precedent was set and could've led to long term injuries",
+    "author": "u/Beneficial-Steak-117",
+    "platform": "reddit",
+    "url": "https://www.reddit.com/r/soccer/comments/1unpjgz/léquipe_paraguayfrance_referee_receives_a_110/"
+   },
+   {
+    "text": "PARAGUAY TRIED TO KICK FRANCE OUT OF THIS TOURNAMENT BUT FRANCE JUST WALKED THROUGH THEM ANYWAY",
+    "author": "@slash1sol",
+    "platform": "x",
+    "url": "https://x.com/slash1sol/status/2073726808013287573"
+   },
+   {
+    "text": "Speed just spotted Kylian Mbappé walking out ahead of the France vs Paraguay World Cup Round of 16 match😭😭 Mbappe needs to turn up😭😭",
+    "author": "@speedxtraa",
+    "platform": "x",
+    "url": "https://x.com/speedxtraa/status/2073621086437355890"
+   }
+  ]
  }
 }
