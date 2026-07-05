@@ -11,7 +11,7 @@ interface Step {
 
 const STEPS: Step[] = [
   { anchor: null, title: 'tourT1', body: 'tourB1' },
-  { anchor: '.radial-wrap', title: 'tourT2', body: 'tourB2' },
+  { anchor: 'main', title: 'tourT2', body: 'tourB2' },
   { anchor: '.pick-fab', title: 'tourT3', body: 'tourB3' },
   { anchor: '.score-chips', title: 'tourT4', body: 'tourB4' },
   { anchor: '.today-strip', title: 'tourT5', body: 'tourB5' },

@@ -103,7 +103,13 @@ function MatchCard({
   }
 
   return (
-    <button className={`match-card ${result ? `res-${result.outcome}` : ''}`} onClick={() => onSelect({ kind: 'match', id: m.id })}>
+    <button
+      className={`match-card ${result ? `res-${result.outcome}` : ''}`}
+      onClick={(e) => {
+        e.stopPropagation()
+        onSelect({ kind: 'match', id: m.id })
+      }}
+    >
       {row('home')}
       {row('away')}
       <div className="mc-foot">

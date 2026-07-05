@@ -25,7 +25,10 @@ export default function GroupsView({ data, asOf, onSelect, lang }: Props) {
                   <tr
                     key={id}
                     className={team.advanced ? 'advanced' : ''}
-                    onClick={() => onSelect({ kind: 'team', id })}
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      onSelect({ kind: 'team', id })
+                    }}
                   >
                     <td className="pos">{team.groupRank}</td>
                     <td className="flag">
@@ -46,7 +49,14 @@ export default function GroupsView({ data, asOf, onSelect, lang }: Props) {
             {t.matches
               .filter((m) => m.stage === 'group' && m.homeId && t.teams[m.homeId].group === letter)
               .map((m) => (
-                <button key={m.id} className="gm-row" onClick={() => onSelect({ kind: 'match', id: m.id })}>
+                <button
+                  key={m.id}
+                  className="gm-row"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    onSelect({ kind: 'match', id: m.id })
+                  }}
+                >
                   <span>{m.homeId ? t.teams[m.homeId].abbrev : '?'}</span>
                   <span className="gm-score">
                     {knownAsOf(m, asOf) ? `${m.homeScore}–${m.awayScore}` : '·'}
