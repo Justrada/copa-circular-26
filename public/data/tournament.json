@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-07-05T09:46:06.961Z",
+ "generatedAt": "2026-07-06T11:43:05.996Z",
  "season": "2026 FIFA World Cup",
  "teams": {
   "164": {
@@ -5397,20 +5397,46 @@
    "date": "2026-07-05T20:00Z",
    "venue": "MetLife Stadium",
    "city": "East Rutherford, New Jersey",
-   "status": "scheduled",
-   "statusDetail": "Scheduled",
+   "status": "ft",
+   "statusDetail": "FT",
    "homeId": "205",
    "awayId": "464",
    "homePlaceholder": null,
    "awayPlaceholder": null,
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 1,
+   "awayScore": 2,
    "homePens": null,
    "awayPens": null,
-   "winnerId": null,
-   "headline": null,
-   "attendance": null,
-   "loserId": null,
+   "winnerId": "464",
+   "headline": "Norway, Haaland stun Brazil to reach 1st quarters ever",
+   "attendance": 80663,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "464",
+     "player": "E. Haaland",
+     "clock": "79'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "464",
+     "player": "E. Haaland",
+     "clock": "90'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "205",
+     "player": "Neymar",
+     "clock": "90'+10'",
+     "pen": true,
+     "og": false
+    }
+   ],
+   "loserId": "205",
    "feeds": {
     "home": {
      "matchId": "760487",
@@ -5426,23 +5452,73 @@
    "id": "760505",
    "stage": "r16",
    "bracketIndex": 3,
-   "date": "2026-07-06T00:00Z",
+   "date": "2026-07-06T01:00Z",
    "venue": "Estadio Banorte",
    "city": "Mexico City",
-   "status": "scheduled",
-   "statusDetail": "Scheduled",
+   "status": "ft",
+   "statusDetail": "FT",
    "homeId": "203",
    "awayId": "448",
    "homePlaceholder": null,
    "awayPlaceholder": null,
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 2,
+   "awayScore": 3,
    "homePens": null,
    "awayPens": null,
-   "winnerId": null,
-   "headline": null,
-   "attendance": null,
-   "loserId": null,
+   "winnerId": "448",
+   "headline": "10-man England win thriller against Mexico to reach World Cup quarterfinals",
+   "attendance": 80824,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "448",
+     "player": "J. Bellingham",
+     "clock": "36'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "448",
+     "player": "J. Bellingham",
+     "clock": "38'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "203",
+     "player": "J. Quiñones",
+     "clock": "42'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "red",
+     "teamId": "448",
+     "player": "J. Quansah",
+     "clock": "54'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "448",
+     "player": "H. Kane",
+     "clock": "60'",
+     "pen": true,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "203",
+     "player": "R. Jiménez",
+     "clock": "69'",
+     "pen": true,
+     "og": false
+    }
+   ],
+   "loserId": "203",
    "feeds": {
     "home": {
      "matchId": "760491",
@@ -5655,10 +5731,10 @@
    "city": "Miami Gardens, Florida",
    "status": "scheduled",
    "statusDetail": "Scheduled",
-   "homeId": null,
-   "awayId": null,
-   "homePlaceholder": "Round of 16 3 Winner",
-   "awayPlaceholder": "Round of 16 4 Winner",
+   "homeId": "464",
+   "awayId": "448",
+   "homePlaceholder": null,
+   "awayPlaceholder": null,
    "homeScore": null,
    "awayScore": null,
    "homePens": null,
