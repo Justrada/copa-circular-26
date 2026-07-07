@@ -756,8 +756,7 @@
   "away": 0.4171,
   "source": "Polymarket",
   "kind": "market",
-  "note": "raw prices 0.265/0.315/0.415, normalized",
-  "capturedAt": "2026-07-07T00:06:27.371Z"
+  "capturedAt": "2026-07-07T02:14:44.850Z"
  },
  "760509": {
   "home": 0.7114,
@@ -765,8 +764,7 @@
   "away": 0.0846,
   "source": "Polymarket",
   "kind": "market",
-  "note": "raw prices 0.715/0.205/0.085, normalized",
-  "capturedAt": "2026-07-07T00:06:27.371Z"
+  "capturedAt": "2026-07-07T02:14:44.850Z"
  },
  "760510": {
   "home": 0.6119,
@@ -774,16 +772,14 @@
   "away": 0.1443,
   "source": "Polymarket",
   "kind": "market",
-  "note": "raw prices 0.615/0.245/0.145, normalized",
-  "capturedAt": "2026-07-07T00:06:27.371Z"
+  "capturedAt": "2026-07-07T02:14:44.850Z"
  },
  "760512": {
-  "home": 0.2315,
-  "draw": 0.2611,
-  "away": 0.5074,
+  "home": 0.2239,
+  "draw": 0.2637,
+  "away": 0.5124,
   "source": "Polymarket",
   "kind": "market",
-  "note": "raw prices 0.235/0.265/0.515, normalized",
-  "capturedAt": "2026-07-07T00:06:27.371Z"
+  "capturedAt": "2026-07-07T02:14:44.850Z"
  }
 }

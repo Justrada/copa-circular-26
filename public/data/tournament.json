@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-07-07T00:06:02.892Z",
+ "generatedAt": "2026-07-07T02:03:45.559Z",
  "season": "2026 FIFA World Cup",
  "teams": {
   "164": {
@@ -5579,20 +5579,62 @@
    "date": "2026-07-07T00:00Z",
    "venue": "Lumen Field",
    "city": "Seattle, Washington",
-   "status": "live",
-   "statusDetail": "6'",
+   "status": "ft",
+   "statusDetail": "FT",
    "homeId": "660",
    "awayId": "459",
    "homePlaceholder": null,
    "awayPlaceholder": null,
-   "homeScore": 0,
-   "awayScore": 0,
+   "homeScore": 1,
+   "awayScore": 4,
    "homePens": null,
    "awayPens": null,
-   "winnerId": null,
+   "winnerId": "459",
    "headline": null,
    "attendance": null,
-   "loserId": null,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "459",
+     "player": "C. De Ketelaere",
+     "clock": "9'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "660",
+     "player": "M. Tillman",
+     "clock": "31'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "459",
+     "player": "C. De Ketelaere",
+     "clock": "33'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "459",
+     "player": "H. Vanaken",
+     "clock": "57'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "459",
+     "player": "R. Lukaku",
+     "clock": "90'+3'",
+     "pen": false,
+     "og": false
+    }
+   ],
+   "loserId": "660",
    "feeds": {
     "home": {
      "matchId": "760494",
@@ -5710,9 +5752,9 @@
    "status": "scheduled",
    "statusDetail": "Scheduled",
    "homeId": "164",
-   "awayId": null,
+   "awayId": "459",
    "homePlaceholder": null,
-   "awayPlaceholder": "Round of 16 6 Winner",
+   "awayPlaceholder": null,
    "homeScore": null,
    "awayScore": null,
    "homePens": null,

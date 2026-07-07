@@ -5017,5 +5017,50 @@
     "url": "https://www.reddit.com/r/soccer/comments/1upa4xl/roberto_martinez_before_the_world_cup_said_that/"
    }
   ]
+ },
+ "760507": {
+  "highlights": {
+   "fox": null,
+   "fifa": null
+  },
+  "social": [
+   {
+    "platform": "youtube",
+    "url": "https://www.youtube.com/watch?v=d-ZYKgSnfN0",
+    "kind": "goal",
+    "note": "FOX Sports: Charles De Ketelaere's first-half brace (9' and 33') that put Belgium in control and broke USA hearts in Seattle"
+   },
+   {
+    "platform": "youtube",
+    "url": "https://www.youtube.com/watch?v=SZpZCY5j8QM",
+    "kind": "reaction",
+    "note": "FOX Sports: Malik Tillman on his brilliant free-kick goal and moving forward without Folarin Balogun"
+   }
+  ],
+  "quotes": [],
+  "recap": {
+   "en": "Charles De Ketelaere struck twice inside the first 33 minutes and Belgium never looked back, cruising past the United States 4-1 in Seattle to knock the last of the three World Cup co-hosts out in the Round of 16. Malik Tillman's free kick briefly leveled it, but a Matt Freese error teed up Hans Vanaken and Romelu Lukaku's stoppage-time strike completed the rout as Belgium booked a quarterfinal with Spain.",
+   "es": "Charles De Ketelaere marcó dos veces en los primeros 33 minutos y Bélgica nunca miró atrás, superando a Estados Unidos por 4-1 en Seattle para eliminar en octavos al último de los tres anfitriones del Mundial. Un tiro libre de Malik Tillman igualó momentáneamente el marcador, pero un error de Matt Freese dejó servido el gol de Hans Vanaken, y el tanto de Romelu Lukaku en el descuento completó la goleada mientras Bélgica selló un cuarto de final ante España."
+  },
+  "fans": [
+   {
+    "text": "Team USA started the World Cup winning 4-1 against Paraguay & go out in the round of 16 losing to Belgium 4-1... Good showing on home soil by the USA but again showed they aren't on the level of the Europeans in Soccer.",
+    "author": "@Fairwinds10",
+    "platform": "x",
+    "url": "https://x.com/Fairwinds10/status/2074314976819601522"
+   },
+   {
+    "text": "Proud of our Team USA for battling all the way to the Round of 16 at the 2026 World Cup! They gave everything against a strong Belgium side tonight... We love you, USMNT. The support never ends.",
+    "author": "@ForgeThePatriot",
+    "platform": "x",
+    "url": "https://x.com/ForgeThePatriot/status/2074314503945179225"
+   },
+   {
+    "text": "All three hosts of the 2026 World Cup have been KNOCKED OUT in the Round of 16: Canada: OUT vs. Morocco / Mexico: OUT vs. England / USA: OUT vs. Belgium",
+    "author": "@_FaridKhan",
+    "platform": "x",
+    "url": "https://x.com/_FaridKhan/status/2074314416779047214"
+   }
+  ]
  }
 }

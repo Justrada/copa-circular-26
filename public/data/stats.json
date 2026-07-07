@@ -28104,5 +28104,311 @@
     ]
    }
   ]
+ },
+ "760507": {
+  "teams": [
+   {
+    "teamId": "660",
+    "stats": {
+     "foulsCommitted": "11",
+     "yellowCards": "2",
+     "redCards": "0",
+     "offsides": "0",
+     "wonCorners": "3",
+     "saves": "3",
+     "possessionPct": "56.2",
+     "totalShots": "7",
+     "shotsOnTarget": "2",
+     "accuratePasses": "458",
+     "passPct": "0.9"
+    }
+   },
+   {
+    "teamId": "459",
+    "stats": {
+     "foulsCommitted": "9",
+     "yellowCards": "0",
+     "redCards": "0",
+     "offsides": "1",
+     "wonCorners": "5",
+     "saves": "1",
+     "possessionPct": "43.8",
+     "totalShots": "15",
+     "shotsOnTarget": "7",
+     "accuratePasses": "333",
+     "passPct": "0.8"
+    }
+   }
+  ],
+  "lineups": [
+   {
+    "teamId": "660",
+    "formation": "4-3-3",
+    "players": [
+     {
+      "name": "M. Freese",
+      "jersey": "24",
+      "pos": "G",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "T. Ream",
+      "jersey": "13",
+      "pos": "CD-L",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "C. Richards",
+      "jersey": "3",
+      "pos": "CD-R",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "A. Robinson",
+      "jersey": "5",
+      "pos": "LB",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "A. Freeman",
+      "jersey": "16",
+      "pos": "RB",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "T. Adams",
+      "jersey": "4",
+      "pos": "CM",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "M. Tillman",
+      "jersey": "17",
+      "pos": "LM",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "W. McKennie",
+      "jersey": "8",
+      "pos": "RM",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "F. Balogun",
+      "jersey": "20",
+      "pos": "F",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "C. Pulisic",
+      "jersey": "10",
+      "pos": "LF",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "S. Dest",
+      "jersey": "2",
+      "pos": "RF",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "R. Pepi",
+      "jersey": "9",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "M. Arfsten",
+      "jersey": "18",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "G. Reyna",
+      "jersey": "7",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "H. Wright",
+      "jersey": "19",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "S. Berhalter",
+      "jersey": "14",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     }
+    ]
+   },
+   {
+    "teamId": "459",
+    "formation": "4-2-3-1",
+    "players": [
+     {
+      "name": "T. Courtois",
+      "jersey": "1",
+      "pos": "G",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "B. Mechele",
+      "jersey": "4",
+      "pos": "CD-L",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "N. Ngoy",
+      "jersey": "25",
+      "pos": "CD-R",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "M. De Cuyper",
+      "jersey": "5",
+      "pos": "LB",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "T. Castagne",
+      "jersey": "21",
+      "pos": "RB",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "Y. Tielemans",
+      "jersey": "8",
+      "pos": "AM",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "N. Raskin",
+      "jersey": "23",
+      "pos": "LM",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "A. Onana",
+      "jersey": "24",
+      "pos": "RM",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "C. De Ketelaere",
+      "jersey": "17",
+      "pos": "F",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "L. Trossard",
+      "jersey": "10",
+      "pos": "AM-L",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "D. Lukébakio",
+      "jersey": "14",
+      "pos": "AM-R",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "R. Lukaku",
+      "jersey": "9",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "A. Saelemaekers",
+      "jersey": "22",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "H. Vanaken",
+      "jersey": "20",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "J. Doku",
+      "jersey": "11",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "A. Witsel",
+      "jersey": "6",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     }
+    ]
+   }
+  ]
  }
 }
