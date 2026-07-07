@@ -5020,7 +5020,10 @@
  },
  "760507": {
   "highlights": {
-   "fox": null,
+   "fox": {
+    "videoId": "QL3kCTgeVKA",
+    "title": "United States vs Belgium Highlights 🌎🏆 2026 FIFA World Cup™ | Round of 16"
+   },
    "fifa": null
   },
   "social": [
@@ -5037,7 +5040,14 @@
     "note": "FOX Sports: Malik Tillman on his brilliant free-kick goal and moving forward without Folarin Balogun"
    }
   ],
-  "quotes": [],
+  "quotes": [
+   {
+    "speaker": "Mauricio Pochettino",
+    "text": "We were not the same team that during the tournament showed the quality. Very bad day. But in a tournament like the World Cup, when that happens, you don't have another chance.",
+    "sourceName": "ESPN",
+    "sourceUrl": "https://www.espn.com/soccer/story/_/id/49291529/usa-belgium-20206-fifa-world-cup"
+   }
+  ],
   "recap": {
    "en": "Charles De Ketelaere struck twice inside the first 33 minutes and Belgium never looked back, cruising past the United States 4-1 in Seattle to knock the last of the three World Cup co-hosts out in the Round of 16. Malik Tillman's free kick briefly leveled it, but a Matt Freese error teed up Hans Vanaken and Romelu Lukaku's stoppage-time strike completed the rout as Belgium booked a quarterfinal with Spain.",
    "es": "Charles De Ketelaere marcó dos veces en los primeros 33 minutos y Bélgica nunca miró atrás, superando a Estados Unidos por 4-1 en Seattle para eliminar en octavos al último de los tres anfitriones del Mundial. Un tiro libre de Malik Tillman igualó momentáneamente el marcador, pero un error de Matt Freese dejó servido el gol de Hans Vanaken, y el tanto de Romelu Lukaku en el descuento completó la goleada mientras Bélgica selló un cuarto de final ante España."

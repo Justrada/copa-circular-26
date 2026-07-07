@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-07-07T02:03:45.559Z",
+ "generatedAt": "2026-07-07T09:01:45.398Z",
  "season": "2026 FIFA World Cup",
  "teams": {
   "164": {
@@ -5590,8 +5590,8 @@
    "homePens": null,
    "awayPens": null,
    "winnerId": "459",
-   "headline": null,
-   "attendance": null,
+   "headline": "USMNT out of WCup as Belgium hit four in Seattle",
+   "attendance": 66925,
    "events": [
     {
      "kind": "goal",
