@@ -767,27 +767,38 @@
   "capturedAt": "2026-07-07T10:31:14.607Z"
  },
  "760510": {
-  "home": 0.596,
-  "draw": 0.246,
-  "away": 0.158,
-  "source": "DraftKings closing line",
-  "kind": "book",
-  "capturedAt": "2026-07-07T10:31:14.607Z"
+  "home": 0.612,
+  "draw": 0.244,
+  "away": 0.144,
+  "source": "Polymarket",
+  "kind": "market",
+  "note": "raw 0.615/0.245/0.145 (event fifwc-fra-mar-2026-07-09), normalized",
+  "capturedAt": "2026-07-08T09:09:10.347Z"
  },
  "760511": {
-  "home": 0.584,
-  "draw": 0.243,
-  "away": 0.173,
-  "source": "DraftKings closing line",
-  "kind": "book",
-  "capturedAt": "2026-07-07T10:31:14.607Z"
+  "home": 0.596,
+  "draw": 0.241,
+  "away": 0.163,
+  "source": "Polymarket",
+  "kind": "market",
+  "note": "raw 0.605/0.245/0.165 (event fifwc-esp-bel-2026-07-10), normalized",
+  "capturedAt": "2026-07-08T09:09:10.347Z"
  },
  "760512": {
-  "home": 0.239,
-  "draw": 0.255,
-  "away": 0.505,
+  "home": 0.222,
+  "draw": 0.261,
+  "away": 0.517,
+  "source": "Polymarket",
+  "kind": "market",
+  "note": "raw 0.225/0.265/0.525 (event fifwc-nor-eng-2026-07-11), normalized",
+  "capturedAt": "2026-07-08T09:09:10.347Z"
+ },
+ "760513": {
+  "home": 0.551,
+  "draw": 0.27,
+  "away": 0.18,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-07T10:31:14.607Z"
+  "capturedAt": "2026-07-08T09:01:52.416Z"
  }
 }

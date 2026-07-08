@@ -28410,5 +28410,617 @@
     ]
    }
   ]
+ },
+ "760508": {
+  "teams": [
+   {
+    "teamId": "475",
+    "stats": {
+     "foulsCommitted": "22",
+     "yellowCards": "3",
+     "redCards": "0",
+     "offsides": "5",
+     "wonCorners": "3",
+     "saves": "3",
+     "possessionPct": "53.4",
+     "totalShots": "7",
+     "shotsOnTarget": "2",
+     "accuratePasses": "547",
+     "passPct": "0.9"
+    }
+   },
+   {
+    "teamId": "208",
+    "stats": {
+     "foulsCommitted": "21",
+     "yellowCards": "2",
+     "redCards": "0",
+     "offsides": "4",
+     "wonCorners": "7",
+     "saves": "2",
+     "possessionPct": "46.6",
+     "totalShots": "15",
+     "shotsOnTarget": "3",
+     "accuratePasses": "454",
+     "passPct": "0.8"
+    }
+   }
+  ],
+  "lineups": [
+   {
+    "teamId": "475",
+    "formation": "4-2-3-1",
+    "players": [
+     {
+      "name": "G. Kobel",
+      "jersey": "1",
+      "pos": "G",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "M. Akanji",
+      "jersey": "5",
+      "pos": "CD-L",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "N. Elvedi",
+      "jersey": "4",
+      "pos": "CD-R",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "R. Rodríguez",
+      "jersey": "13",
+      "pos": "LB",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "D. Zakaria",
+      "jersey": "6",
+      "pos": "RB",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "A. Jashari",
+      "jersey": "14",
+      "pos": "AM",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "G. Xhaka",
+      "jersey": "10",
+      "pos": "LM",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "R. Freuler",
+      "jersey": "8",
+      "pos": "RM",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "B. Embolo",
+      "jersey": "7",
+      "pos": "F",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "D. Ndoye",
+      "jersey": "11",
+      "pos": "AM-L",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "F. Rieder",
+      "jersey": "22",
+      "pos": "AM-R",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "Z. Amdouni",
+      "jersey": "23",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "R. Vargas",
+      "jersey": "17",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "C. Itten",
+      "jersey": "26",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "S. Widmer",
+      "jersey": "3",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "M. Muheim",
+      "jersey": "2",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "D. Sow",
+      "jersey": "15",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     }
+    ]
+   },
+   {
+    "teamId": "208",
+    "formation": "4-4-1-1",
+    "players": [
+     {
+      "name": "C. Vargas",
+      "jersey": "12",
+      "pos": "G",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "J. Lucumí",
+      "jersey": "3",
+      "pos": "CD-L",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "D. Sánchez",
+      "jersey": "23",
+      "pos": "CD-R",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "J. Mojica",
+      "jersey": "17",
+      "pos": "LB",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "D. Muñoz",
+      "jersey": "2",
+      "pos": "RB",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "G. Puerta",
+      "jersey": "14",
+      "pos": "CM-L",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "J. Lerma",
+      "jersey": "16",
+      "pos": "CM-R",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "L. Díaz",
+      "jersey": "7",
+      "pos": "LM",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "J. Arias",
+      "jersey": "11",
+      "pos": "RM",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "L. Suárez",
+      "jersey": "25",
+      "pos": "F",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "J. Rodríguez",
+      "jersey": "10",
+      "pos": "RCF",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "R. Ríos",
+      "jersey": "6",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "C. Hernández",
+      "jersey": "19",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "J. Campaz",
+      "jersey": "21",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "J. Quintero",
+      "jersey": "20",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "Y. Mina",
+      "jersey": "13",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     }
+    ]
+   }
+  ]
+ },
+ "760509": {
+  "teams": [
+   {
+    "teamId": "202",
+    "stats": {
+     "foulsCommitted": "13",
+     "yellowCards": "0",
+     "redCards": "0",
+     "offsides": "3",
+     "wonCorners": "6",
+     "saves": "0",
+     "possessionPct": "63.6",
+     "totalShots": "19",
+     "shotsOnTarget": "7",
+     "accuratePasses": "541",
+     "passPct": "0.9"
+    }
+   },
+   {
+    "teamId": "2620",
+    "stats": {
+     "foulsCommitted": "11",
+     "yellowCards": "4",
+     "redCards": "0",
+     "offsides": "0",
+     "wonCorners": "1",
+     "saves": "4",
+     "possessionPct": "36.4",
+     "totalShots": "5",
+     "shotsOnTarget": "2",
+     "accuratePasses": "287",
+     "passPct": "0.8"
+    }
+   }
+  ],
+  "lineups": [
+   {
+    "teamId": "202",
+    "formation": "4-1-3-2",
+    "players": [
+     {
+      "name": "L. Martínez",
+      "jersey": "22",
+      "pos": "",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "F. Medina",
+      "jersey": "25",
+      "pos": "",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "G. Montiel",
+      "jersey": "4",
+      "pos": "",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "N. Otamendi",
+      "jersey": "19",
+      "pos": "",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "N. González",
+      "jersey": "15",
+      "pos": "",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "E. Martínez",
+      "jersey": "23",
+      "pos": "G",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "L. Martínez",
+      "jersey": "6",
+      "pos": "CD-L",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "C. Romero",
+      "jersey": "13",
+      "pos": "CD-R",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "L. Paredes",
+      "jersey": "5",
+      "pos": "SW",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "N. Tagliafico",
+      "jersey": "3",
+      "pos": "LB",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "N. Molina",
+      "jersey": "26",
+      "pos": "RB",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "A. Mac Allister",
+      "jersey": "20",
+      "pos": "CM",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "E. Fernández",
+      "jersey": "24",
+      "pos": "LM",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "R. De Paul",
+      "jersey": "7",
+      "pos": "RM",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "J. Álvarez",
+      "jersey": "9",
+      "pos": "CF-L",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "L. Messi",
+      "jersey": "10",
+      "pos": "CF-R",
+      "starter": true,
+      "off": false,
+      "on": false
+     }
+    ]
+   },
+   {
+    "teamId": "2620",
+    "formation": "4-4-2",
+    "players": [
+     {
+      "name": "M. Shoubir",
+      "jersey": "23",
+      "pos": "G",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "R. Rabia",
+      "jersey": "5",
+      "pos": "CD-L",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "Y. Ibrahim",
+      "jersey": "2",
+      "pos": "CD-R",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "K. Hafez",
+      "jersey": "15",
+      "pos": "LB",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "M. Hany",
+      "jersey": "3",
+      "pos": "RB",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "M. Attia",
+      "jersey": "19",
+      "pos": "CM-L",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "M. Lashin",
+      "jersey": "17",
+      "pos": "CM-R",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "E. Ashour",
+      "jersey": "8",
+      "pos": "LM",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "H. Hassan",
+      "jersey": "12",
+      "pos": "RM",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "M. Zico",
+      "jersey": "11",
+      "pos": "CF-L",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "M. Salah",
+      "jersey": "10",
+      "pos": "CF-R",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "Trézéguet",
+      "jersey": "7",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "Zizo",
+      "jersey": "25",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "H. Fathy",
+      "jersey": "14",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "O. Marmoush",
+      "jersey": "22",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     }
+    ]
+   }
+  ]
  }
 }

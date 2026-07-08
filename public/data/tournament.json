@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-07-07T10:31:14.613Z",
+ "generatedAt": "2026-07-08T09:01:53.009Z",
  "season": "2026 FIFA World Cup",
  "teams": {
   "164": {
@@ -5653,20 +5653,20 @@
    "date": "2026-07-07T20:00Z",
    "venue": "BC Place",
    "city": "Vancouver",
-   "status": "scheduled",
-   "statusDetail": "Scheduled",
+   "status": "ft",
+   "statusDetail": "FT-Pens",
    "homeId": "475",
    "awayId": "208",
    "homePlaceholder": null,
    "awayPlaceholder": null,
-   "homeScore": null,
-   "awayScore": null,
-   "homePens": null,
-   "awayPens": null,
-   "winnerId": null,
-   "headline": null,
-   "attendance": null,
-   "loserId": null,
+   "homeScore": 0,
+   "awayScore": 0,
+   "homePens": 4,
+   "awayPens": 3,
+   "winnerId": "475",
+   "headline": "Switzerland send Colombia home from World Cup after penalty shootout",
+   "attendance": 52497,
+   "loserId": "208",
    "feeds": {
     "home": {
      "matchId": "760498",
@@ -5685,20 +5685,62 @@
    "date": "2026-07-07T16:00Z",
    "venue": "Mercedes-Benz Stadium",
    "city": "Atlanta, Georgia",
-   "status": "scheduled",
-   "statusDetail": "Scheduled",
+   "status": "ft",
+   "statusDetail": "FT",
    "homeId": "202",
    "awayId": "2620",
    "homePlaceholder": null,
    "awayPlaceholder": null,
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 3,
+   "awayScore": 2,
    "homePens": null,
    "awayPens": null,
-   "winnerId": null,
-   "headline": null,
-   "attendance": null,
-   "loserId": null,
+   "winnerId": "202",
+   "headline": "Argentina overturn two-goal deficit to beat Egypt late at World Cup",
+   "attendance": 68239,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "2620",
+     "player": "Y. Ibrahim",
+     "clock": "15'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "2620",
+     "player": "M. Zico",
+     "clock": "67'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "202",
+     "player": "C. Romero",
+     "clock": "79'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "202",
+     "player": "L. Messi",
+     "clock": "83'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "202",
+     "player": "E. Fernández",
+     "clock": "90'+2'",
+     "pen": false,
+     "og": false
+    }
+   ],
+   "loserId": "2620",
    "feeds": {
     "home": {
      "matchId": "760500",
@@ -5815,10 +5857,10 @@
    "city": "Kansas City, Missouri",
    "status": "scheduled",
    "statusDetail": "Scheduled",
-   "homeId": null,
-   "awayId": null,
-   "homePlaceholder": "Round of 16 7 Winner",
-   "awayPlaceholder": "Round of 16 8 Winner",
+   "homeId": "202",
+   "awayId": "475",
+   "homePlaceholder": null,
+   "awayPlaceholder": null,
    "homeScore": null,
    "awayScore": null,
    "homePens": null,
@@ -5829,11 +5871,11 @@
    "loserId": null,
    "feeds": {
     "home": {
-     "matchId": "760508",
+     "matchId": "760509",
      "kind": "winner"
     },
     "away": {
-     "matchId": "760509",
+     "matchId": "760508",
      "kind": "winner"
     }
    }

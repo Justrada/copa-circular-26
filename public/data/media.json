@@ -5072,5 +5072,103 @@
     "url": "https://x.com/_FaridKhan/status/2074314416779047214"
    }
   ]
+ },
+ "760508": {
+  "highlights": {
+   "fox": {
+    "videoId": "_uEzppRKcd0",
+    "title": "Switzerland vs Colombia Highlights 🌎🏆 2026 FIFA World Cup™ | Round of 16"
+   },
+   "fifa": null
+  },
+  "social": [
+   {
+    "platform": "youtube",
+    "url": "https://www.youtube.com/watch?v=VqASxH2YH0I",
+    "kind": "penalties",
+    "note": "FOX Sports: the full 4-3 penalty shootout, with Gregor Kobel’s decisive save and Davinson Sánchez and Cucho Hernández both missing from the spot."
+   }
+  ],
+  "quotes": [
+   {
+    "speaker": "Murat Yakin",
+    "text": "It took an incredible fight. Cleverness and patience, too. And then the penalty shootout at the end, we finally broke the curse.",
+    "sourceName": "ESPN",
+    "sourceUrl": "https://www.espn.com/soccer/story/_/id/49301381/switzerland-overcome-penalty-curse-oust-colombia-world-cup"
+   }
+  ],
+  "recap": {
+   "en": "Switzerland and Colombia played out a goalless 120 minutes in Vancouver before the Swiss won a World Cup penalty shootout for the very first time, 4-3, with goalkeeper Gregor Kobel the hero. Davinson Sánchez and Cucho Hernández missed from the spot as Switzerland reached their first World Cup quarterfinal since 1954, where Argentina now awaits.",
+   "es": "Suiza y Colombia empataron sin goles tras 120 minutos en Vancouver antes de que los suizos ganaran por primera vez una tanda de penales en un Mundial, 4-3, con el portero Gregor Kobel como héroe. Davinson Sánchez y Cucho Hernández fallaron desde el punto de penal y Suiza alcanzó sus primeros cuartos de final mundialistas desde 1954, donde ahora le espera Argentina."
+  },
+  "fans": [
+   {
+    "text": "Wait what there’s no game tomorrow?? What am I meant to do instead? Talk to my wife and kids??!!!! FUCK",
+    "author": "u/cricketbandit",
+    "platform": "reddit",
+    "url": "https://www.reddit.com/r/worldcup/comments/1uqatfj/postmatch_thread_switzerland_00_colombia_world/"
+   },
+   {
+    "text": "Colombia had at least three 1v1 against the keeper and they fucking missed every single one",
+    "author": "u/marcegearsolid",
+    "platform": "reddit",
+    "url": "https://www.reddit.com/r/worldcup/comments/1uqatfj/postmatch_thread_switzerland_00_colombia_world/"
+   },
+   {
+    "text": "Colombia dangerous until it’s time to shoot the ball into the net",
+    "author": "u/Username-_-Password",
+    "platform": "reddit",
+    "url": "https://www.reddit.com/r/football/comments/1uqatgj/postmatch_thread_switzerland_00_colombia_world/"
+   }
+  ]
+ },
+ "760509": {
+  "highlights": {
+   "fox": {
+    "videoId": "XO3x8vm0Ijc",
+    "title": "Argentina vs Egypt Highlights 🌎🏆 2026 FIFA World Cup™ | Round of 16"
+   },
+   "fifa": null
+  },
+  "social": [
+   {
+    "platform": "youtube",
+    "url": "https://www.youtube.com/watch?v=i49NzYqYQ1I",
+    "kind": "goal",
+    "note": "FIFA: Lionel Messi’s 83rd-minute strike that leveled the tie during Argentina’s frantic second-half comeback."
+   },
+   {
+    "platform": "youtube",
+    "url": "https://www.youtube.com/watch?v=FunGHOVC6sw",
+    "kind": "goal",
+    "note": "FIFA: Enzo Fernández’s stoppage-time header that completed the comeback and sent Argentina through to the quarterfinals."
+   }
+  ],
+  "quotes": [
+   {
+    "speaker": "Lionel Scaloni",
+    "text": "Messi missed a penalty but he asks for the ball again and he drives, again and again. I get goosebumps, to be honest. This is who we are, as Argentinians. We play our hearts out.",
+    "sourceName": "Yahoo Sports",
+    "sourceUrl": "https://sports.yahoo.com/articles/lionel-scaloni-abandons-interview-tears-224330373.html"
+   }
+  ],
+  "recap": {
+   "en": "Egypt looked set for the biggest shock of the World Cup, leading 2-0 through Ibrahim and Zico as Lionel Messi had a penalty saved in Atlanta. Then Argentina erupted for three goals in 14 minutes — Cristian Romero, Messi and a stoppage-time Enzo Fernández header — to steal a 3-2 win and a quarterfinal against Switzerland.",
+   "es": "Egipto acariciaba la mayor sorpresa del Mundial, ganando 2-0 con goles de Ibrahim y Zico y tras un penal atajado a Lionel Messi en Atlanta. Entonces Argentina estalló con tres goles en 14 minutos —Cristian Romero, Messi y un cabezazo de Enzo Fernández en el descuento— para robar un 3-2 y unos cuartos de final ante Suiza."
+  },
+  "fans": [
+   {
+    "text": "Two things can be true at the same time. Egypt pissed away a 2-0 lead. The officiating favored Argentina.",
+    "author": "u/TheBrodysseus",
+    "platform": "reddit",
+    "url": "https://www.reddit.com/r/soccer/comments/1uq468f/mostafa_zico_the_referee_is_unfair_god_is/"
+   },
+   {
+    "text": "I think the goal was disallowed correctly. But I really feel for him, what a goal it would have been",
+    "author": "u/OrignalSauce",
+    "platform": "reddit",
+    "url": "https://www.reddit.com/r/soccer/comments/1uq468f/mostafa_zico_the_referee_is_unfair_god_is/"
+   }
+  ]
  }
 }
