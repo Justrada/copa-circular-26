@@ -767,20 +767,20 @@
   "capturedAt": "2026-07-07T10:31:14.607Z"
  },
  "760510": {
-  "home": 0.596,
-  "draw": 0.246,
-  "away": 0.158,
+  "home": 0.604,
+  "draw": 0.25,
+  "away": 0.146,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-08T09:33:37.093Z"
+  "capturedAt": "2026-07-09T10:35:55.385Z"
  },
  "760511": {
-  "home": 0.589,
-  "draw": 0.239,
-  "away": 0.172,
+  "home": 0.576,
+  "draw": 0.243,
+  "away": 0.181,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-08T09:33:37.093Z"
+  "capturedAt": "2026-07-09T10:35:55.386Z"
  },
  "760512": {
   "home": 0.232,
@@ -788,14 +788,14 @@
   "away": 0.51,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-08T09:33:37.093Z"
+  "capturedAt": "2026-07-09T10:35:55.386Z"
  },
  "760513": {
-  "home": 0.551,
-  "draw": 0.27,
-  "away": 0.18,
+  "home": 0.561,
+  "draw": 0.267,
+  "away": 0.172,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-08T09:33:37.093Z"
+  "capturedAt": "2026-07-09T10:35:55.386Z"
  }
 }
