@@ -5170,5 +5170,109 @@
     "url": "https://www.reddit.com/r/soccer/comments/1uq468f/mostafa_zico_the_referee_is_unfair_god_is/"
    }
   ]
+ },
+ "760510": {
+  "highlights": {
+   "fox": {
+    "videoId": "J_1iFnRsHG0",
+    "title": "France vs Morocco Highlights 🌎🏆 2026 FIFA World Cup™ | Quarterfinals"
+   },
+   "fifa": {
+    "videoId": "Lfo49ZbV4WU",
+    "title": "Highlights | France 2-0 Morocco | FIFA World Cup 2026™"
+   }
+  },
+  "social": [
+   {
+    "platform": "youtube",
+    "url": "https://www.youtube.com/watch?v=3LrNmNWyAn0",
+    "kind": "goal",
+    "note": "FIFA official clip of Mbappé's 60' opener, his 8th goal of the tournament"
+   },
+   {
+    "platform": "youtube",
+    "url": "https://www.youtube.com/watch?v=j8g-1qV2Iog",
+    "kind": "goal",
+    "note": "FIFA official clip of Dembélé's 66' goal that sealed the win"
+   }
+  ],
+  "quotes": [
+   {
+    "speaker": "Ousmane Dembélé",
+    "text": "He's an incredible player, our captain. He's fearless, he has the mentality, we expect even more goals from Kylian.",
+    "sourceName": "Goal.com",
+    "sourceUrl": "https://www.goal.com/en-us/lists/ousmane-dembele-kylian-mbappe-advice-france-morocco--world-cup/bltf62c38780d938821"
+   }
+  ],
+  "recap": {
+   "en": "Kylian Mbappé curled in his eighth goal of the tournament and set up Ousmane Dembélé six minutes later as France beat Morocco 2-0 at Gillette Stadium to reach a third consecutive World Cup semifinal. Mbappé shrugged off a missed first-half penalty, finishing with a goal and an assist before being substituted late with a minor ankle knock.",
+   "es": "Kylian Mbappé marcó su octavo gol del torneo con un remate curvado y asistió a Ousmane Dembélé seis minutos después para que Francia venciera 2-0 a Marruecos en el Gillette Stadium y alcanzara su tercera semifinal consecutiva del Mundial. Mbappé superó un penalti fallado en la primera parte, terminó con un gol y una asistencia, y fue sustituido al final con una leve molestia en el tobillo."
+  },
+  "fans": [
+   {
+    "text": "I'm happy France won, but I wish Morocco would have played better and actually put up a fight",
+    "author": "u/embarrrasssing",
+    "platform": "reddit",
+    "url": "https://www.reddit.com/r/worldcup/comments/1us4k57/postmatch_thread_france_20_morocco_world_cup/"
+   },
+   {
+    "text": "Mbappe looks invincible in NT.",
+    "author": "u/Impossible_Try_6008",
+    "platform": "reddit",
+    "url": "https://www.reddit.com/r/soccer/comments/1usvcxg/mr_world_cup_frances_record_the_world_cup_when/"
+   },
+   {
+    "text": "Let's appreciate that this match was refereed reasonably for the vast majority of situations",
+    "author": "u/AJL912-aber",
+    "platform": "reddit",
+    "url": "https://www.reddit.com/r/worldcup/comments/1us4k57/postmatch_thread_france_20_morocco_world_cup/"
+   }
+  ]
+ },
+ "760511": {
+  "highlights": {
+   "fox": null,
+   "fifa": null
+  },
+  "social": [
+   {
+    "platform": "youtube",
+    "url": "https://www.youtube.com/watch?v=KBUS-lSiJEU",
+    "kind": "punditry",
+    "note": "ESPN FC full reaction to Merino's winner and Lammens' howler, plus a France vs Spain semifinal preview (ESPN UK)."
+   }
+  ],
+  "quotes": [
+   {
+    "speaker": "Mikel Merino",
+    "text": "I trust myself and I know what to do whenever I have the chance.",
+    "sourceName": "NBC News",
+    "sourceUrl": "https://www.nbcnews.com/sports/soccer/live-blog/spain-belgium-world-cup-2026-july-10-live-updates-rcna385832"
+   }
+  ],
+  "recap": {
+   "en": "Substitute Mikel Merino struck in the 88th minute, pouncing on a spill from Belgium's backup keeper Senne Lammens, to give Spain a 2-1 quarterfinal win at SoFi Stadium. Fabián Ruiz had opened the scoring before Charles De Ketelaere's header leveled it, and La Roja advance to a semifinal against France.",
+   "es": "El suplente Mikel Merino marcó en el minuto 88, aprovechando un rechace del portero suplente belga Senne Lammens, para dar a España una victoria de 2-1 en los cuartos de final en el SoFi Stadium. Fabián Ruiz había abierto el marcador antes de que el cabezazo de Charles De Ketelaere igualara, y La Roja avanza a una semifinal ante Francia."
+  },
+  "fans": [
+   {
+    "text": "That's awful for Lammens",
+    "author": "u/lazersbeem",
+    "platform": "reddit",
+    "url": "https://www.reddit.com/r/soccer/comments/1uszrtl/spain_2_1_belgium_mikel_merino_88/"
+   },
+   {
+    "text": "That cut to Courtois 😭",
+    "author": "u/Ryponagar",
+    "platform": "reddit",
+    "url": "https://www.reddit.com/r/soccer/comments/1uszrtl/spain_2_1_belgium_mikel_merino_88/"
+   },
+   {
+    "text": "\"lammens has this trust\" that comment didnt age well",
+    "author": "u/fap4jesus",
+    "platform": "reddit",
+    "url": "https://www.reddit.com/r/soccer/comments/1uszrtl/spain_2_1_belgium_mikel_merino_88/"
+   }
+  ]
  }
 }

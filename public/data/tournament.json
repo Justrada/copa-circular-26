@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-07-10T10:29:00.537Z",
+ "generatedAt": "2026-07-10T22:23:00.638Z",
  "season": "2026 FIFA World Cup",
  "teams": {
   "164": {
@@ -5809,20 +5809,46 @@
    "date": "2026-07-10T19:00Z",
    "venue": "SoFi Stadium",
    "city": "Inglewood, California",
-   "status": "scheduled",
-   "statusDetail": "Scheduled",
+   "status": "ft",
+   "statusDetail": "FT",
    "homeId": "164",
    "awayId": "459",
    "homePlaceholder": null,
    "awayPlaceholder": null,
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 2,
+   "awayScore": 1,
    "homePens": null,
    "awayPens": null,
-   "winnerId": null,
-   "headline": null,
-   "attendance": null,
-   "loserId": null,
+   "winnerId": "164",
+   "headline": "Lammens error sends Spain past Belgium into SF",
+   "attendance": 70492,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "164",
+     "player": "F. Ruiz",
+     "clock": "30'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "459",
+     "player": "C. De Ketelaere",
+     "clock": "41'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "164",
+     "player": "M. Merino",
+     "clock": "88'",
+     "pen": false,
+     "og": false
+    }
+   ],
+   "loserId": "459",
    "feeds": {
     "home": {
      "matchId": "760506",
@@ -5908,9 +5934,9 @@
    "status": "scheduled",
    "statusDetail": "Scheduled",
    "homeId": "478",
-   "awayId": null,
+   "awayId": "164",
    "homePlaceholder": null,
-   "awayPlaceholder": "Quarterfinal 2 Winner",
+   "awayPlaceholder": null,
    "homeScore": null,
    "awayScore": null,
    "homePens": null,

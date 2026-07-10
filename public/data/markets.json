@@ -1,14 +1,12 @@
 {
-  "champion": {
-    "France": 0.3265,
-    "Argentina": 0.1865,
-    "Spain": 0.1855,
-    "England": 0.1565,
-    "Norway": 0.0595,
-    "Morocco": 0.0305,
-    "Belgium": 0.0245,
-    "Switzerland": 0.0225
-  },
-  "capturedAt": "2026-07-08T09:09:10.347Z",
-  "source": "Polymarket"
+ "champion": {
+  "France": 0.3735,
+  "Spain": 0.2105,
+  "Argentina": 0.1765,
+  "England": 0.1475,
+  "Norway": 0.0605,
+  "Belgium": 0.0005
+ },
+ "capturedAt": "2026-07-10T22:10:22.452Z",
+ "source": "Polymarket"
 }

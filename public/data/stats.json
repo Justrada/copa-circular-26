@@ -29320,5 +29320,303 @@
     ]
    }
   ]
+ },
+ "760511": {
+  "teams": [
+   {
+    "teamId": "164",
+    "stats": {
+     "foulsCommitted": "13",
+     "yellowCards": "2",
+     "redCards": "0",
+     "offsides": "3",
+     "wonCorners": "5",
+     "saves": "1",
+     "possessionPct": "67.8",
+     "totalShots": "17",
+     "shotsOnTarget": "8",
+     "accuratePasses": "598",
+     "passPct": "0.9"
+    }
+   },
+   {
+    "teamId": "459",
+    "stats": {
+     "foulsCommitted": "18",
+     "yellowCards": "2",
+     "redCards": "0",
+     "offsides": "1",
+     "wonCorners": "1",
+     "saves": "6",
+     "possessionPct": "32.2",
+     "totalShots": "5",
+     "shotsOnTarget": "2",
+     "accuratePasses": "244",
+     "passPct": "0.8"
+    }
+   }
+  ],
+  "lineups": [
+   {
+    "teamId": "164",
+    "formation": "4-2-3-1",
+    "players": [
+     {
+      "name": "U. Simón",
+      "jersey": "23",
+      "pos": "G",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "A. Laporte",
+      "jersey": "14",
+      "pos": "CD-L",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "P. Cubarsí",
+      "jersey": "22",
+      "pos": "CD-R",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "M. Cucurella",
+      "jersey": "24",
+      "pos": "LB",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "P. Porro",
+      "jersey": "12",
+      "pos": "RB",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "D. Olmo",
+      "jersey": "10",
+      "pos": "AM",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "F. Ruiz",
+      "jersey": "8",
+      "pos": "LM",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "Rodri",
+      "jersey": "16",
+      "pos": "RM",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "M. Oyarzabal",
+      "jersey": "21",
+      "pos": "F",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "Á. Baena",
+      "jersey": "15",
+      "pos": "AM-L",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "L. Yamal",
+      "jersey": "19",
+      "pos": "AM-R",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "N. Williams",
+      "jersey": "17",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "M. Merino",
+      "jersey": "6",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "Pedri",
+      "jersey": "20",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "F. Torres",
+      "jersey": "7",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     }
+    ]
+   },
+   {
+    "teamId": "459",
+    "formation": "4-2-3-1",
+    "players": [
+     {
+      "name": "T. Courtois",
+      "jersey": "1",
+      "pos": "G",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "B. Mechele",
+      "jersey": "4",
+      "pos": "CD-L",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "N. Ngoy",
+      "jersey": "25",
+      "pos": "CD-R",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "M. De Cuyper",
+      "jersey": "5",
+      "pos": "LB",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "T. Castagne",
+      "jersey": "21",
+      "pos": "RB",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "K. De Bruyne",
+      "jersey": "7",
+      "pos": "AM",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "N. Raskin",
+      "jersey": "23",
+      "pos": "LM",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "H. Vanaken",
+      "jersey": "20",
+      "pos": "RM",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "C. De Ketelaere",
+      "jersey": "17",
+      "pos": "F",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "J. Doku",
+      "jersey": "11",
+      "pos": "AM-L",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "L. Trossard",
+      "jersey": "10",
+      "pos": "AM-R",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "A. Saelemaekers",
+      "jersey": "22",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "J. Seys",
+      "jersey": "18",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "S. Lammens",
+      "jersey": "12",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "A. Witsel",
+      "jersey": "6",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "R. Lukaku",
+      "jersey": "9",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     }
+    ]
+   }
+  ]
  }
 }
