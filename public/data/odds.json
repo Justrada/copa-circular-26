@@ -775,12 +775,12 @@
   "capturedAt": "2026-07-09T10:35:55.385Z"
  },
  "760511": {
-  "home": 0.576,
-  "draw": 0.243,
-  "away": 0.181,
+  "home": 0.586,
+  "draw": 0.241,
+  "away": 0.173,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-09T10:35:55.386Z"
+  "capturedAt": "2026-07-10T10:29:00.256Z"
  },
  "760512": {
   "home": 0.232,
@@ -788,7 +788,7 @@
   "away": 0.51,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-09T10:35:55.386Z"
+  "capturedAt": "2026-07-10T10:29:00.257Z"
  },
  "760513": {
   "home": 0.561,
@@ -796,6 +796,6 @@
   "away": 0.172,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-09T10:35:55.386Z"
+  "capturedAt": "2026-07-10T10:29:00.257Z"
  }
 }

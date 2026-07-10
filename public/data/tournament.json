@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-07-09T10:35:55.397Z",
+ "generatedAt": "2026-07-10T10:29:00.537Z",
  "season": "2026 FIFA World Cup",
  "teams": {
   "164": {
@@ -5759,20 +5759,38 @@
    "date": "2026-07-09T20:00Z",
    "venue": "Gillette Stadium",
    "city": "Foxborough, Massachusetts",
-   "status": "scheduled",
-   "statusDetail": "Scheduled",
+   "status": "ft",
+   "statusDetail": "FT",
    "homeId": "478",
    "awayId": "2869",
    "homePlaceholder": null,
    "awayPlaceholder": null,
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 2,
+   "awayScore": 0,
    "homePens": null,
    "awayPens": null,
-   "winnerId": null,
-   "headline": null,
-   "attendance": null,
-   "loserId": null,
+   "winnerId": "478",
+   "headline": "Mbappé scores 8th of WC, France beat Morocco in QF",
+   "attendance": 63811,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "478",
+     "player": "K. Mbappé",
+     "clock": "60'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "478",
+     "player": "O. Dembélé",
+     "clock": "66'",
+     "pen": false,
+     "og": false
+    }
+   ],
+   "loserId": "2869",
    "feeds": {
     "home": {
      "matchId": "760503",
@@ -5889,9 +5907,9 @@
    "city": "Arlington, Texas",
    "status": "scheduled",
    "statusDetail": "Scheduled",
-   "homeId": null,
+   "homeId": "478",
    "awayId": null,
-   "homePlaceholder": "Quarterfinal 1 Winner",
+   "homePlaceholder": null,
    "awayPlaceholder": "Quarterfinal 2 Winner",
    "homeScore": null,
    "awayScore": null,
