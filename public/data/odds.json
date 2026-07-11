@@ -783,20 +783,20 @@
   "capturedAt": "2026-07-10T10:29:00.256Z"
  },
  "760512": {
-  "home": 0.251,
-  "draw": 0.261,
-  "away": 0.488,
-  "source": "DraftKings closing line",
-  "kind": "book",
-  "capturedAt": "2026-07-11T08:57:36.688Z"
+  "home": 0.243,
+  "draw": 0.255,
+  "away": 0.502,
+  "source": "Polymarket (event fifwc-nor-eng-2026-07-11, CLOB last prices, normalized)",
+  "kind": "market",
+  "capturedAt": "2026-07-11T09:13:18.633Z"
  },
  "760513": {
-  "home": 0.561,
-  "draw": 0.267,
-  "away": 0.172,
-  "source": "DraftKings closing line",
-  "kind": "book",
-  "capturedAt": "2026-07-11T08:57:36.688Z"
+  "home": 0.574,
+  "draw": 0.266,
+  "away": 0.16,
+  "source": "Polymarket (event fifwc-arg-che-2026-07-11, CLOB last prices, normalized)",
+  "kind": "market",
+  "capturedAt": "2026-07-11T09:13:18.633Z"
  },
  "760514": {
   "home": 0.405,
@@ -804,6 +804,6 @@
   "away": 0.302,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-11T08:57:36.688Z"
+  "capturedAt": "2026-07-11T09:02:07.529Z"
  }
 }

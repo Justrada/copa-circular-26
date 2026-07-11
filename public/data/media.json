@@ -5231,32 +5231,41 @@
  },
  "760511": {
   "highlights": {
-   "fox": null,
+   "fox": {
+    "videoId": "jqG_pZGkLcc",
+    "title": "Spain vs Belgium Highlights 🌎🏆 2026 FIFA World Cup™ | Quarterfinals"
+   },
    "fifa": null
   },
   "social": [
    {
     "platform": "youtube",
-    "url": "https://www.youtube.com/watch?v=KBUS-lSiJEU",
-    "kind": "punditry",
-    "note": "ESPN FC full reaction to Merino's winner and Lammens' howler, plus a France vs Spain semifinal preview (ESPN UK)."
+    "url": "https://www.youtube.com/watch?v=7Mm0MDIQ-ck",
+    "kind": "goal",
+    "note": "FOX Sports: Fabián Ruiz's 30' opener, Spain's first goal of a tense quarterfinal"
+   },
+   {
+    "platform": "youtube",
+    "url": "https://www.youtube.com/watch?v=guOtmLGbsUA",
+    "kind": "reaction",
+    "note": "CBS Sports Golazo: Mikel Merino's 88th-minute winner off the Lammens spill that sent Spain to the semis"
    }
   ],
   "quotes": [
    {
-    "speaker": "Mikel Merino",
-    "text": "I trust myself and I know what to do whenever I have the chance.",
-    "sourceName": "NBC News",
-    "sourceUrl": "https://www.nbcnews.com/sports/soccer/live-blog/spain-belgium-world-cup-2026-july-10-live-updates-rcna385832"
+    "speaker": "Luis de la Fuente",
+    "text": "Merino has many virtues, he could play in any national team and any club, and for us he is tailor-made for this team, for this model. We know that whenever we need him, he's always there.",
+    "sourceName": "Goal.com",
+    "sourceUrl": "https://www.goal.com/en-om/lists/mikel-merino-tailor-made-spain-luis-de-la-fuente-belgium-world-cup/blt71dc129465913f9e"
    }
   ],
   "recap": {
-   "en": "Substitute Mikel Merino struck in the 88th minute, pouncing on a spill from Belgium's backup keeper Senne Lammens, to give Spain a 2-1 quarterfinal win at SoFi Stadium. Fabián Ruiz had opened the scoring before Charles De Ketelaere's header leveled it, and La Roja advance to a semifinal against France.",
-   "es": "El suplente Mikel Merino marcó en el minuto 88, aprovechando un rechace del portero suplente belga Senne Lammens, para dar a España una victoria de 2-1 en los cuartos de final en el SoFi Stadium. Fabián Ruiz había abierto el marcador antes de que el cabezazo de Charles De Ketelaere igualara, y La Roja avanza a una semifinal ante Francia."
+   "en": "Spain conceded their first goal of the tournament but still edged Belgium 2-1 at SoFi Stadium, substitute Mikel Merino pouncing on a Senne Lammens spill in the 88th minute. Fabián Ruiz had opened the scoring before Charles De Ketelaere equalised, and La Roja's late winner set up a semifinal against France.",
+   "es": "España encajó su primer gol del torneo pero aun así superó a Bélgica 2-1 en el SoFi Stadium, con el suplente Mikel Merino aprovechando un rechace de Senne Lammens en el minuto 88. Fabián Ruiz había abierto el marcador antes de que Charles De Ketelaere empatara, y el tanto tardío de La Roja montó una semifinal ante Francia."
   },
   "fans": [
    {
-    "text": "That's awful for Lammens",
+    "text": "That’s awful for Lammens",
     "author": "u/lazersbeem",
     "platform": "reddit",
     "url": "https://www.reddit.com/r/soccer/comments/1uszrtl/spain_2_1_belgium_mikel_merino_88/"
@@ -5268,7 +5277,7 @@
     "url": "https://www.reddit.com/r/soccer/comments/1uszrtl/spain_2_1_belgium_mikel_merino_88/"
    },
    {
-    "text": "\"lammens has this trust\" that comment didnt age well",
+    "text": "“lammens has this trust” that comment didnt age well",
     "author": "u/fap4jesus",
     "platform": "reddit",
     "url": "https://www.reddit.com/r/soccer/comments/1uszrtl/spain_2_1_belgium_mikel_merino_88/"
