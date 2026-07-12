@@ -799,11 +799,19 @@
   "capturedAt": "2026-07-11T09:13:18.633Z"
  },
  "760514": {
-  "home": 0.405,
-  "draw": 0.293,
-  "away": 0.302,
+  "home": 0.407,
+  "draw": 0.294,
+  "away": 0.299,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-11T09:02:07.529Z"
+  "capturedAt": "2026-07-12T09:13:25.365Z"
+ },
+ "760515": {
+  "home": 0.372,
+  "draw": 0.316,
+  "away": 0.311,
+  "source": "DraftKings closing line",
+  "kind": "book",
+  "capturedAt": "2026-07-12T09:13:25.365Z"
  }
 }

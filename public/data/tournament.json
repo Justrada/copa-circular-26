@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-07-11T09:02:07.534Z",
+ "generatedAt": "2026-07-12T09:13:25.939Z",
  "season": "2026 FIFA World Cup",
  "teams": {
   "164": {
@@ -5867,20 +5867,46 @@
    "date": "2026-07-11T21:00Z",
    "venue": "Hard Rock Stadium",
    "city": "Miami Gardens, Florida",
-   "status": "scheduled",
-   "statusDetail": "Scheduled",
+   "status": "ft",
+   "statusDetail": "AET",
    "homeId": "464",
    "awayId": "448",
    "homePlaceholder": null,
    "awayPlaceholder": null,
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 1,
+   "awayScore": 2,
    "homePens": null,
    "awayPens": null,
-   "winnerId": null,
-   "headline": null,
-   "attendance": null,
-   "loserId": null,
+   "winnerId": "448",
+   "headline": "Bellingham hits brace as England reach WCup semifinals",
+   "attendance": 64478,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "464",
+     "player": "A. Schjelderup",
+     "clock": "36'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "448",
+     "player": "J. Bellingham",
+     "clock": "45'+2'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "448",
+     "player": "J. Bellingham",
+     "clock": "93'",
+     "pen": false,
+     "og": false
+    }
+   ],
+   "loserId": "464",
    "feeds": {
     "home": {
      "matchId": "760504",
@@ -5899,20 +5925,62 @@
    "date": "2026-07-12T01:00Z",
    "venue": "GEHA Field at Arrowhead Stadium",
    "city": "Kansas City, Missouri",
-   "status": "scheduled",
-   "statusDetail": "Scheduled",
+   "status": "ft",
+   "statusDetail": "AET",
    "homeId": "202",
    "awayId": "475",
    "homePlaceholder": null,
    "awayPlaceholder": null,
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 3,
+   "awayScore": 1,
    "homePens": null,
    "awayPens": null,
-   "winnerId": null,
-   "headline": null,
-   "attendance": null,
-   "loserId": null,
+   "winnerId": "202",
+   "headline": "Argentina survive Switzerland scare to book semifinal with England",
+   "attendance": 69045,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "202",
+     "player": "A. Mac Allister",
+     "clock": "10'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "475",
+     "player": "D. Ndoye",
+     "clock": "67'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "red",
+     "teamId": "475",
+     "player": "B. Embolo",
+     "clock": "72'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "202",
+     "player": "J. Álvarez",
+     "clock": "112'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "202",
+     "player": "L. Martínez",
+     "clock": "120'+1'",
+     "pen": false,
+     "og": false
+    }
+   ],
+   "loserId": "475",
    "feeds": {
     "home": {
      "matchId": "760509",
@@ -5965,10 +6033,10 @@
    "city": "Atlanta, Georgia",
    "status": "scheduled",
    "statusDetail": "Scheduled",
-   "homeId": null,
-   "awayId": null,
-   "homePlaceholder": "Quarterfinal 3 Winner",
-   "awayPlaceholder": "Quarterfinal 4 Winner",
+   "homeId": "448",
+   "awayId": "202",
+   "homePlaceholder": null,
+   "awayPlaceholder": null,
    "homeScore": null,
    "awayScore": null,
    "homePens": null,
