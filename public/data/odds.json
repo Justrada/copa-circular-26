@@ -799,12 +799,12 @@
   "capturedAt": "2026-07-11T09:13:18.633Z"
  },
  "760514": {
-  "home": 0.407,
-  "draw": 0.294,
-  "away": 0.299,
-  "source": "DraftKings closing line",
-  "kind": "book",
-  "capturedAt": "2026-07-12T09:13:25.365Z"
+  "home": 0.4229,
+  "draw": 0.2935,
+  "away": 0.2836,
+  "source": "Polymarket",
+  "kind": "market",
+  "capturedAt": "2026-07-12T09:17:39.000Z"
  },
  "760515": {
   "home": 0.372,

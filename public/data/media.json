@@ -5283,5 +5283,109 @@
     "url": "https://www.reddit.com/r/soccer/comments/1uszrtl/spain_2_1_belgium_mikel_merino_88/"
    }
   ]
+ },
+ "760512": {
+  "highlights": {
+   "fox": {
+    "videoId": "dVWBrxpPVuY",
+    "title": "Norway vs England Highlights 🌎🏆 2026 FIFA World Cup™ | Quarterfinals"
+   },
+   "fifa": null
+  },
+  "social": [
+   {
+    "platform": "youtube",
+    "url": "https://www.youtube.com/watch?v=m2YIgnjuEII",
+    "kind": "goal",
+    "note": "FIFA official clip of Jude Bellingham’s goals in the 2-1 comeback win over Norway"
+   },
+   {
+    "platform": "youtube",
+    "url": "https://www.youtube.com/watch?v=fcrWheLuGE0",
+    "kind": "punditry",
+    "note": "FOX Sports feature on Bellingham’s unstoppable quarterfinal performance"
+   }
+  ],
+  "quotes": [
+   {
+    "speaker": "Jude Bellingham",
+    "text": "You’re not going to win every game, popping the ball and making a thousand passes. Sometimes you have to win dirty, and we’ve done that again tonight.",
+    "sourceName": "Sky Sports",
+    "sourceUrl": "https://www.skysports.com/football/news/11095/13562621/thomas-tuchel-unhappy-with-englands-display-in-world-cup-quarter-final-win-over-norway-but-jude-bellingham-responds-with-whatever"
+   }
+  ],
+  "recap": {
+   "en": "England fell behind to Andreas Schjelderup’s 36th-minute strike but Jude Bellingham levelled in first-half stoppage time and then won it in extra time, completing a 2-1 comeback over Norway in Miami Gardens. The brace sent England into their first World Cup semifinal since 2018, where they will meet Argentina.",
+   "es": "Inglaterra se puso por detrás con el gol de Andreas Schjelderup al minuto 36, pero Jude Bellingham igualó en el descuento de la primera parte y luego marcó el gol de la victoria en la prórroga, completando una remontada por 2-1 ante Noruega en Miami Gardens. El doblete metió a Inglaterra en su primera semifinal de un Mundial desde 2018, donde se enfrentará a Argentina."
+  },
+  "fans": [
+   {
+    "text": "ENGLAND!!! Bellingham you deserve to be there hopefully you will win the cup 😩☝🏽",
+    "author": "@kookiegirlxo",
+    "platform": "x",
+    "url": "https://x.com/kookiegirlxo/status/2076205894212468999"
+   },
+   {
+    "text": "Jude Bellingham is not human. Trailing to Norway, World Cup quarterfinal, absolute bottleneck script... and this man casually drops a brace to drag England into the semis. Maradona ’86 vibes are getting out of hand.",
+    "author": "@globaltrendwtch",
+    "platform": "x",
+    "url": "https://x.com/globaltrendwtch/status/2076190941984288866"
+   }
+  ]
+ },
+ "760513": {
+  "highlights": {
+   "fox": {
+    "videoId": "FGhW41kIpgQ",
+    "title": "Argentina vs Switzerland Highlights 🌎🏆 2026 FIFA World Cup™ | Quarterfinals"
+   },
+   "fifa": null
+  },
+  "social": [
+   {
+    "platform": "youtube",
+    "url": "https://www.youtube.com/watch?v=qY5SdQa7-jA",
+    "kind": "goal",
+    "note": "FIFA official clip of Julián Álvarez’s 112th-minute golazo from outside the box"
+   },
+   {
+    "platform": "youtube",
+    "url": "https://www.youtube.com/watch?v=NJSrj4i9SII",
+    "kind": "punditry",
+    "note": "ESPN FC full reaction breaking down Álvarez’s winner and the semifinal against England"
+   }
+  ],
+  "quotes": [
+   {
+    "speaker": "Lionel Scaloni",
+    "text": "We knew that we were going to suffer, and this is part of our blood, this is part of our DNA, and this brings peace of mind.",
+    "sourceName": "Buenos Aires Times",
+    "sourceUrl": "https://batimes.com.ar/news/sports/scaloni-admits-argentina-suffered-in-switzerland-win.phtml"
+   }
+  ],
+  "recap": {
+   "en": "Alexis Mac Allister headed Argentina ahead from a Messi corner, but Dan Ndoye levelled for Switzerland before Breel Embolo was sent off. Julián Álvarez then curled a stunning 112th-minute winner and Lautaro Martínez added a third in stoppage time as the champions edged 10-man Switzerland 3-1 after extra time in Kansas City to reach a sixth straight semifinal against England.",
+   "es": "Alexis Mac Allister adelantó a Argentina de cabeza tras un córner de Messi, pero Dan Ndoye empató para Suiza antes de que Breel Embolo fuera expulsado. Julián Álvarez marcó luego un golazo desde fuera del área al minuto 112 y Lautaro Martínez añadió el tercero en el descuento, y los campeones superaron 3-1 a una Suiza con diez hombres tras la prórroga en Kansas City para alcanzar su sexta semifinal consecutiva ante Inglaterra."
+  },
+  "fans": [
+   {
+    "text": "Argentina vs Switzerland World Cup celebrations at the Obelisk finishes with riot police sending everyone home. This happened all of a sudden, one minute people were singing the next minute rubber bullets😮",
+    "author": "@rashidmahazi",
+    "platform": "x",
+    "url": "https://x.com/rashidmahazi/status/2076205738205286861"
+   },
+   {
+    "text": "Argentina beat Switzerland and advance! Argentina won but it was another extra time battle. Embolo and Switzerland pushed hard, but Alvarez, Lautaro Martinez, Paredes and the team found a way. Messi was not at his usual level, he looked absent for long periods.",
+    "author": "@iamrichygold",
+    "platform": "x",
+    "url": "https://x.com/iamrichygold/status/2076216733258400147"
+   },
+   {
+    "text": "Embolo cost Switzerland dearly as Messi’s Argentina secured the win to book a semifinal clash against England. 🤯‼️",
+    "author": "@tsushima077",
+    "platform": "x",
+    "url": "https://x.com/tsushima077/status/2076204057513918504"
+   }
+  ]
  }
 }
