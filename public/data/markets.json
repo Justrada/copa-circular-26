@@ -1,10 +1,10 @@
 {
  "champion": {
-  "France": 0.3845,
-  "England": 0.2115,
-  "Spain": 0.1995,
-  "Argentina": 0.1895
+  "France": 0.3885,
+  "England": 0.2155,
+  "Spain": 0.2075,
+  "Argentina": 0.1785
  },
- "capturedAt": "2026-07-12T09:17:39.000Z",
- "source": "Polymarket"
+ "capturedAt": "2026-07-13T09:15:00.000Z",
+ "source": "Polymarket (event world-cup-winner, CLOB last prices)"
 }
