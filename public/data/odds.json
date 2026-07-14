@@ -799,19 +799,21 @@
   "capturedAt": "2026-07-11T09:13:18.633Z"
  },
  "760514": {
-  "home": 0.405,
-  "draw": 0.302,
-  "away": 0.293,
-  "source": "DraftKings closing line",
-  "kind": "book",
-  "capturedAt": "2026-07-13T10:34:23.992Z"
+  "home": 0.404,
+  "draw": 0.298,
+  "away": 0.298,
+  "source": "Polymarket (event fifwc-fra-esp-2026-07-14, CLOB last prices)",
+  "kind": "market",
+  "note": "raw prices 0.40625/0.29875/0.29875, normalized",
+  "capturedAt": "2026-07-14T06:05:00Z"
  },
  "760515": {
-  "home": 0.366,
-  "draw": 0.322,
+  "home": 0.359,
+  "draw": 0.329,
   "away": 0.312,
-  "source": "DraftKings closing line",
-  "kind": "book",
-  "capturedAt": "2026-07-13T10:34:23.992Z"
+  "source": "Polymarket (event fifwc-eng-arg-2026-07-15, CLOB last prices)",
+  "kind": "market",
+  "note": "raw prices 0.35875/0.32875/0.31125, normalized",
+  "capturedAt": "2026-07-14T06:05:00Z"
  }
 }
