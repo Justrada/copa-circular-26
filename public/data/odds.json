@@ -807,11 +807,11 @@
   "capturedAt": "2026-07-14T09:15:27.798Z"
  },
  "760515": {
-  "home": 0.358,
-  "draw": 0.327,
+  "home": 0.351,
+  "draw": 0.333,
   "away": 0.316,
-  "source": "DraftKings closing line",
-  "kind": "book",
-  "capturedAt": "2026-07-14T09:15:27.798Z"
+  "source": "Polymarket",
+  "kind": "market",
+  "capturedAt": "2026-07-15T06:12:30Z"
  }
 }

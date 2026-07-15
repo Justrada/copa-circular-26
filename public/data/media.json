@@ -5387,5 +5387,63 @@
     "url": "https://x.com/tsushima077/status/2076204057513918504"
    }
   ]
+ },
+ "760514": {
+  "highlights": {
+   "fox": {
+    "videoId": "3JAZZr3jWD0",
+    "title": "France vs Spain Highlights 🌎🏆 2026 FIFA World Cup™ | Semifinals"
+   },
+   "fifa": {
+    "videoId": "_cV8QcKp3GU",
+    "title": "Highlights | France 0-2 Spain | FIFA World Cup 2026™ Semi-Finals"
+   }
+  },
+  "social": [
+   {
+    "platform": "youtube",
+    "url": "https://www.youtube.com/watch?v=tJAXBJ85RmY",
+    "kind": "reaction",
+    "note": "FOX 5 New York gathers fans from both sides reacting to Spain reaching its first World Cup final since 2010"
+   },
+   {
+    "platform": "youtube",
+    "url": "https://www.youtube.com/watch?v=kw79AaGKWSg",
+    "kind": "punditry",
+    "note": "talkSPORT's Rory Jennings & Max Scott break down how Spain suffocated France in the 2-0 semifinal"
+   }
+  ],
+  "quotes": [
+   {
+    "speaker": "Didier Deschamps",
+    "text": "To have any hope, we needed to be at our best. Unfortunately, we weren't.",
+    "sourceName": "ESPN",
+    "sourceUrl": "https://www.espn.com/soccer/story/_/id/49362324/didier-deschamps-france-spain-world-cup-2026"
+   }
+  ],
+  "recap": {
+   "en": "Mikel Oyarzabal drilled home a 22nd-minute penalty after Lucas Digne fouled Lamine Yamal, and Pedro Porro doubled the lead in the 58th, finishing a slick Dani Olmo one-two to send Spain past France 2-0 in Arlington. La Roja reached their first World Cup final since 2010, kept a record sixth clean sheet, and knocked France out of a fourth straight major tournament.",
+   "es": "Mikel Oyarzabal clavó un penalti al minuto 22 tras la falta de Lucas Digne sobre Lamine Yamal, y Pedro Porro amplió la ventaja en el 58 rematando una pared con Dani Olmo para dar a España un 2-0 sobre Francia en Arlington. La Roja alcanzó su primera final del Mundial desde 2010, firmó una sexta portería a cero de récord y eliminó a Francia en su cuarto torneo importante consecutivo."
+  },
+  "fans": [
+   {
+    "text": "France 🇫🇷 0-2 Spain 🇪🇸, the result shocked me … Argentina takes on England tonight in the 2nd semifinal of the 2026 World Cup, May the best team win ..",
+    "author": "@D_supabara",
+    "platform": "x",
+    "url": "https://x.com/D_supabara/status/2077270237871788086"
+   },
+   {
+    "text": "I’ve never seen—and probably never will see—a talent with the sheer aura and personality of Lamine Yamal.",
+    "author": "@appiecule",
+    "platform": "x",
+    "url": "https://x.com/appiecule/status/2077256849292951951"
+   },
+   {
+    "text": "@FabrizioRomano Although ref made some few WRONG calld like that Spain's penalty, Spain generally outplayed France in almost all positions but the penalty call was wrong.",
+    "author": "@Dannkasina",
+    "platform": "x",
+    "url": "https://x.com/Dannkasina/status/2077235031555047515"
+   }
+  ]
  }
 }
