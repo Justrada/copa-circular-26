@@ -815,19 +815,19 @@
   "capturedAt": "2026-07-15T09:19:33.756Z"
  },
  "760516": {
-  "home": 0.479,
-  "draw": 0.255,
-  "away": 0.266,
+  "home": 0.507,
+  "draw": 0.246,
+  "away": 0.246,
   "source": "DraftKings closing line",
   "kind": "book",
-  "capturedAt": "2026-07-16T06:15:08.186Z"
+  "capturedAt": "2026-07-16T09:25:09.863Z"
  },
  "760517": {
-  "home": 0.5824,
-  "draw": 0,
-  "away": 0.4176,
-  "source": "Polymarket",
-  "kind": "market",
-  "capturedAt": "2026-07-16T06:15:28Z"
+  "home": 0.412,
+  "draw": 0.321,
+  "away": 0.267,
+  "source": "DraftKings closing line",
+  "kind": "book",
+  "capturedAt": "2026-07-16T09:25:09.863Z"
  }
 }
