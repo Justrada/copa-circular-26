@@ -5445,5 +5445,54 @@
     "url": "https://x.com/Dannkasina/status/2077235031555047515"
    }
   ]
+ },
+ "760515": {
+  "highlights": {
+   "fox": {
+    "videoId": "y-4saPWrPt0",
+    "title": "England vs Argentina Highlights 🌎🏆 2026 FIFA World Cup™ | Semifinals"
+   },
+   "fifa": null
+  },
+  "social": [
+   {
+    "platform": "youtube",
+    "url": "https://www.youtube.com/watch?v=NQ77aO251cA",
+    "kind": "reaction",
+    "note": "Sky Sports Football captures heartbroken England fans at the Hill Dickinson fan zone the moment Lautaro Martínez’s stoppage-time header knocks them out"
+   },
+   {
+    "platform": "youtube",
+    "url": "https://www.youtube.com/watch?v=lwm1top9IqU",
+    "kind": "punditry",
+    "note": "CBS Sports breaks down Argentina’s stunning late comeback and Messi’s two assists that sent the holders to a second straight final"
+   }
+  ],
+  "quotes": [
+   {
+    "speaker": "Harry Kane",
+    "text": "Once we went 1-0 up, we seemed to just try and hold on, which at this level is just not enough, so I’m gutted.",
+    "sourceName": "ESPN",
+    "sourceUrl": "https://www.espn.com/soccer/story/_/id/49371265/thomas-tuchel-england-argentina-tactics-2026-world-cup-future"
+   }
+  ],
+  "recap": {
+   "en": "Anthony Gordon’s 55th-minute strike had England four minutes from a first World Cup final since 1966, but Lionel Messi set up two late goals — Enzo Fernández in the 85th and a Lautaro Martínez header in stoppage time — to complete a stunning 2-1 Argentina comeback in Atlanta. The defending champions reach a second consecutive final, where they will face Spain, while Thomas Tuchel’s decision to sit on the lead drew fierce criticism.",
+   "es": "El gol de Anthony Gordon al minuto 55 tenía a Inglaterra a cuatro minutos de su primera final del Mundial desde 1966, pero Lionel Messi asistió dos goles tardíos —de Enzo Fernández al 85 y un cabezazo de Lautaro Martínez en el descuento— para completar una asombrosa remontada 2-1 de Argentina en Atlanta. Los campeones defensores llegan a su segunda final consecutiva, donde enfrentarán a España, mientras la decisión de Thomas Tuchel de conservar la ventaja recibió duras críticas."
+  },
+  "fans": [
+   {
+    "text": "England vs Argentina was a case of self-inflicted tactical collapse. England did not simply lose; England actively surrendered the initiative.",
+    "author": "@TheUtdPivot",
+    "platform": "x",
+    "url": "https://x.com/TheUtdPivot/status/2077604584755953685"
+   },
+   {
+    "text": "It looked as if England would finally have the chance to rewrite history when they took the lead through Anthony Gordon in the 55th minute... But the magician, the god himself...",
+    "author": "@osarobojnr",
+    "platform": "x",
+    "url": "https://x.com/osarobojnr/status/2077634997788262546"
+   }
+  ]
  }
 }

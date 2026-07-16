@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-07-15T09:19:33.763Z",
+ "generatedAt": "2026-07-16T06:15:08.192Z",
  "season": "2026 FIFA World Cup",
  "teams": {
   "164": {
@@ -6049,20 +6049,46 @@
    "date": "2026-07-15T19:00Z",
    "venue": "Mercedes-Benz Stadium",
    "city": "Atlanta, Georgia",
-   "status": "scheduled",
-   "statusDetail": "Scheduled",
+   "status": "ft",
+   "statusDetail": "FT",
    "homeId": "448",
    "awayId": "202",
    "homePlaceholder": null,
    "awayPlaceholder": null,
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 1,
+   "awayScore": 2,
    "homePens": null,
    "awayPens": null,
-   "winnerId": null,
-   "headline": null,
-   "attendance": null,
-   "loserId": null,
+   "winnerId": "202",
+   "headline": "Argentina come from behind vs. England, reach WC final",
+   "attendance": 68239,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "448",
+     "player": "A. Gordon",
+     "clock": "55'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "202",
+     "player": "E. Fernández",
+     "clock": "85'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "202",
+     "player": "L. Martínez",
+     "clock": "90'+2'",
+     "pen": false,
+     "og": false
+    }
+   ],
+   "loserId": "448",
    "feeds": {
     "home": {
      "matchId": "760512",
@@ -6084,9 +6110,9 @@
    "status": "scheduled",
    "statusDetail": "Scheduled",
    "homeId": "478",
-   "awayId": null,
+   "awayId": "448",
    "homePlaceholder": null,
-   "awayPlaceholder": "Semifinal 2 Loser",
+   "awayPlaceholder": null,
    "homeScore": null,
    "awayScore": null,
    "homePens": null,
@@ -6116,9 +6142,9 @@
    "status": "scheduled",
    "statusDetail": "Scheduled",
    "homeId": "164",
-   "awayId": null,
+   "awayId": "202",
    "homePlaceholder": null,
-   "awayPlaceholder": "Semifinal 2 Winner",
+   "awayPlaceholder": null,
    "homeScore": null,
    "awayScore": null,
    "homePens": null,
