@@ -815,21 +815,19 @@
   "capturedAt": "2026-07-15T09:19:33.756Z"
  },
  "760516": {
-  "home": 0.4975,
-  "draw": 0.2563,
-  "away": 0.2462,
-  "source": "Polymarket (event fifwc-fra-eng-2026-07-18, CLOB last prices, normalized)",
-  "kind": "market",
-  "note": "90-minute 3-way market; raw pre-match prices FRA 0.495 / draw 0.255 / ENG 0.245, normalized from sum 0.995",
-  "capturedAt": "2026-07-17T06:05:44Z"
+  "home": 0.497,
+  "draw": 0.246,
+  "away": 0.256,
+  "source": "DraftKings closing line",
+  "kind": "book",
+  "capturedAt": "2026-07-17T09:19:23.522Z"
  },
  "760517": {
-  "home": 0.4229,
-  "draw": 0.3134,
-  "away": 0.2637,
-  "source": "Polymarket (event fifwc-esp-arg-2026-07-19, CLOB last prices, normalized)",
-  "kind": "market",
-  "note": "90-minute 3-way market; raw pre-match prices ESP 0.425 / draw 0.315 / ARG 0.265, normalized from sum 1.005",
-  "capturedAt": "2026-07-17T06:05:44Z"
+  "home": 0.412,
+  "draw": 0.321,
+  "away": 0.267,
+  "source": "DraftKings closing line",
+  "kind": "book",
+  "capturedAt": "2026-07-17T09:19:23.522Z"
  }
 }
