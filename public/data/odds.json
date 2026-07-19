@@ -823,11 +823,11 @@
   "capturedAt": "2026-07-18T08:56:49.434Z"
  },
  "760517": {
-  "home": 0.419,
-  "draw": 0.315,
-  "away": 0.266,
-  "source": "DraftKings closing line",
-  "kind": "book",
-  "capturedAt": "2026-07-18T08:56:49.434Z"
+  "home": 0.4211,
+  "draw": 0.3143,
+  "away": 0.2646,
+  "source": "Polymarket (event fifwc-esp-arg-2026-07-19, CLOB last prices, normalized)",
+  "kind": "market",
+  "capturedAt": "2026-07-19T06:09:03.905Z"
  }
 }

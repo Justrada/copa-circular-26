@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-07-18T08:56:49.444Z",
+ "generatedAt": "2026-07-19T06:08:53.990Z",
  "season": "2026 FIFA World Cup",
  "teams": {
   "164": {
@@ -6107,20 +6107,102 @@
    "date": "2026-07-18T21:00Z",
    "venue": "Hard Rock Stadium",
    "city": "Miami Gardens, Florida",
-   "status": "scheduled",
-   "statusDetail": "Scheduled",
+   "status": "ft",
+   "statusDetail": "FT",
    "homeId": "478",
    "awayId": "448",
    "homePlaceholder": null,
    "awayPlaceholder": null,
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 4,
+   "awayScore": 6,
    "homePens": null,
    "awayPens": null,
-   "winnerId": null,
-   "headline": null,
-   "attendance": null,
-   "loserId": null,
+   "winnerId": "448",
+   "headline": "England beat France 6-4 in chaotic third-place World Cup playoff",
+   "attendance": 64478,
+   "events": [
+    {
+     "kind": "goal",
+     "teamId": "448",
+     "player": "D. Rice",
+     "clock": "3'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "448",
+     "player": "E. Konsa",
+     "clock": "18'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "448",
+     "player": "B. Saka",
+     "clock": "37'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "448",
+     "player": "B. Saka",
+     "clock": "45'+1'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "478",
+     "player": "K. Mbappé",
+     "clock": "48'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "478",
+     "player": "B. Barcola",
+     "clock": "54'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "478",
+     "player": "K. Mbappé",
+     "clock": "66'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "448",
+     "player": "B. Saka",
+     "clock": "87'",
+     "pen": true,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "478",
+     "player": "O. Dembélé",
+     "clock": "90'+6'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "448",
+     "player": "J. Bellingham",
+     "clock": "90'+8'",
+     "pen": false,
+     "og": false
+    }
+   ],
+   "loserId": "478",
    "feeds": {
     "home": {
      "matchId": "760514",

@@ -30874,5 +30874,311 @@
     ]
    }
   ]
+ },
+ "760516": {
+  "teams": [
+   {
+    "teamId": "478",
+    "stats": {
+     "foulsCommitted": "14",
+     "yellowCards": "0",
+     "redCards": "0",
+     "offsides": "3",
+     "wonCorners": "3",
+     "saves": "4",
+     "possessionPct": "45.9",
+     "totalShots": "19",
+     "shotsOnTarget": "9",
+     "accuratePasses": "404",
+     "passPct": "0.9"
+    }
+   },
+   {
+    "teamId": "448",
+    "stats": {
+     "foulsCommitted": "8",
+     "yellowCards": "0",
+     "redCards": "0",
+     "offsides": "3",
+     "wonCorners": "4",
+     "saves": "5",
+     "possessionPct": "54.1",
+     "totalShots": "19",
+     "shotsOnTarget": "11",
+     "accuratePasses": "469",
+     "passPct": "0.9"
+    }
+   }
+  ],
+  "lineups": [
+   {
+    "teamId": "478",
+    "formation": "4-2-3-1",
+    "players": [
+     {
+      "name": "M. Maignan",
+      "jersey": "16",
+      "pos": "G",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "M. Lacroix",
+      "jersey": "26",
+      "pos": "CD-L",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "I. Konaté",
+      "jersey": "15",
+      "pos": "CD-R",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "T. Hernández",
+      "jersey": "19",
+      "pos": "LB",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "M. Gusto",
+      "jersey": "2",
+      "pos": "RB",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "R. Cherki",
+      "jersey": "24",
+      "pos": "AM",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "A. Rabiot",
+      "jersey": "14",
+      "pos": "LM",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "W. Zaïre-Emery",
+      "jersey": "18",
+      "pos": "RM",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "K. Mbappé",
+      "jersey": "10",
+      "pos": "F",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "D. Doué",
+      "jersey": "20",
+      "pos": "AM-L",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "M. Olise",
+      "jersey": "11",
+      "pos": "AM-R",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "B. Barcola",
+      "jersey": "12",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "J. Koundé",
+      "jersey": "5",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "D. Upamecano",
+      "jersey": "4",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "O. Dembélé",
+      "jersey": "7",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "L. Digne",
+      "jersey": "3",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     }
+    ]
+   },
+   {
+    "teamId": "448",
+    "formation": "4-1-4-1",
+    "players": [
+     {
+      "name": "D. Henderson",
+      "jersey": "13",
+      "pos": "G",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "M. Guéhi",
+      "jersey": "6",
+      "pos": "CD-L",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "E. Konsa",
+      "jersey": "2",
+      "pos": "CD-R",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "D. Rice",
+      "jersey": "4",
+      "pos": "DM",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "D. Spence",
+      "jersey": "25",
+      "pos": "LB",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "J. Quansah",
+      "jersey": "26",
+      "pos": "RB",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "E. Eze",
+      "jersey": "21",
+      "pos": "CM-L",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "M. Rogers",
+      "jersey": "17",
+      "pos": "CM-R",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "M. Rashford",
+      "jersey": "11",
+      "pos": "LM",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "B. Saka",
+      "jersey": "7",
+      "pos": "RM",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "I. Toney",
+      "jersey": "22",
+      "pos": "F",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "J. Bellingham",
+      "jersey": "10",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "T. Chalobah",
+      "jersey": "12",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "E. Anderson",
+      "jersey": "8",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "R. James",
+      "jersey": "24",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "O. Watkins",
+      "jersey": "19",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     }
+    ]
+   }
+  ]
  }
 }
