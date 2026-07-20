@@ -31180,5 +31180,327 @@
     ]
    }
   ]
+ },
+ "760517": {
+  "teams": [
+   {
+    "teamId": "164",
+    "stats": {
+     "foulsCommitted": "21",
+     "yellowCards": "0",
+     "redCards": "0",
+     "offsides": "4",
+     "wonCorners": "9",
+     "saves": "0",
+     "possessionPct": "65.1",
+     "totalShots": "20",
+     "shotsOnTarget": "12",
+     "accuratePasses": "763",
+     "passPct": "0.9"
+    }
+   },
+   {
+    "teamId": "202",
+    "stats": {
+     "foulsCommitted": "25",
+     "yellowCards": "4",
+     "redCards": "1",
+     "offsides": "1",
+     "wonCorners": "4",
+     "saves": "11",
+     "possessionPct": "34.9",
+     "totalShots": "2",
+     "shotsOnTarget": "0",
+     "accuratePasses": "357",
+     "passPct": "0.8"
+    }
+   }
+  ],
+  "lineups": [
+   {
+    "teamId": "164",
+    "formation": "4-2-3-1",
+    "players": [
+     {
+      "name": "U. Simón",
+      "jersey": "23",
+      "pos": "G",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "A. Laporte",
+      "jersey": "14",
+      "pos": "CD-L",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "P. Cubarsí",
+      "jersey": "22",
+      "pos": "CD-R",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "M. Cucurella",
+      "jersey": "24",
+      "pos": "LB",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "P. Porro",
+      "jersey": "12",
+      "pos": "RB",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "D. Olmo",
+      "jersey": "10",
+      "pos": "AM",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "F. Ruiz",
+      "jersey": "8",
+      "pos": "LM",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "Rodri",
+      "jersey": "16",
+      "pos": "RM",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "M. Oyarzabal",
+      "jersey": "21",
+      "pos": "F",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "Á. Baena",
+      "jersey": "15",
+      "pos": "AM-L",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "L. Yamal",
+      "jersey": "19",
+      "pos": "AM-R",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "M. Zubimendi",
+      "jersey": "18",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "N. Williams",
+      "jersey": "17",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "F. Torres",
+      "jersey": "7",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "Pedri",
+      "jersey": "20",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "M. Merino",
+      "jersey": "6",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "E. García",
+      "jersey": "4",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     }
+    ]
+   },
+   {
+    "teamId": "202",
+    "formation": "4-4-2",
+    "players": [
+     {
+      "name": "E. Martínez",
+      "jersey": "23",
+      "pos": "G",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "L. Martínez",
+      "jersey": "6",
+      "pos": "CD-L",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "C. Romero",
+      "jersey": "13",
+      "pos": "CD-R",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "N. Tagliafico",
+      "jersey": "3",
+      "pos": "LB",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "G. Montiel",
+      "jersey": "4",
+      "pos": "RB",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "A. Mac Allister",
+      "jersey": "20",
+      "pos": "CM-L",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "E. Fernández",
+      "jersey": "24",
+      "pos": "CM-R",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "N. González",
+      "jersey": "15",
+      "pos": "LM",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "R. De Paul",
+      "jersey": "7",
+      "pos": "RM",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "J. Álvarez",
+      "jersey": "9",
+      "pos": "CF-L",
+      "starter": true,
+      "off": true,
+      "on": false
+     },
+     {
+      "name": "L. Messi",
+      "jersey": "10",
+      "pos": "CF-R",
+      "starter": true,
+      "off": false,
+      "on": false
+     },
+     {
+      "name": "L. Paredes",
+      "jersey": "5",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "N. Otamendi",
+      "jersey": "19",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "N. Molina",
+      "jersey": "26",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "G. Simeone",
+      "jersey": "17",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "M. Senesi",
+      "jersey": "2",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     },
+     {
+      "name": "F. Medina",
+      "jersey": "25",
+      "pos": "SUB",
+      "starter": false,
+      "off": false,
+      "on": true
+     }
+    ]
+   }
+  ]
  }
 }

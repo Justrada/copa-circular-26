@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-07-19T09:14:56.495Z",
+ "generatedAt": "2026-07-20T06:08:23.847Z",
  "season": "2026 FIFA World Cup",
  "teams": {
   "164": {
@@ -6221,20 +6221,38 @@
    "date": "2026-07-19T19:00Z",
    "venue": "MetLife Stadium",
    "city": "East Rutherford, New Jersey",
-   "status": "scheduled",
-   "statusDetail": "Scheduled",
+   "status": "ft",
+   "statusDetail": "AET",
    "homeId": "164",
    "awayId": "202",
    "homePlaceholder": null,
    "awayPlaceholder": null,
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 1,
+   "awayScore": 0,
    "homePens": null,
    "awayPens": null,
-   "winnerId": null,
-   "headline": null,
-   "attendance": null,
-   "loserId": null,
+   "winnerId": "164",
+   "headline": "Torres scores in ET vs Argentina to win Spain WC",
+   "attendance": 80663,
+   "events": [
+    {
+     "kind": "red",
+     "teamId": "202",
+     "player": "E. Fernández",
+     "clock": "90'+3'",
+     "pen": false,
+     "og": false
+    },
+    {
+     "kind": "goal",
+     "teamId": "164",
+     "player": "F. Torres",
+     "clock": "106'",
+     "pen": false,
+     "og": false
+    }
+   ],
+   "loserId": "202",
    "feeds": {
     "home": {
      "matchId": "760514",

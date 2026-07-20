@@ -1,8 +1,8 @@
 {
- "champion": {
-  "Spain": 0.5905,
-  "Argentina": 0.4095
- },
- "capturedAt": "2026-07-19T06:08:49.985Z",
- "source": "Polymarket (Will <team> win the 2026 FIFA World Cup, CLOB last prices)"
+  "champion": {
+    "Spain": 1,
+    "Argentina": 0
+  },
+  "capturedAt": "2026-07-20T06:08:19.357Z",
+  "source": "Polymarket (2026 FIFA World Cup champion market resolved — Spain won the final 1-0)"
 }
