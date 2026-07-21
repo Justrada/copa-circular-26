@@ -1214,7 +1214,14 @@
         "title": "Highlights | Uzbekistan 1-3 Colombia | FIFA World Cup 2026™"
       }
     },
-    "social": [],
+    "social": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=q6iL9ds0Rwg",
+        "kind": "highlight",
+        "note": "Jaminton Campaz's goal on FIFA's channel"
+      }
+    ],
     "quotes": [
       {
         "speaker": "Néstor Lorenzo",
@@ -1253,7 +1260,20 @@
         "title": "Highlights | England 4-2 Croatia | FIFA World Cup 2026™"
       }
     },
-    "social": [],
+    "social": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=qSGX9NX3ek8",
+        "kind": "highlight",
+        "note": "Harry Kane's header from a Rice corner on FIFA's channel"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=0iloB5Gy7mU",
+        "kind": "highlight",
+        "note": "Jude Bellingham's goal on FIFA's channel"
+      }
+    ],
     "quotes": [
       {
         "speaker": "Thomas Tuchel",
@@ -1298,7 +1318,14 @@
         "title": "Highlights | Czechia 1-1 South Africa | FIFA World Cup 2026™"
       }
     },
-    "social": [],
+    "social": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=bWBx95nIm2k",
+        "kind": "highlight",
+        "note": "FIFA's Alt Cast highlights of the 1-1 draw"
+      }
+    ],
     "quotes": [
       {
         "speaker": "Hugo Broos",
@@ -1447,7 +1474,20 @@
         "title": "Highlights | Mexico 1-0 Korea Republic | FIFA World Cup 2026™"
       }
     },
-    "social": [],
+    "social": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=up5QJyUC5dY",
+        "kind": "highlight",
+        "note": "Luis Romo's winner on FIFA's channel"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/shorts/mC5WN5FnuB8",
+        "kind": "highlight",
+        "note": "FIFA Short of the Romo winner"
+      }
+    ],
     "quotes": [
       {
         "speaker": "Javier Aguirre",
